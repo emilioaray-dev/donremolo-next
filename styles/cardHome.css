@@ -1,0 +1,37 @@
+.container {
+  display: grid;
+  height: 100vh;
+  align-content: center;
+}
+
+.containerCardCategories {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+}
+
+.cardCategories {
+  max-width: 8.75rem;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 0.625rem;
+  margin: 2rem 1rem 1rem 1rem;
+  background-color: var(--Cards-Colors);
+  height: fit-content;
+}
+
+.effectTranslateY {
+  display: grid;
+  transform: translateY(-30%);
+  justify-items: center;
+}
+
+.imgGrid {
+  display: grid;
+  min-height: 6rem;
+  padding: 0rem 0.5rem;
+}
+
+.titleCategories {
+  font-family: var(--Home-Card-fontFamily);
+  font-size: 0.875rem;
+}

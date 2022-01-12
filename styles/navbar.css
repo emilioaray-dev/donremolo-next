@@ -1,0 +1,50 @@
+/* Estilo del Componente Navbar*/
+header {
+  position: fixed;
+  /* Necesario para que sea flotante la barra del Nav*/
+  top: 1rem;
+  z-index: 1;
+  width: 100%;
+
+}
+
+#__next>div>header>nav>div {
+  display: grid;
+  width: 100%;
+  grid-template-columns: max-content repeat(4, 1fr);
+  align-items: center;
+  transform: translateY(-1.5rem);
+  margin-top: 1rem;
+
+}
+
+.cardNavbar {
+  height: var(--header-Nav-height);
+  box-shadow: 0 2px 12px 0 rgb(0 0 0 / 20%);
+  backdrop-filter: blur(2px);
+  background: var(--background--Nav);
+  border-radius: 1rem;
+  margin: var(--margen-horizontal);
+}
+
+.logo {
+  width: var(--size-With-Logo);
+  height: auto;
+  transform: translate(-7px, 7px);
+}
+
+#__next>div>header>nav>div>div {
+  margin-left: calc(var(--header-Nav-height) - (var(--header-Nav-height) * 2) + 1rem);
+}
+
+.MarginTopNav {
+  padding-top: calc(var(--header-Nav-height) + 5rem);
+}
+
+.titleNav {
+  grid-column-start: 2;
+  grid-column-end: 6;
+  text-align: center;
+  font-size: xx-large;
+  font-style: italic
+}
