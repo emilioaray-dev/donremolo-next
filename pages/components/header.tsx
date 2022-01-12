@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import logo from '../../public/assets/img/Logo_DonRemolo_png.png'
+import logo from '../../public/assets/img/Logo_DonRemolo.svg'
 
 const Header = () => {
   return (
