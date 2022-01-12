@@ -4,7 +4,7 @@
 
 /* BackGround for Tablet and Pc */
 .backgroundHome {
-  background-image: url("../public/assets/img/Background_Desktop_PNG.png");
+  background-image: url("/assets/img/Background_Desktop_PNG.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
