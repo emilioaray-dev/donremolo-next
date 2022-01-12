@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import slogan from '../../public/assets/img/slogan.svg'
-function Slogan() {
+
+const Slogan = () => {
   return (
     <div>
 
@@ -16,7 +17,13 @@ function Slogan() {
           bottom: 4rem;
           display: block;
           width: calc(100% - 2rem);
+          max-width: 24rem;
         }
+        @media only screen and (orientation:portrait) and (min-width:820px) {
+        .footerFloat {
+          right: 2rem;
+        }
+      }
       `}</style>
 
       <div className="containerSlogan">
