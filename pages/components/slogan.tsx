@@ -14,7 +14,7 @@ const Slogan = () => {
         }
         .footerFloat {
           position: absolute;
-          bottom: 4rem;
+          bottom: 1rem;
           display: block;
           width: calc(100% - 2rem);
           max-width: 24rem;

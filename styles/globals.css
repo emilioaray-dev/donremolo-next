@@ -74,3 +74,27 @@ a:-webkit-any-link {
   src: url(../public/fonts/OpenSans-VariableFont_wdth,wght.ttf);
 
 }
+
+/*******************************************
+**********   Start BackGround   ************
+********************************************/
+
+/* BackGround for Tablet and Pc */
+body {
+  background-image: url("/img/Background_Desktop_PNG.png");
+  background-size: contain;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* BackGround for Mobile */
+@media only screen and (max-width:414px) {
+  body {
+    background-image: url("/img/Background_mobile_PNG.png");
+  }
+}
+
+/*******************************************
+***********   End BackGround   *************
+********************************************/
