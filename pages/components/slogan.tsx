@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import slogan from '../../public/assets/img/slogan.svg'
+
 
 const Slogan = () => {
   return (
@@ -28,7 +28,7 @@ const Slogan = () => {
 
       <div className="containerSlogan">
         <picture className=" footerFloat">
-          <Image src={slogan} alt="Logo" layout='responsive' />
+          <Image src="/assets/img/slogan.svg" alt="Logo" width={257} height={56}  layout='responsive' priority />
         </picture>
       </div>
 
