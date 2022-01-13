@@ -19,7 +19,7 @@ const Slogan = () => {
           width: calc(100% - 2rem);
           max-width: 24rem;
         }
-        @media only screen and (orientation:portrait) and (min-width:820px) {
+        @media only screen and (min-width:820px) {
         .footerFloat {
           right: 2rem;
         }
