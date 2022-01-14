@@ -14,7 +14,7 @@
   --size-With-Logo: 6.438rem;
 
   /* Margen horizontal de componentes */
-  --margen-horizontal: 0 1rem;
+  --margen-horizontal: 0rem 1rem;
 
   /* Variable de Fuentes en Home Cards  */
   --Home-Card-fontFamily: OpenSans;
@@ -28,8 +28,7 @@
   --color-Negro: #313638;
   --color-Rojo: #EC3205;
 
-
-
+  --maxWidth-container: 1128px;
 }
 
 /*******************************************

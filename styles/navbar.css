@@ -5,6 +5,7 @@ header {
   top: 1rem;
   z-index: 1;
   width: 100%;
+  padding: var(--margen-horizontal);
 
 }
 
@@ -24,7 +25,8 @@ header {
   backdrop-filter: blur(2px);
   background: var(--background--Nav);
   border-radius: 1rem;
-  margin: var(--margen-horizontal);
+  margin: 0 auto;
+  max-width: var(--maxWidth-container);
 }
 
 .logo {

@@ -19,7 +19,7 @@ const Home: NextPage = () => {
       <Header/>
 
       <main >
-        
+
         <CardHome/>
 
       </main>

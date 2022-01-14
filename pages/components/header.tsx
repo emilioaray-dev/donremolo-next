@@ -11,7 +11,7 @@ const Header = () => {
           <Link href="/">
             <a>
               <picture className="logo" >
-                <Image src="/img/Logo_DonRemolo.svg" alt="Logo" width={100} height={100} priority />
+                <Image src="/assets/img/Logo_DonRemolo.svg" alt="Logo" width={100} height={100} priority />
               </picture>
             </a>
           </Link>

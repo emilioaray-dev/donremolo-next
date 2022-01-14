@@ -2,64 +2,88 @@
   Reset CSS
 */
 
+
 /* 1. box-sizing model. */
-*, *::before, *::after {
-  box-sizing: border-box;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
+
 
 /* 2. Eliminar margen predeterminado de los browser */
+
 * {
-  margin: 0px;
-  padding: 0px;
+    margin: 0px;
+    padding: 0px;
 }
 
+
 /* 3. Estableciendo la minima altura de una caja a toda la pantalla */
-html, body {
-  height: 100%;
+
+html,
+body {
+    height: 100%;
 }
+
 
 /* 4. Mejora la representación del texto 
 4.1 Definiendo OpenSans como fuente predeterminada*/
 
 body {
-  -webkit-font-smoothing: antialiased;
-  font-family: OpenSans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-family: OpenSans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
+
 
 /* 5. Mejorar los valores predeterminados de los medios */
-img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
 }
 
+
 /* 6. Evitar los desbordamientos de texto */
-p, h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word;
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
 }
+
 
 /*7. Quitando Estilos de los textos de links  */
 
 a:-webkit-any-link {
-  color: unset;
-  text-decoration: none;
+    color: unset;
+    text-decoration: none;
 }
 
 
 /*8.Agregar cuadrado después del header hecho por Emilio */
 
 .cuadrado {
-  margin-top: 30px ! important;
-  padding: 20px;
-  margin: 10px;
-  background-color: #d4c6c6ef;
-  border: solid 1px #d4c6c6ef(255, 247, 247);
-  color: black;
+    margin-top: 30px ! important;
+    padding: 20px;
+    margin: 10px;
+    background-color: #d4c6c6ef;
+    border: solid 1px #d4c6c6ef(255, 247, 247);
+    color: black;
 }
 
 .cuadradoMitad {
-  width: 40%;
-  border: solid 1px #d4c6c6ef(255, 247, 247);
+    width: 40%;
+    border: solid 1px #d4c6c6ef(255, 247, 247);
 }
 
 
@@ -67,33 +91,39 @@ a:-webkit-any-link {
   End - Reset CSS
 */
 
+
 /* fonts */
 
 @font-face {
-  font-family: OpenSans;
-  src: url(../public/fonts/OpenSans-VariableFont_wdth,wght.ttf);
-
+    font-family: OpenSans;
+    src: url(../public/assets/fonts/OpenSans-VariableFont_wdth,wght.ttf);
 }
+
 
 /*******************************************
 **********   Start BackGround   ************
 ********************************************/
 
+
 /* BackGround for Tablet and Pc */
+
 body {
-  background-image: url("/img/Background_Desktop_PNG.png");
-  background-size: contain;
-  background-position: center;
-  background-attachment: fixed;
-  min-height: 100vh;
+    background-image: url("/assets/img/Background_Desktop_PNG.png");
+    background-size: contain;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 
+
 /* BackGround for Mobile */
+
 @media only screen and (max-width:414px) {
-  body {
-    background-image: url("/img/Background_mobile_PNG.png");
-  }
+    body {
+        background-image: url("/assets/img/Background_mobile_PNG.png");
+    }
 }
+
 
 /*******************************************
 ***********   End BackGround   *************

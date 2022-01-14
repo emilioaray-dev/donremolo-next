@@ -7,15 +7,18 @@ const CardList = () => {
     <>
       <style jsx>{`
         .container {
-          margin: var(--margen-horizontal);
+          padding: var(--margen-horizontal);
+          max-width: var(--maxWidth-container);
+          margin: 0 auto;
+        }
+        .card{
           box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
           border-radius: 0.625rem;
-          margin-bottom: 1.2rem;
-       
           background-color: var(--Cards-Colors);
           height: fit-content;
           min-height: 112px;
           padding: 12px;
+          margin-bottom: 1.2rem;
         }
         .containerGrid {
           display: grid;
@@ -68,9 +71,9 @@ const CardList = () => {
       <Link href="">
         <a>
           <div className="container">
-            <article className="containerGrid">
+            <article className="containerGrid card">
               <picture>
-                <Image src="/img/pizzas/mozzarella.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
+                <Image src="/assets/img/pizzas/mozzarella.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
               </picture>
               <div className="rowGrid">
                 <h2>Mozzarella</h2>
@@ -89,9 +92,9 @@ const CardList = () => {
       <Link href="">
         <a>
           <div className="container">
-            <article className="containerGrid">
+            <article className="containerGrid card">
               <picture>
-                <Image src="/img/pizzas/napolitana.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
+                <Image src="/assets/img/pizzas/napolitana.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
               </picture>
               <div className="rowGrid">
                 <h2>Napolitana</h2>
@@ -110,9 +113,9 @@ const CardList = () => {
       <Link href="">
         <a>
           <div className="container">
-            <article className="containerGrid">
+            <article className="containerGrid card">
               <picture>
-                <Image src="/img/pizzas/calabreza.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
+                <Image src="/assets/img/pizzas/calabreza.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
               </picture>
               <div className="rowGrid">
                 <h2>Calabreza</h2>
@@ -131,9 +134,9 @@ const CardList = () => {
       <Link href="">
         <a>
           <div className="container">
-            <article className="containerGrid">
+            <article className="containerGrid card">
               <picture>
-                <Image src="/img/pizzas/especial.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
+                <Image src="/assets/img/pizzas/especial.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
               </picture>
               <div className="rowGrid">
                 <h2>Especial</h2>
@@ -152,9 +155,9 @@ const CardList = () => {
       <Link href="">
         <a>
           <div className="container">
-            <article className="containerGrid">
+            <article className="containerGrid card">
               <picture>
-                <Image src="/img/pizzas/fugazza.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
+                <Image src="/assets/img/pizzas/fugazza.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
               </picture>
               <div className="rowGrid">
                 <h2>Fugazza</h2>
@@ -173,9 +176,9 @@ const CardList = () => {
       <Link href="">
         <a>
           <div className="container">
-            <article className="containerGrid">
+            <article className="containerGrid card">
               <picture>
-                <Image src="/img/pizzas/mozzarella.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
+                <Image src="/assets/img/pizzas/mozzarella.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
               </picture>
               <div className="rowGrid">
                 <h2>Mozzarella</h2>
@@ -194,9 +197,9 @@ const CardList = () => {
       <Link href="">
         <a>
           <div className="container">
-            <article className="containerGrid">
+            <article className="containerGrid card">
               <picture>
-                <Image src="/img/pizzas/napolitana.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
+                <Image src="/assets/img/pizzas/napolitana.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
               </picture>
               <div className="rowGrid">
                 <h2>Napolitana</h2>
@@ -215,9 +218,9 @@ const CardList = () => {
       <Link href="">
         <a>
           <div className="container">
-            <article className="containerGrid">
+            <article className="containerGrid card">
               <picture>
-                <Image src="/img/pizzas/calabreza.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
+                <Image src="/assets/img/pizzas/calabreza.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
               </picture>
               <div className="rowGrid">
                 <h2>Calabreza</h2>
@@ -236,9 +239,9 @@ const CardList = () => {
       <Link href="">
         <a>
           <div className="container">
-            <article className="containerGrid">
+            <article className="containerGrid card">
               <picture>
-                <Image src="/img/pizzas/especial.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
+                <Image src="/assets/img/pizzas/especial.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
               </picture>
               <div className="rowGrid">
                 <h2>Especial</h2>
@@ -257,9 +260,9 @@ const CardList = () => {
       <Link href="">
         <a>
           <div className="container">
-            <article className="containerGrid">
+            <article className="containerGrid card">
               <picture>
-                <Image src="/img/pizzas/fugazza.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
+                <Image src="/assets/img/pizzas/fugazza.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
               </picture>
               <div className="rowGrid">
                 <h2>Fugazza</h2>
