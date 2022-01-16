@@ -139,7 +139,7 @@ const CardDescription = () => {
       <div className="container">
         <article className="cardMaster">
           <div className="cardTitle">
-            <h1>Muzzarela</h1>
+            <h1>Mozzarella</h1>
           </div>
           <div className="containerGrid">
             <picture>
