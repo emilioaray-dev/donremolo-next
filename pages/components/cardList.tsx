@@ -68,21 +68,26 @@ const CardList = () => {
       }
       `}</style>
 
-      <Link href="">
+      <Link as="/pizzas/mozzarellas" href="/[pizzas]/mozzarellas">
         <a>
           <div className="container">
             <article className="containerGrid card">
               <picture>
-                <Image src="/assets/img/pizzas/mozzarella.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
+                <Image
+                  src="/assets/img/pizzas/mozzarella.png"
+                  alt="Pizza Mozzarella"
+                  width={100}
+                  height={100}
+                  layout="responsive"
+                  priority
+                />
               </picture>
               <div className="rowGrid">
                 <h2>Mozzarella</h2>
-                <div className='description'>
+                <div className="description">
                   Mozzarella|Orégano|Aceitunas |Aceite de oliva
                 </div>
-                <footer>
-                  $1134
-                </footer>
+                <footer>$1134</footer>
               </div>
             </article>
           </div>
@@ -94,16 +99,21 @@ const CardList = () => {
           <div className="container">
             <article className="containerGrid card">
               <picture>
-                <Image src="/assets/img/pizzas/napolitana.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
+                <Image
+                  src="/assets/img/pizzas/napolitana.png"
+                  alt="Pizza Mozzarella"
+                  width={100}
+                  height={100}
+                  layout="responsive"
+                  priority
+                />
               </picture>
               <div className="rowGrid">
                 <h2>Napolitana</h2>
-                <div className='description'>
+                <div className="description">
                   Mozzarella|Orégano|Aceitunas |Aceite de oliva
                 </div>
-                <footer>
-                  $1134
-                </footer>
+                <footer>$1134</footer>
               </div>
             </article>
           </div>
@@ -115,16 +125,21 @@ const CardList = () => {
           <div className="container">
             <article className="containerGrid card">
               <picture>
-                <Image src="/assets/img/pizzas/calabreza.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
+                <Image
+                  src="/assets/img/pizzas/calabreza.png"
+                  alt="Pizza Mozzarella"
+                  width={100}
+                  height={100}
+                  layout="responsive"
+                  priority
+                />
               </picture>
               <div className="rowGrid">
                 <h2>Calabreza</h2>
-                <div className='description'>
+                <div className="description">
                   Mozzarella|Orégano|Aceitunas |Aceite de oliva
                 </div>
-                <footer>
-                  $1134
-                </footer>
+                <footer>$1134</footer>
               </div>
             </article>
           </div>
@@ -136,16 +151,21 @@ const CardList = () => {
           <div className="container">
             <article className="containerGrid card">
               <picture>
-                <Image src="/assets/img/pizzas/especial.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
+                <Image
+                  src="/assets/img/pizzas/especial.png"
+                  alt="Pizza Mozzarella"
+                  width={100}
+                  height={100}
+                  layout="responsive"
+                  priority
+                />
               </picture>
               <div className="rowGrid">
                 <h2>Especial</h2>
-                <div className='description'>
+                <div className="description">
                   Mozzarella|Orégano|Aceitunas |Aceite de oliva
                 </div>
-                <footer>
-                  $1134
-                </footer>
+                <footer>$1134</footer>
               </div>
             </article>
           </div>
@@ -157,16 +177,21 @@ const CardList = () => {
           <div className="container">
             <article className="containerGrid card">
               <picture>
-                <Image src="/assets/img/pizzas/fugazza.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
+                <Image
+                  src="/assets/img/pizzas/fugazza.png"
+                  alt="Pizza Mozzarella"
+                  width={100}
+                  height={100}
+                  layout="responsive"
+                  priority
+                />
               </picture>
               <div className="rowGrid">
                 <h2>Fugazza</h2>
-                <div className='description'>
+                <div className="description">
                   Mozzarella|Orégano|Aceitunas |Aceite de oliva
                 </div>
-                <footer>
-                  $1134
-                </footer>
+                <footer>$1134</footer>
               </div>
             </article>
           </div>
@@ -178,16 +203,21 @@ const CardList = () => {
           <div className="container">
             <article className="containerGrid card">
               <picture>
-                <Image src="/assets/img/pizzas/mozzarella.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
+                <Image
+                  src="/assets/img/pizzas/mozzarella.png"
+                  alt="Pizza Mozzarella"
+                  width={100}
+                  height={100}
+                  layout="responsive"
+                  priority
+                />
               </picture>
               <div className="rowGrid">
                 <h2>Mozzarella</h2>
-                <div className='description'>
+                <div className="description">
                   Mozzarella|Orégano|Aceitunas |Aceite de oliva
                 </div>
-                <footer>
-                  $1134
-                </footer>
+                <footer>$1134</footer>
               </div>
             </article>
           </div>
@@ -199,16 +229,21 @@ const CardList = () => {
           <div className="container">
             <article className="containerGrid card">
               <picture>
-                <Image src="/assets/img/pizzas/napolitana.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
+                <Image
+                  src="/assets/img/pizzas/napolitana.png"
+                  alt="Pizza Mozzarella"
+                  width={100}
+                  height={100}
+                  layout="responsive"
+                  priority
+                />
               </picture>
               <div className="rowGrid">
                 <h2>Napolitana</h2>
-                <div className='description'>
+                <div className="description">
                   Mozzarella|Orégano|Aceitunas |Aceite de oliva
                 </div>
-                <footer>
-                  $1134
-                </footer>
+                <footer>$1134</footer>
               </div>
             </article>
           </div>
@@ -220,16 +255,21 @@ const CardList = () => {
           <div className="container">
             <article className="containerGrid card">
               <picture>
-                <Image src="/assets/img/pizzas/calabreza.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
+                <Image
+                  src="/assets/img/pizzas/calabreza.png"
+                  alt="Pizza Mozzarella"
+                  width={100}
+                  height={100}
+                  layout="responsive"
+                  priority
+                />
               </picture>
               <div className="rowGrid">
                 <h2>Calabreza</h2>
-                <div className='description'>
+                <div className="description">
                   Mozzarella|Orégano|Aceitunas |Aceite de oliva
                 </div>
-                <footer>
-                  $1134
-                </footer>
+                <footer>$1134</footer>
               </div>
             </article>
           </div>
@@ -241,16 +281,21 @@ const CardList = () => {
           <div className="container">
             <article className="containerGrid card">
               <picture>
-                <Image src="/assets/img/pizzas/especial.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
+                <Image
+                  src="/assets/img/pizzas/especial.png"
+                  alt="Pizza Mozzarella"
+                  width={100}
+                  height={100}
+                  layout="responsive"
+                  priority
+                />
               </picture>
               <div className="rowGrid">
                 <h2>Especial</h2>
-                <div className='description'>
+                <div className="description">
                   Mozzarella|Orégano|Aceitunas |Aceite de oliva
                 </div>
-                <footer>
-                  $1134
-                </footer>
+                <footer>$1134</footer>
               </div>
             </article>
           </div>
@@ -262,16 +307,21 @@ const CardList = () => {
           <div className="container">
             <article className="containerGrid card">
               <picture>
-                <Image src="/assets/img/pizzas/fugazza.png" alt="Pizza Mozzarella" width={100} height={100} layout="responsive" priority />
+                <Image
+                  src="/assets/img/pizzas/fugazza.png"
+                  alt="Pizza Mozzarella"
+                  width={100}
+                  height={100}
+                  layout="responsive"
+                  priority
+                />
               </picture>
               <div className="rowGrid">
                 <h2>Fugazza</h2>
-                <div className='description'>
+                <div className="description">
                   Mozzarella|Orégano|Aceitunas |Aceite de oliva
                 </div>
-                <footer>
-                  $1134
-                </footer>
+                <footer>$1134</footer>
               </div>
             </article>
           </div>
@@ -279,9 +329,8 @@ const CardList = () => {
       </Link>
 
       <div className="espacioFinal"></div>
-
     </>
-  )
+  );
 }
 
 export default CardList
