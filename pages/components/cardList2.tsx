@@ -1,11 +1,21 @@
-import { GetServerSideProps } from "next";
+
 import Image from "next/image";
 import Link from "next/link";
 
 import { useRouter } from "next/router";
 
+export async function getServerSideProps() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  const data = await res.json();
+  console.log("Por que no te ves" + data);
+  return {
+    props: { data },
+  };
+};
+
+
+
 export default function CardList2() {
-  console.log("Marico");
   return (
     <div>
       <style jsx>{`
@@ -102,11 +112,3 @@ export default function CardList2() {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/users");
-  const data = await res.json();
-  console.log("Por que no te ves" + data);
-  return {
-    props: { data },
-  };
-};
