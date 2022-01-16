@@ -16,7 +16,7 @@ function Pizzas() {
 
       `}</style>
       <Header />
-      <CardList />
+      <CardList2 />
 
     </div>
   )
