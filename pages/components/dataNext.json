@@ -1,35 +1,38 @@
 {
-  "categorias": [
-    {
+  "categorias": [{
       "nombre": "Pizzas",
-      "platos": [
-        {
-          "titulo": "Muzzarella",
+      "platos": [{
+          "id": "1",
+          "titulo": "Mozzarella",
           "descripcion": "Mozzarella|Orégano|Aceitunas |Aceite de oliva",
-          "precio": "1134",
+          "precio": "1135",
           "urlImagen": "/assets/img/pizzas/mozzarella.png"
         },
         {
+          "id": "2",
           "titulo": "Napolitana",
-          "descripcion": "Mozzarella|Orégano|Aceitunas |Aceite de oliva",
+          "descripcion": "Napolitana|Orégano|Aceitunas |Aceite de oliva",
           "precio": "1134",
           "urlImagen": "/assets/img/pizzas/napolitana.png"
         },
         {
+          "id": "3",
           "titulo": "Calabreza",
-          "descripcion": "Mozzarella|Orégano|Aceitunas |Aceite de oliva",
+          "descripcion": "Calabreza|Orégano|Aceitunas |Aceite de oliva",
           "precio": "1134",
           "urlImagen": "/assets/img/pizzas/calabreza.png"
         },
         {
+          "id": "4",
           "titulo": "Especial",
-          "descripcion": "Mozzarella|Orégano|Aceitunas |Aceite de oliva",
+          "descripcion": "Especial|Orégano|Aceitunas |Aceite de oliva",
           "precio": "1134",
           "urlImagen": "/assets/img/pizzas/especial.png"
         },
         {
+          "id": "5",
           "titulo": "Fugazza",
-          "descripcion": "Mozzarella|Orégano|Aceitunas |Aceite de oliva",
+          "descripcion": "Fugazza|Orégano|Aceitunas |Aceite de oliva",
           "precio": "1134",
           "urlImagen": "/assets/img/pizzas/fugazza.png"
         }
@@ -37,32 +40,36 @@
     },
     {
       "nombre": "Empanadas",
-      "platos": [
-        {
+      "platos": [{
+          "id": "6",
           "titulo": "Jamón y Queso",
           "descripcion": "Mozzarella|Jamón|Oregano ",
           "precio": "65",
           "urlImagen": ""
         },
         {
+          "id": "7",
           "titulo": "Carne",
           "descripcion": "Carne Picada|Aceituna|Huevo Duro",
           "precio": "82",
           "urlImagen": ""
         },
         {
+          "id": "8",
           "titulo": "Queso y Cebolla",
           "descripcion": "Mozzarella|Cebolla|Orégano ",
           "precio": "65",
           "urlImagen": ""
         },
         {
+          "id": "9",
           "titulo": "Verdura",
           "descripcion": "Espinaca|Huevo Duro|Cebolla",
           "precio": "80",
           "urlImagen": ""
         },
         {
+          "id": "10",
           "titulo": "Pollo",
           "descripcion": "Pollo|Cebolla|Huevo Duro",
           "precio": "90",
@@ -72,26 +79,29 @@
     },
     {
       "nombre": "Bebidas",
-      "platos": [
-        {
+      "platos": [{
+          "id": "",
           "titulo": "Coca Cola",
           "descripcion": "Común | Zero",
           "precio": "80",
           "urlImagen": ""
         },
         {
+          "id": "",
           "titulo": "Agua Saborizada",
           "descripcion": "Manzana | Naranja | Citrus",
           "precio": "85",
           "urlImagen": ""
         },
         {
+          "id": "",
           "titulo": "Agua",
           "descripcion": "",
           "precio": "85",
           "urlImagen": ""
         },
         {
+          "id": "",
           "titulo": "Agua con Gas",
           "descripcion": "",
           "precio": "85",

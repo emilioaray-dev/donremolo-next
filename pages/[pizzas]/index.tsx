@@ -12,14 +12,12 @@ function Pizzas() {
         <meta name="description" content="Generado por el Equipo 87 de IDeas" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <style jsx>{`
-
-      `}</style>
+      <style jsx>{``}</style>
       <Header />
       <CardList2 />
-
+      <div style={{ height: "3rem" }} />
     </div>
-  )
+  );
 }
 
 export default Pizzas

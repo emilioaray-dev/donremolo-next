@@ -1,23 +1,65 @@
-
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
-import { useRouter } from "next/router";
+function CardList2() {
+  const [data, setData] = useState(null);
+  const [isLoading, setLoading] = useState(false);
 
-export async function getServerSideProps() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/users");
-  const data = await res.json();
-  console.log("Por que no te ves" + data);
-  return {
-    props: { data },
-  };
-};
+  useEffect(() => {
+    setLoading(true);
+    fetch("api/datajs")
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+      });
+  }, []);
 
+  if (isLoading) return (
+    <p
+      style={{
+        display: "block",
+        position: "fixed",
+        margin: "0 auto",
+        textAlign: "center",
+        width: "100%",
+        height: "100vh",
+        transform: "translateY(26%)",
+      }}
+    >
+      Loading...
+    </p>
+  );
+  if (!data) return <p>No profile data</p>;
 
-
-export default function CardList2() {
   return (
     <div>
+     
+      {/*   {data.categorias.map(c => DibujarCategoria(c))} */}
+      {DibujarCategoria(data.categorias[0])}
+    </div>
+  );
+}
+
+function DibujarCategoria(c) {
+  return (
+    <>
+      {/*       
+      <div>
+        <b>{c.nombre}</b>
+      </div>
+ */}
+      {c.platos.map((p) => DibujarPlatos(p))}
+    </>
+  );
+}
+
+
+
+function DibujarPlatos(p) {
+  return (
+    <div key={p.titulo}>
       <style jsx>{`
         .container {
           padding: var(--margen-horizontal);
@@ -80,15 +122,17 @@ export default function CardList2() {
         }
       }
       `}</style>
-
-      <Link as="/pizzas/mozzarellas" href="/[pizzas]/mozzarellas">
+      <Link as={`/pizzas/${p.titulo}`} href={`/[pizzas]/${p.titulo}`}>
+        {/*      
+        <Link as="/pizzas/{p.titulo}" href="/[pizzas]/Mozzarella">
+        <Link as={`/pizzas/${p.titulo}`} href={`/$[pizzas]/{p.titulo}`}> */}
         <a>
           <div className="container">
             <article className="containerGrid card">
               <picture>
                 <Image
-                  src="/assets/img/pizzas/mozzarella.png"
-                  alt="Pizza Mozzarella"
+                  src={`${p.urlImagen}`}
+                  alt={` Pizza ${p.titulo}`}
                   width={100}
                   height={100}
                   layout="responsive"
@@ -96,19 +140,16 @@ export default function CardList2() {
                 />
               </picture>
               <div className="rowGrid">
-                <h2>Mozzarellas</h2>
-                <div className="description">
-                  Mozzarella|Orégano|Aceitunas |Aceite de oliva
-                </div>
-                <footer>$1134</footer>
+                <h2>{p.titulo}</h2>
+                <div className="description">{p.descripcion}</div>
+                <footer>{` $${p.precio}`}</footer>
               </div>
             </article>
           </div>
         </a>
       </Link>
-
-      <div className="espacioFinal"></div>
     </div>
   );
-};
+}
 
+export default CardList2;
