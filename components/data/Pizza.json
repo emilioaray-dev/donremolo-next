@@ -1,5 +1,6 @@
 [{
     "id": "1",
+    "categoria": "Pizza",
     "titulo": "Mozzarella",
     "descripcion": "Mozzarella|Orégano|Aceitunas |Aceite de oliva",
     "precio": "1135",
@@ -7,6 +8,7 @@
   },
   {
     "id": "2",
+    "categoria": "Pizza",
     "titulo": "Napolitana",
     "descripcion": "Napolitana|Orégano|Aceitunas |Aceite de oliva",
     "precio": "1134",
@@ -14,6 +16,7 @@
   },
   {
     "id": "3",
+    "categoria": "Pizza",
     "titulo": "Calabreza",
     "descripcion": "Calabreza|Orégano|Aceitunas |Aceite de oliva",
     "precio": "1134",
@@ -21,6 +24,7 @@
   },
   {
     "id": "4",
+    "categoria": "Pizza",
     "titulo": "Especial",
     "descripcion": "Especial|Orégano|Aceitunas |Aceite de oliva",
     "precio": "1134",
@@ -28,6 +32,7 @@
   },
   {
     "id": "5",
+    "categoria": "Pizza",
     "titulo": "Fugazza",
     "descripcion": "Fugazza|Orégano|Aceitunas |Aceite de oliva",
     "precio": "1134",
