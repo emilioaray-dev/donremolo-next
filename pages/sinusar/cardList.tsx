@@ -68,7 +68,7 @@ const CardList = () => {
       }
       `}</style>
 
-      <Link as="/pizzas/mozzarella" href="/[pizzas]/mozzarella">
+      <Link href="#">
         <a>
           <div className="container">
             <article className="containerGrid card">
