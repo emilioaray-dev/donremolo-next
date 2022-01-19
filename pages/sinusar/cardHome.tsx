@@ -64,7 +64,7 @@ const CardHome = () => {
             </a>
           </Link>
 
-          <Link href="/pizzas">
+          <Link as="/pizzar" href="/listabase">
             <a>
               <div className="cardCategories">
 

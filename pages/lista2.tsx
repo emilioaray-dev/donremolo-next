@@ -1,18 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { Key, useEffect, useState } from "react";
 import CardComponent from "../components/listado/cardComponent";
 
 function ListaProducto({ lista }) {
   return (
     <>
-      {lista.map((lista) => {
+      {lista.map((lista ) => {
         return (
           <div key={lista.id}>
             <CardComponent  
               href="#"
               imagen={lista.urlImagen}
-              altImagen={lista.titulo}
+              altImagen="nose"
               titulo={lista.titulo}
               descripcion={lista.descripcion}
               precio={lista.precio}
@@ -28,7 +28,7 @@ export async function getStaticProps() {
   const res = await fetch("http://127.0.0.1:3000/api/dataPizza");
   const lista = await res.json();
 
-  console.log(lista);
+ // console.log(lista);
 
   return {
     props: {

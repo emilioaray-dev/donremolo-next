@@ -1,0 +1,21 @@
+[{
+    "id": "1",
+    "categoria": "Empanadas",
+    "urlImagen": "/assets/img/categoriaEmpanadas.png"
+  },
+  {
+    "id": "2",
+    "categoria": "pizzas",
+    "urlImagen": "/assets/img/categoriaPizzas.png"
+  },
+  {
+    "id": "3",
+    "categoria": "Postres",
+    "urlImagen": "/assets/img/categoriaPostres.png"
+  },
+  {
+    "id": "4",
+    "categoria": "Bebidas",
+    "urlImagen": "/assets/img/categoriaBebidas.png"
+  }
+]

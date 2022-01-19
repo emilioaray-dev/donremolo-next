@@ -1,6 +1,6 @@
 import Header from "../../components/header";
 import styles from '../../styles/Home.module.css'
-import Lista from "../lista2";
+import Lista from "../listabase";
 import Head from 'next/head'
 import CardList2 from "../../components/listado/cardList2";
 
@@ -14,7 +14,7 @@ function Pizzas() {
       </Head>
       <style jsx>{``}</style>
       <Header />
-      <Lista />
+      <Lista lista={undefined} />
       <div style={{ height: "3rem" }} />
     </div>
   );
