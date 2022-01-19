@@ -1,5 +1,44 @@
 {
   "categorias": [{
+      "nombre": "Empanadas",
+      "platos": [{
+          "id": "6",
+          "titulo": "Jamón y Queso",
+          "descripcion": "Mozzarella|Jamón|Oregano ",
+          "precio": "65",
+          "urlImagen": ""
+        },
+        {
+          "id": "7",
+          "titulo": "Carne",
+          "descripcion": "Carne Picada|Aceituna|Huevo Duro",
+          "precio": "82",
+          "urlImagen": ""
+        },
+        {
+          "id": "8",
+          "titulo": "Queso y Cebolla",
+          "descripcion": "Mozzarella|Cebolla|Orégano ",
+          "precio": "65",
+          "urlImagen": ""
+        },
+        {
+          "id": "9",
+          "titulo": "Verdura",
+          "descripcion": "Espinaca|Huevo Duro|Cebolla",
+          "precio": "80",
+          "urlImagen": ""
+        },
+        {
+          "id": "10",
+          "titulo": "Pollo",
+          "descripcion": "Pollo|Cebolla|Huevo Duro",
+          "precio": "90",
+          "urlImagen": ""
+        }
+      ]
+    },
+    {
       "nombre": "Pizzas",
       "platos": [{
           "id": "1",
@@ -39,40 +78,33 @@
       ]
     },
     {
-      "nombre": "Empanadas",
+      "nombre": "Postres",
       "platos": [{
-          "id": "6",
-          "titulo": "Jamón y Queso",
-          "descripcion": "Mozzarella|Jamón|Oregano ",
-          "precio": "65",
-          "urlImagen": ""
-        },
-        {
-          "id": "7",
-          "titulo": "Carne",
-          "descripcion": "Carne Picada|Aceituna|Huevo Duro",
-          "precio": "82",
-          "urlImagen": ""
-        },
-        {
-          "id": "8",
-          "titulo": "Queso y Cebolla",
-          "descripcion": "Mozzarella|Cebolla|Orégano ",
-          "precio": "65",
-          "urlImagen": ""
-        },
-        {
-          "id": "9",
-          "titulo": "Verdura",
-          "descripcion": "Espinaca|Huevo Duro|Cebolla",
+          "id": "",
+          "titulo": "Postres 1",
+          "descripcion": "Común | Zero",
           "precio": "80",
           "urlImagen": ""
         },
         {
-          "id": "10",
-          "titulo": "Pollo",
-          "descripcion": "Pollo|Cebolla|Huevo Duro",
-          "precio": "90",
+          "id": "",
+          "titulo": "Postres 2",
+          "descripcion": "Manzana | Naranja | Citrus",
+          "precio": "85",
+          "urlImagen": ""
+        },
+        {
+          "id": "",
+          "titulo": "Postres 3",
+          "descripcion": "",
+          "precio": "85",
+          "urlImagen": ""
+        },
+        {
+          "id": "",
+          "titulo": "Postres 4",
+          "descripcion": "",
+          "precio": "85",
           "urlImagen": ""
         }
       ]

@@ -1,8 +1,8 @@
-import Header from "../components/header";
+import Header from "../../components/header";
 import styles from "../../styles/Home.module.css";
-import CardList from "../components/cardList";
+import CardList from "../../components/cardList";
 import Head from "next/head";
-import CardDescription2 from "../components/cardDescription2";
+import CardDescription2 from "../../components/cardDescription2";
 
 function Pizzas() {
   return (

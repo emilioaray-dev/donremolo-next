@@ -1,8 +1,8 @@
-import Header from "../components/header";
+import Header from "../../components/header";
 import styles from '../../styles/Home.module.css'
-import CardList from '../components/cardList'
+import CardList from "../../components/cardList";
 import Head from 'next/head'
-import CardList2 from '../components/cardList2'
+import CardList2 from "../../components/cardList2";
 
 function Pizzas() {
   return (
@@ -14,7 +14,7 @@ function Pizzas() {
       </Head>
       <style jsx>{``}</style>
       <Header />
-      <CardList2 />
+      <CardList />
       <div style={{ height: "3rem" }} />
     </div>
   );

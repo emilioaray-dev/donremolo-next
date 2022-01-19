@@ -1,0 +1,26 @@
+[
+  {
+    "_id": "5cf5679a915ecad153ab68cb",
+    "allies": ["Kya"],
+    "enemies": ["Zuko"],
+    "photoUrl": "https://vignette.wikia.nocookie.net/avatar/images/7/79/Pilot_-_Aang.png/revision/latest?cb=20120311133235",
+    "name": "Aang (pilot)",
+    "affiliation": " Air Nomads Team Avatar"
+  },
+  {
+    "_id": "5cf5679a915ecad153ab68c9",
+    "allies": ["Appa"],
+    "enemies": ["Azula"],
+    "photoUrl": "https://vignette.wikia.nocookie.net/avatar/images/a/ae/Aang_at_Jasmine_Dragon.png/revision/latest?cb=20130612174003",
+    "name": "Aang",
+    "affiliation": " Air Acolytes Air Nomads Air Scouts (formerly) Team Avatar"
+  },
+  {
+    "_id": "5cf5679a915ecad153ab68ca",
+    "allies": ["Gyatso"],
+    "enemies": ["Ozai"],
+    "photoUrl": "https://vignette.wikia.nocookie.net/avatar/images/2/21/Into_The_Inferno_Aang.png/revision/latest?cb=20131009060746",
+    "name": "Aang (games)",
+    "affiliation": " Air Nomads Team Avatar"
+  }
+]

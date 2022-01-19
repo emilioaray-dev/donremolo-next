@@ -16,26 +16,26 @@ function CardList2() {
       });
   }, []);
 
-  if (isLoading) return (
-    <p
-      style={{
-        display: "block",
-        position: "fixed",
-        margin: "0 auto",
-        textAlign: "center",
-        width: "100%",
-        height: "100vh",
-        transform: "translateY(26%)",
-      }}
-    >
-      Loading...
-    </p>
-  );
+  if (isLoading)
+    return (
+      <p
+        style={{
+          display: "block",
+          position: "fixed",
+          margin: "0 auto",
+          textAlign: "center",
+          width: "100%",
+          height: "100vh",
+          transform: "translateY(26%)",
+        }}
+      >
+        Loading...
+      </p>
+    );
   if (!data) return <p>No profile data</p>;
 
   return (
     <div>
-     
       {/*   {data.categorias.map(c => DibujarCategoria(c))} */}
       {DibujarCategoria(data.categorias[0])}
     </div>
@@ -54,8 +54,6 @@ function DibujarCategoria(c) {
     </>
   );
 }
-
-
 
 function DibujarPlatos(p) {
   return (
