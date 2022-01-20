@@ -11,7 +11,7 @@ const CardList: FC<Props> = ({
   precio,
 }) => (
   <>
-    <Link  href={href}>
+    <Link href={href}>
       <a>
         <div className="container">
           <article className="containerGrid card">
@@ -38,6 +38,7 @@ const CardList: FC<Props> = ({
     <style jsx>{`
         .container {
           padding: var(--margen-horizontal);
+          width: max-content;
           max-width: var(--maxWidth-container);
           margin: 0 auto;
         }
@@ -45,6 +46,7 @@ const CardList: FC<Props> = ({
           box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
           border-radius: 0.625rem;
           background-color: var(--Cards-Colors);
+          min-width: 27rem;
           height: fit-content;
           min-height: 112px;
           padding: 12px;
@@ -76,7 +78,7 @@ const CardList: FC<Props> = ({
           -webkit-line-clamp: 3; /* Maximo 3 lineas */
           -webkit-box-orient: vertical; /* Caja Vertical */
           overflow: hidden;
-          height: 3.5rem; 
+          height: 3.5rem;
           font-size: 12px;
           font-weight: 300;
           color: var(--color-Negro);

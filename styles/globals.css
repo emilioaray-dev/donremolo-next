@@ -1,6 +1,4 @@
-/*
-  Reset CSS
-*/
+/* Reset CSS*/
 
 
 /* 1. box-sizing model. */
@@ -14,7 +12,8 @@
 
 /* 2. Eliminar margen predeterminado de los browser */
 
-* {
+html,
+body {
   margin: 0px;
   padding: 0px;
 }

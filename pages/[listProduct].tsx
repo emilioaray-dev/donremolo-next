@@ -17,22 +17,33 @@ function CardRender({ lista }: InferGetStaticPropsType<typeof getStaticProps>) {
       <div>
         <Header />
       </div>
-      {lista.map((product) => {
-        return (
-          <div key={product.id}>
-            <CardList
-              key=""
-              href="#"
-              imagen={`${product.urlImagen}`}
-              altImagen={` ${product.categoria} ${product.nombre}`}
-              titulo={product.nombre}
-              descripcion={product.descripcion}
-              precio={` $${product.precio}`}
-            />
-          </div>
-        );
-      })}
-      <div style={{ height: "3rem" }}></div>
+      <div className="containerFather">
+        {lista.map((product) => {
+          return (
+            <div key={product.id}>
+              <CardList
+                key=""
+                href="#"
+                imagen={`${product.urlImagen}`}
+                altImagen={` ${product.categoria} ${product.nombre}`}
+                titulo={product.nombre}
+                descripcion={product.descripcion}
+                precio={` $${product.precio}`}
+              />
+            </div>
+          );
+        })}
+        <div style={{ height: "3rem" }}></div>
+        <style jsx>{`
+          @media only screen and (min-width: 768px) {
+            .containerFather {
+              display: grid;
+              grid-template-columns: auto auto;
+              justify-content: center;
+            }
+          }
+        `}</style>
+      </div>
     </>
   );
 }
