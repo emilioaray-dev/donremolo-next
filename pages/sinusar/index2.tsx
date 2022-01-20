@@ -1,28 +1,14 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import Header from '../components/header'
-import Slogan from '../components/slogan'
+import Header from '../../components/header'
+import Slogan from '../../components/slogan'
 import Link from 'next/link'
 import Image from "next/image";
-import { useRouter } from "next/router";
+import { GetStaticProps, GetStaticPaths } from "next";
 
 
-export async function getStaticProps() {
-  // Res Lista Pizza
-  const resCategorias = await fetch("http://127.0.0.1:3000/api/dataCategorias");
-  const listacategoria = await resCategorias.json();
- console.log(listacategoria);
-
-  return {
-    props: {
-      listacategoria,
-    },
-    revalidate: 10, // In seconds
-  };
-}
 function Home({ listacategoria }) {
-  const router = useRouter();
   return (
     <div className={styles.backgroundHome}>
       <Head>
@@ -36,51 +22,40 @@ function Home({ listacategoria }) {
       <main>
         <section className="container">
           <div className="containerCardCategories">
-            
             {listacategoria.map((listacategoria) => {
               return (
                 <div key={listacategoria.id}>
-                  <Link
-                    href={`/${listacategoria.categoria}`}
-                  >
-                    <a>
-                      <div className="cardCategories">
-                        <div className="effectTranslateY">
-                          <div className="imgGrid">
-                            <picture className="imgCategories">
-                              <Image
-                                src={`${listacategoria.urlImagen}`}
-                                alt="Imagen de Empanadas"
-                                width={512}
-                                height={384}
-                                layout="responsive"
-                                priority
-                              />
-                            </picture>
-                          </div>
-                          <h2 className="titleCategories">
-                            {listacategoria.categoria}
-                          </h2>
+                  <a>
+                    <div className="cardCategories">
+                      <div className="effectTranslateY">
+                        <div className="imgGrid">
+                          <picture className="imgCategories">
+                            <Image
+                              src={`${listacategoria.urlImagen}`}
+                              alt="Imagen de Empanadas"
+                              width={512}
+                              height={384}
+                              layout="responsive"
+                              priority
+                            />
+                          </picture>
                         </div>
+                        <h2 className="titleCategories">
+                          {listacategoria.categoria}
+                        </h2>
                       </div>
-                    </a>
-                  </Link>
+                    </div>
+                  </a>
                 </div>
               );
             })}
           </div>
         </section>
         <style jsx>{`
-          @media only screen and (min-width: 768px) {
-            .containerCardCategories {
-              grid-template-columns: auto auto auto auto !important;
-            }
-          }
           .container {
-            position: absolute;
-            width: 100vw;
-            top: 50%;
-            transform: translateY(-48%);
+            display: grid;
+            height: 62vh;
+            align-content: center;
           }
 
           .containerCardCategories {
@@ -126,5 +101,34 @@ function Home({ listacategoria }) {
   );
 }
 
+export default Home;
 
-export default Home
+
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const resCategory = await fetch("http://127.0.0.1:3000/api/dataCategorias");
+  const listaCategory = await resCategory.json();
+
+  const paths = listaCategory.map((listC) => ({
+    params: { id: listC.id },
+  }));
+    return { paths, fallback: false }
+};
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const resCategorias = await fetch("http://127.0.0.1:3000/api/dataCategorias");
+  const listacategoria = await resCategorias.json();
+
+  const res = await fetch("http://127.0.0.1:3000/api/dataPizza");
+  const lista = await res.json();
+  // console.log(lista);
+  return {
+    props: {
+      listacategoria,
+      lista,
+    },
+    revalidate: 10, // In seconds
+  };
+};
+
+

@@ -1,6 +1,6 @@
 import Header from "../../components/header";
 import styles from '../../styles/Home.module.css'
-import Lista from "../listabase";
+import Lista from "../sinusar/listabase";
 import Head from 'next/head'
 import CardList2 from "../../components/listado/cardList2";
 

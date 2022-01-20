@@ -1,54 +1,63 @@
+import { useRouter } from 'next/router'
 import Image from "next/image";
+import Head from 'next/head'
 import Link from "next/link";
-import Header from "../components/header";
+import Header from '../../components/header'
+import { GetStaticProps, GetStaticPaths } from "next";
 
-export async function getStaticProps() {
+
+export const getStaticProps: GetStaticProps = async (context) => {
   const res = await fetch("http://127.0.0.1:3000/api/dataPizza");
-  const lista = await res.json();
+  const listaP = await res.json();
   // console.log(lista);
   return {
     props: {
-      lista,
+      listaP,
     },
     revalidate: 10, // In seconds
   };
-}
+};
 
-
-function Listabase({ lista }) {
+function ListaProduct({ listaP }) {
+  const router = useRouter();
+  console.log(router.query);
   return (
     <>
+      <Head>
+        <title>Don Rémolo</title>
+        <meta name="description" content="Generado por el Equipo 87 de IDeas" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div>
         <Header />
       </div>
-      {lista.map((lista) => {
-        return (
-          <div key={lista.titulo}>
-            <Link href="#">
-              <a>
-                <div className="container">
-                  <article className="containerGrid card">
-                    <picture>
-                      <Image
-                        src={`${lista.urlImagen}`}
-                        alt={` Pizza ${lista.titulo}`}
-                        width={100}
-                        height={100}
-                        layout="responsive"
-                        priority
-                      />
-                    </picture>
-                    <div className="rowGrid">
-                      <h2>{lista.titulo}</h2>
-                      <div className="description">{lista.descripcion}</div>
-                      <footer>{` $${lista.precio}`}</footer>
-                    </div>
-                  </article>
-                </div>
-              </a>
-            </Link>
+      {listaP.map((l) => (
+        <div key={l.titulo}>
+          <Link href="#">
+            <a>
+              <div className="container">
+                <article className="containerGrid card">
+                  <picture>
+                    <Image
+                      src={`${l.urlImagen}`}
+                      alt={` Pizza ${l.titulo}`}
+                      width={100}
+                      height={100}
+                      layout="responsive"
+                      priority
+                    />
+                  </picture>
+                  <div className="rowGrid">
+                    <h2>{l.titulo}</h2>
+                    <div className="description">{l.descripcion}</div>
+                    <footer>{` $${l.precio}`}</footer>
+                  </div>
+                </article>
+              </div>
+            </a>
+          </Link>
 
-            <style jsx>{`
+          <style jsx>{`
             .container {
               padding: var(--margen-horizontal);
               max-width: var(--maxWidth-container);
@@ -105,19 +114,13 @@ function Listabase({ lista }) {
               font-weight: 600;
               opacity: 0.8;
             }
-            .espacioFinal {
-              height: 3rem;
             }
-          }
           `}</style>
-          </div>
-        );
-      })}
-
-      
+        </div>
+      ))}
+      <div style={{ height: "3rem" }}></div>
     </>
   );
 }
 
-
-export default Listabase;
+export default ListaProduct;

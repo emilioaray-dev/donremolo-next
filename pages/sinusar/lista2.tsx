@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Key, useEffect, useState } from "react";
-import CardComponent from "../components/listado/cardComponent";
+import CardComponent from "../../components/listado/cardComponent";
 
 function ListaProducto({ lista }) {
   return (

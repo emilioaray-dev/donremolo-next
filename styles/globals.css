@@ -109,7 +109,7 @@ a:-webkit-any-link {
 /* BackGround for Tablet and Pc */
 
 body {
-  background-image: url("/assets/img/Background_Desktop_PNG.png");
+  background-image: url("/assets/img/Background_mobile_PNG.png");
   background-size: contain;
   background-position: center;
   background-attachment: fixed;
@@ -119,9 +119,9 @@ body {
 
 /* BackGround for Mobile */
 
-@media only screen and (max-width:414px) {
+@media only screen and (min-width:768px) {
   body {
-    background-image: url("/assets/img/Background_mobile_PNG.png");
+    background-image: url("/assets/img/Background_Desktop_PNG.png");
   }
 }
 
