@@ -41,7 +41,8 @@ function Home({ listacategoria }) {
               return (
                 <div key={listacategoria.id}>
                   <Link
-                    href={`/${listacategoria.categoria}`}
+                    href={`/productos/${listacategoria.categoria}`}
+               
                   >
                     <a>
                       <div className="cardCategories">

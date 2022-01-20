@@ -1,7 +1,7 @@
 [{
     "id": "1",
     "categoria": "Pizza",
-    "titulo": "Mozzarella",
+    "nombre": "Mozzarella",
     "descripcion": "Mozzarella|Orégano|Aceitunas |Aceite de oliva",
     "precio": "1135",
     "urlImagen": "/assets/img/pizzas/mozzarella.png"
@@ -9,7 +9,7 @@
   {
     "id": "2",
     "categoria": "Pizza",
-    "titulo": "Napolitana",
+    "nombre": "Napolitana",
     "descripcion": "Napolitana|Orégano|Aceitunas |Aceite de oliva",
     "precio": "1134",
     "urlImagen": "/assets/img/pizzas/napolitana.png"
@@ -17,7 +17,7 @@
   {
     "id": "3",
     "categoria": "Pizza",
-    "titulo": "Calabreza",
+    "nombre": "Calabreza",
     "descripcion": "Calabreza|Orégano|Aceitunas |Aceite de oliva",
     "precio": "1134",
     "urlImagen": "/assets/img/pizzas/calabreza.png"
@@ -25,7 +25,7 @@
   {
     "id": "4",
     "categoria": "Pizza",
-    "titulo": "Especial",
+    "nombre": "Especial",
     "descripcion": "Especial|Orégano|Aceitunas |Aceite de oliva",
     "precio": "1134",
     "urlImagen": "/assets/img/pizzas/especial.png"
@@ -33,7 +33,7 @@
   {
     "id": "5",
     "categoria": "Pizza",
-    "titulo": "Fugazza",
+    "nombre": "Fugazza",
     "descripcion": "Fugazza|Orégano|Aceitunas |Aceite de oliva",
     "precio": "1134",
     "urlImagen": "/assets/img/pizzas/fugazza.png"

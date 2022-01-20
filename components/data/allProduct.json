@@ -1,0 +1,145 @@
+[{
+    "id": "1",
+    "categoria": "Empanadas",
+    "nombre": "Jamón y Queso",
+    "descripcion": "Mozzarella|Jamón|Oregano ",
+    "precio": "65",
+    "urlImagen": ""
+  },
+  {
+    "id": "2",
+    "categoria": "Empanadas",
+    "nombre": "Carne",
+    "descripcion": "Carne Picada|Aceituna|Huevo Duro",
+    "precio": "82",
+    "urlImagen": ""
+  },
+  {
+    "id": "3",
+    "categoria": "Empanadas",
+    "nombre": "Queso y Cebolla",
+    "descripcion": "Mozzarella|Cebolla|Orégano ",
+    "precio": "65",
+    "urlImagen": ""
+  },
+  {
+    "id": "4",
+    "categoria": "Empanadas",
+    "nombre": "Verdura",
+    "descripcion": "Espinaca|Huevo Duro|Cebolla",
+    "precio": "80",
+    "urlImagen": ""
+  },
+  {
+    "id": "5",
+    "categoria": "Empanadas",
+    "nombre": "Pollo",
+    "descripcion": "Pollo|Cebolla|Huevo Duro",
+    "precio": "90",
+    "urlImagen": ""
+  },
+  {
+    "id": "6",
+    "categoria": "Pizzas",
+    "nombre": "Mozzarella",
+    "descripcion": "Mozzarella|Orégano|Aceitunas |Aceite de oliva",
+    "precio": "1135",
+    "urlImagen": "/assets/img/pizzas/mozzarella.png"
+  },
+  {
+    "id": "7",
+    "categoria": "Pizzas",
+    "nombre": "Napolitana",
+    "descripcion": "Napolitana|Orégano|Aceitunas |Aceite de oliva",
+    "precio": "1134",
+    "urlImagen": "/assets/img/pizzas/napolitana.png"
+  },
+  {
+    "id": "8",
+    "categoria": "Pizzas",
+    "nombre": "Calabreza",
+    "descripcion": "Calabreza|Orégano|Aceitunas |Aceite de oliva",
+    "precio": "1134",
+    "urlImagen": "/assets/img/pizzas/calabreza.png"
+  },
+  {
+    "id": "9",
+    "categoria": "Pizzas",
+    "nombre": "Especial",
+    "descripcion": "Especial|Orégano|Aceitunas |Aceite de oliva",
+    "precio": "1134",
+    "urlImagen": "/assets/img/pizzas/especial.png"
+  },
+  {
+    "id": "10",
+    "categoria": "Pizzas",
+    "nombre": "Fugazza",
+    "descripcion": "Fugazza|Orégano|Aceitunas |Aceite de oliva",
+    "precio": "1134",
+    "urlImagen": "/assets/img/pizzas/fugazza.png"
+  },
+  {
+    "id": "11",
+    "categoria": "Postres",
+    "nombre": "Postres 1",
+    "descripcion": "Común | Zero",
+    "precio": "80",
+    "urlImagen": ""
+  },
+  {
+    "id": "12",
+    "categoria": "Postres",
+    "nombre": "Postres 2",
+    "descripcion": "Manzana | Naranja | Citrus",
+    "precio": "85",
+    "urlImagen": ""
+  },
+  {
+    "id": "13",
+    "categoria": "Postres",
+    "nombre": "Postres 3",
+    "descripcion": "",
+    "precio": "85",
+    "urlImagen": ""
+  },
+  {
+    "id": "14",
+    "categoria": "Postres",
+    "nombre": "Postres 4",
+    "descripcion": "",
+    "precio": "85",
+    "urlImagen": ""
+  },
+  {
+    "id": "15",
+    "categoria": "Bebidas",
+    "nombre": "Coca Cola",
+    "descripcion": "Común | Zero",
+    "precio": "80",
+    "urlImagen": ""
+  },
+  {
+    "id": "16",
+    "categoria": "Bebidas",
+    "nombre": "Agua Saborizada",
+    "descripcion": "Manzana | Naranja | Citrus",
+    "precio": "85",
+    "urlImagen": ""
+  },
+  {
+    "id": "17",
+    "categoria": "Bebidas",
+    "nombre": "Agua",
+    "descripcion": "",
+    "precio": "85",
+    "urlImagen": ""
+  },
+  {
+    "id": "18",
+    "categoria": "Bebidas",
+    "nombre": "Agua con Gas",
+    "descripcion": "",
+    "precio": "85",
+    "urlImagen": ""
+  }
+]
