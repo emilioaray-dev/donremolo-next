@@ -1,46 +1,70 @@
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 import Image from "next/image";
-import Head from 'next/head'
+import Head from "next/head";
 import Link from "next/link";
-import Header from '../../components/header'
-import { GetStaticProps, GetStaticPaths } from "next";
+import Header from "../../components/header";
+import { GetStaticProps } from "next";
+import { GetStaticPaths } from "next";
+
+export const getStaticPaths: GetStaticPaths = async () => {
+
+  const res = await fetch("http://127.0.0.1:3000/api/dataCategorias");
+  const posts = await res.json();
 
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  const res = await fetch("http://127.0.0.1:3000/api/dataPizza");
-  const listaP = await res.json();
-  // console.log(lista);
+  const paths = posts.map((listaPizza) => ({
+    params: { productos: listaPizza.categoria },
+  }));
+
+  // We'll pre-render only these paths at build time.
+  // { fallback: false } means other routes should 404.
+  return { paths, fallback: true };
+}
+
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  // Res Lista Categorias
+  const resCategorias = await fetch("http://127.0.0.1:3000/api/dataCategorias");
+  const listaCategoria = await resCategorias.json();
+  // console.log(listaCategoria);
+
+  // Res Lista Pizza
+  const resPizza = await fetch("http://127.0.0.1:3000/api/dataPizza");
+  const listaPizza = await resPizza.json();
+  // console.log(listaPizza);
+
   return {
     props: {
-      listaP,
+      listaCategoria,
+      listaPizza,
     },
     revalidate: 10, // In seconds
   };
 };
 
-function ListaProduct({ listaP }) {
+function ListaProduct({ listaPizza }) {
   const router = useRouter();
   console.log(router.query);
   return (
     <>
       <Head>
-        <title>Don Rémolo</title>
+        <title>Don Rémolo | </title>
         <meta name="description" content="Generado por el Equipo 87 de IDeas" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
         <Header />
       </div>
-      {listaP.map((l) => (
-        <div key={l.titulo}>
+      {listaPizza.map((lproduct) => (
+        <div key={lproduct.id}>
           <Link href="#">
             <a>
               <div className="container">
                 <article className="containerGrid card">
                   <picture>
                     <Image
-                      src={`${l.urlImagen}`}
-                      alt={` Pizza ${l.titulo}`}
+                      src={`${lproduct.urlImagen}`}
+                      alt={` Pizza ${lproduct.nombre}`}
                       width={100}
                       height={100}
                       layout="responsive"
@@ -48,9 +72,9 @@ function ListaProduct({ listaP }) {
                     />
                   </picture>
                   <div className="rowGrid">
-                    <h2>{l.titulo}</h2>
-                    <div className="description">{l.descripcion}</div>
-                    <footer>{` $${l.precio}`}</footer>
+                    <h2>{lproduct.nombre}</h2>
+                    <div className="description">{lproduct.descripcion}</div>
+                    <footer>{` $${lproduct.precio}`}</footer>
                   </div>
                 </article>
               </div>
@@ -95,10 +119,10 @@ function ListaProduct({ listaP }) {
             }
             .description {
               display: -webkit-box; /* Caja Limitada */
-              -webkit-line-clamp: 3; /* Maximo 3 lineas */
               -webkit-box-orient: vertical; /* Caja Vertical */
+              -webkit-line-clamp: 3; /* Maximo 3 lineas */
               overflow: hidden;
-              height: 3.5rem; 
+              height: 3.5rem;
               font-size: 12px;
               font-weight: 300;
               color: var(--color-Negro);

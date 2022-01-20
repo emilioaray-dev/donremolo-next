@@ -4,6 +4,52 @@ import Link from "next/link";
 const CardDescription = () => {
   return (
     <>
+      <div className="container">
+        <article className="cardMaster">
+          <div className="cardTitle">
+            <h1>Mozzarella</h1>
+          </div>
+          <div className="containerGrid">
+            <picture>
+              <Image
+                src="/assets/img/pizzas/mozzarella.png"
+                alt="Pizza Mozzarella"
+                width={100}
+                height={100}
+                layout="responsive"
+                priority
+              />
+            </picture>
+            <div className="rowGrid">
+              <div className="description">
+                Mozzarella|Orégano|Aceitunas |Aceite de oliva
+              </div>
+            </div>
+            <div className="porciones marginTop">8 Porciones</div>
+            <div className="price marginTop">$1134</div>
+          </div>
+          <div className="cuentaGrid">
+            <div style={{ fontSize: "14px" }}>Cantida</div>
+            <form>
+              <input
+                id="cantidad"
+                type="number"
+                name="cantidad"
+                min="1"
+                max="10"
+              ></input>
+            </form>
+            <span style={{ textAlign: "right", marginRight: "0.5rem" }}>$</span>
+            <span className="total">1234</span>
+          </div>
+          <div style={{ padding: "0px 1.93rem" }}>
+            <button>Agregar al Pedido</button>
+          </div>
+        </article>
+      </div>
+
+      <div className="espacioFinal"></div>
+
       <style jsx>{`
         .container {
           padding: var(--margen-horizontal);
@@ -135,52 +181,6 @@ const CardDescription = () => {
       
       }
       `}</style>
-
-      <div className="container">
-        <article className="cardMaster">
-          <div className="cardTitle">
-            <h1>Mozzarella</h1>
-          </div>
-          <div className="containerGrid">
-            <picture>
-              <Image
-                src="/assets/img/pizzas/mozzarella.png"
-                alt="Pizza Mozzarella"
-                width={100}
-                height={100}
-                layout="responsive"
-                priority
-              />
-            </picture>
-            <div className="rowGrid">
-              <div className="description">
-                Mozzarella|Orégano|Aceitunas |Aceite de oliva
-              </div>
-            </div>
-            <div className="porciones marginTop">8 Porciones</div>
-            <div className="price marginTop">$1134</div>
-          </div>
-          <div className="cuentaGrid">
-            <div style={{ fontSize: "14px" }}>Cantida</div>
-            <form>
-              <input
-                id="cantidad"
-                type="number"
-                name="cantidad"
-                min="1"
-                max="10"
-              ></input>
-            </form>
-            <span style={{ textAlign: "right", marginRight: "0.5rem" }}>$</span>
-            <span className="total">1234</span>
-          </div>
-          <div style={{ padding: "0px 1.93rem" }}>
-            <button>Agregar al Pedido</button>
-          </div>
-        </article>
-      </div>
-
-      <div className="espacioFinal"></div>
     </>
   );
 };

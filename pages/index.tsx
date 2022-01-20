@@ -1,4 +1,3 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Header from '../components/header'
@@ -9,19 +8,26 @@ import { useRouter } from "next/router";
 
 
 export async function getStaticProps() {
-  // Res Lista Pizza
+  // Res Lista Categoria
   const resCategorias = await fetch("http://127.0.0.1:3000/api/dataCategorias");
-  const listacategoria = await resCategorias.json();
- console.log(listacategoria);
+  // Lista Categoria to Json
+  const listCategory = await resCategorias.json();
+  /*
+  // Map Lista Categoria to Minuscula
+  listCategory.map((pathCategory) => {
+    const pathLower = pathCategory.categoria.toLowerCase();
+    console.log(pathLower);
+  });
+*/
 
   return {
     props: {
-      listacategoria,
+      listCategory,
     },
-    revalidate: 10, // In seconds
+    revalidate: 10, // In 10 seconds
   };
 }
-function Home({ listacategoria }) {
+function Home({ listCategory }) {
   const router = useRouter();
   return (
     <div className={styles.backgroundHome}>
@@ -36,21 +42,17 @@ function Home({ listacategoria }) {
       <main>
         <section className="container">
           <div className="containerCardCategories">
-            
-            {listacategoria.map((listacategoria) => {
+            {listCategory.map((listC) => {
               return (
-                <div key={listacategoria.id}>
-                  <Link
-                    href={`/productos/${listacategoria.categoria}`}
-               
-                  >
+                <div key={listC.id}>
+                  <Link href={`/${listC.categoria}`}>
                     <a>
                       <div className="cardCategories">
                         <div className="effectTranslateY">
                           <div className="imgGrid">
                             <picture className="imgCategories">
                               <Image
-                                src={`${listacategoria.urlImagen}`}
+                                src={`${listC.urlImagen}`}
                                 alt="Imagen de Empanadas"
                                 width={512}
                                 height={384}
@@ -59,9 +61,7 @@ function Home({ listacategoria }) {
                               />
                             </picture>
                           </div>
-                          <h2 className="titleCategories">
-                            {listacategoria.categoria}
-                          </h2>
+                          <h2 className="titleCategories">{listC.categoria}</h2>
                         </div>
                       </div>
                     </a>
@@ -71,58 +71,60 @@ function Home({ listacategoria }) {
             })}
           </div>
         </section>
-        <style jsx>{`
-          @media only screen and (min-width: 768px) {
-            .containerCardCategories {
-              grid-template-columns: auto auto auto auto !important;
-            }
-          }
-          .container {
-            position: absolute;
-            width: 100vw;
-            top: 50%;
-            transform: translateY(-48%);
-          }
-
-          .containerCardCategories {
-            display: grid;
-            grid-template-columns: auto auto;
-            justify-content: center;
-          }
-
-          .cardCategories {
-            min-width: 8rem;
-            max-width: 20rem;
-            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
-            border-radius: 0.625rem;
-            margin: 2rem 1rem 1rem 1rem;
-            background-color: var(--Cards-Colors);
-            height: fit-content;
-          }
-
-          .effectTranslateY {
-            display: grid;
-            transform: translateY(-30%);
-            justify-items: center;
-          }
-
-          .imgGrid {
-            display: grid;
-            min-height: 6rem;
-            padding: 0rem 0.5rem;
-            width: 100%;
-          }
-
-          .titleCategories {
-            font-family: var(--Home-Card-fontFamily);
-            font-size: 0.875rem;
-          }
-        `}</style>
       </main>
 
       <footer>
         <Slogan />
       </footer>
+
+      {/* Style of Component-----------------------------------*/}
+      <style jsx>{`
+        @media only screen and (min-width: 768px) {
+          .containerCardCategories {
+            grid-template-columns: auto auto auto auto !important;
+          }
+        }
+        .container {
+          position: absolute;
+          width: 100vw;
+          top: 50%;
+          transform: translateY(-48%);
+        }
+
+        .containerCardCategories {
+          display: grid;
+          grid-template-columns: auto auto;
+          justify-content: center;
+        }
+
+        .cardCategories {
+          min-width: 8rem;
+          max-width: 20rem;
+          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+          border-radius: 0.625rem;
+          margin: 2rem 1rem 1rem 1rem;
+          background-color: var(--Cards-Colors);
+          height: fit-content;
+        }
+
+        .effectTranslateY {
+          display: grid;
+          transform: translateY(-30%);
+          justify-items: center;
+        }
+
+        .imgGrid {
+          display: grid;
+          min-height: 6rem;
+          padding: 0rem 0.5rem;
+          width: 100%;
+        }
+
+        .titleCategories {
+          font-family: var(--Home-Card-fontFamily);
+          font-size: 0.875rem;
+        }
+      `}</style>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 
-const CardComponent: FC<Props> = ({
+const CardList: FC<Props> = ({
   href,
   imagen,
   altImagen,
@@ -100,4 +100,4 @@ const CardComponent: FC<Props> = ({
   </>
 );
 
-export default CardComponent;
+export default CardList;
