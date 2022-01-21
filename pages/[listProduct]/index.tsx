@@ -3,10 +3,14 @@ import Head from "next/head";
 import Header from "../../components/header";
 import CardList from "../../components/cards/CardList";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
+import { useRouter } from 'next/router'
 
 
 
 function CardRender({ lista }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const router = useRouter()
+  const { listProduct } = router.query
+
   return (
     <>
       <Head>
@@ -18,7 +22,7 @@ function CardRender({ lista }: InferGetStaticPropsType<typeof getStaticProps>) {
         <Header />
       </div>
       <div className="containerFather">
-        {lista.map((producto: any) => {
+        {lista.filter((p : any) => p.categoria === listProduct).map((producto: any) => {
           return (
             <div key={producto.id}>
               <CardList
