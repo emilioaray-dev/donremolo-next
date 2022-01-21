@@ -61,7 +61,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const res = await fetch("http://127.0.0.1:3000/api/dataPizza");
+  const res = await fetch("http://127.0.0.1:3000/api/dataAll");
   const lista = await res.json();
   console.log(lista);
 

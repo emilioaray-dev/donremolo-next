@@ -79,12 +79,44 @@
     "urlImagen": "/assets/img/pizzas/fugazza.png"
   },
   {
+    "id": "11",
+    "categoria": "Postres",
+    "nombre": "Postres 1",
+    "descripcion": "Común | Zero",
+    "precio": "80",
+    "urlImagen": ""
+  },
+  {
+    "id": "12",
+    "categoria": "Postres",
+    "nombre": "Postres 2",
+    "descripcion": "Manzana | Naranja | Citrus",
+    "precio": "85",
+    "urlImagen": ""
+  },
+  {
+    "id": "13",
+    "categoria": "Postres",
+    "nombre": "Postres 3",
+    "descripcion": "",
+    "precio": "85",
+    "urlImagen": ""
+  },
+  {
+    "id": "14",
+    "categoria": "Postres",
+    "nombre": "Postres 4",
+    "descripcion": "",
+    "precio": "85",
+    "urlImagen": ""
+  },
+  {
     "id": "15",
     "categoria": "Bebidas",
     "nombre": "Coca Cola",
     "descripcion": "Común | Zero",
     "precio": "80",
-    "urlImagen": "/assets/img/bebidas/bebidasCocaCola.png"
+    "urlImagen": ""
   },
   {
     "id": "16",
@@ -92,7 +124,7 @@
     "nombre": "Agua Saborizada",
     "descripcion": "Manzana | Naranja | Citrus",
     "precio": "85",
-    "urlImagen": "/assets/img/bebidas/bebidasAguaSaborizada.png"
+    "urlImagen": ""
   },
   {
     "id": "17",
@@ -100,7 +132,7 @@
     "nombre": "Agua",
     "descripcion": "",
     "precio": "85",
-    "urlImagen": "/assets/img/bebidas/bebidasAguaMineral.png"
+    "urlImagen": ""
   },
   {
     "id": "18",
@@ -108,6 +140,6 @@
     "nombre": "Agua con Gas",
     "descripcion": "",
     "precio": "85",
-    "urlImagen": "/assets/img/bebidas/bebidasAguaGas.png"
+    "urlImagen": ""
   }
 ]
