@@ -2,6 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 
+interface Props {
+  href: string;
+  imagen: string;
+  altImagen: string;
+  titulo: string;
+  descripcion: string;
+  precio: string;
+}
+
 const CardList: FC<Props> = ({
   href,
   imagen,
