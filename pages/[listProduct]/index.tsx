@@ -18,17 +18,17 @@ function CardRender({ lista }: InferGetStaticPropsType<typeof getStaticProps>) {
         <Header />
       </div>
       <div className="containerFather">
-        {lista.map((lista) => {
+        {lista.map((producto: any) => {
           return (
-            <div key={lista.id}>
+            <div key={producto.id}>
               <CardList
                 key=""
                 href="#"
-                imagen={`${lista.urlImagen}`}
-                altImagen={` ${lista.categoria} ${lista.nombre}`}
-                titulo={lista.nombre}
-                descripcion={lista.descripcion}
-                precio={`${lista.precio}`}
+                imagen={`${producto.urlImagen}`}
+                altImagen={` ${producto.categoria} ${producto.nombre}`}
+                titulo={producto.nombre}
+                descripcion={producto.descripcion}
+                precio={`${producto.precio}`}
               />
             </div>
           );
@@ -52,8 +52,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const res = await fetch("http://127.0.0.1:3000/api/dataCategorias");
   const posts = await res.json();
 
-  const paths = posts.map((lista) => ({
-    params: { listProduct: lista.categoria },
+  const paths = posts.map((listaPath: any) => ({
+    params: { listProduct: listaPath.categoria },
   }));
   // { fallback: false } means other routes should 404.
   return { paths, fallback: true };
