@@ -11,6 +11,8 @@ function CardRender({ lista }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter()
   const { listProduct } = router.query
 
+  const listaFiltrada = lista.filter((p : any) => p.categoria === listProduct)
+  
   return (
     <>
       <Head>
@@ -22,7 +24,7 @@ function CardRender({ lista }: InferGetStaticPropsType<typeof getStaticProps>) {
         <Header />
       </div>
       <div className="containerFather">
-        {lista.filter((p : any) => p.categoria === listProduct).map((producto: any) => {
+        {listaFiltrada.map((producto: any) => {
           return (
             <div key={producto.id}>
               <CardList
