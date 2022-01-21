@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Head from "next/head";
-import Header from "../components/header";
-import CardList from "../components/cards/CardList";
+import Header from "../../components/header";
+import CardList from "../../components/cards/CardList";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 
 
@@ -28,7 +28,7 @@ function CardRender({ lista }: InferGetStaticPropsType<typeof getStaticProps>) {
                 altImagen={` ${product.categoria} ${product.nombre}`}
                 titulo={product.nombre}
                 descripcion={product.descripcion}
-                precio={` $${product.precio}`}
+                precio={`${product.precio}`}
               />
             </div>
           );
