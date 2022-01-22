@@ -1,11 +1,11 @@
 import { FC } from "react";
 import Head from "next/head";
-import Header from "../../../components/header";
-import CardList from "../../../components/cards/CardList";
+import Header from "../../components/header";
+import CardList from "../../components/cards/CardList";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 
 function Description({
-  lista,
+  Description,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
@@ -18,7 +18,7 @@ function Description({
         <Header />
       </div>
       <div className="containerFather">
-        {lista.map((producto: any) => {
+        {Description.map((producto: any) => {
           return (
             <div key={producto.id}>
               <CardList
@@ -56,8 +56,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   );
   const posts = await res.json();
 
-  const paths = posts.map((listaPath: any) => ({
-    params: { listProduct: listaPath.categoria },
+  const paths = posts.map((DescriptionPath: any) => ({
+    params: { desctiptionProduct: DescriptionPath.categoria },
   }));
   // { fallback: false } means other routes should 404.
   return { paths, fallback: true };
@@ -68,12 +68,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   //(`http://${url}/api/dataPizza`);
   const res = await fetch(`https://api-donremolo.vercel.app/api/dataPizza`);
-  const lista = await res.json();
-  console.log(lista);
+  const Description = await res.json();
+  console.log(Description);
 
   return {
     props: {
-      lista,
+      Description,
     },
     revalidate: 10, // In seconds
   };

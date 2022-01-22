@@ -65,15 +65,21 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
 const url = process.env.NEXT_PUBLIC_VERCEL_URL;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch(`https://api-donremolo.vercel.app/api/dataCategorias`
-  );
+  const res = await fetch("https://api-donremolo.vercel.app/api/dataCategorias");
   const posts = await res.json();
 
   const paths = posts.map((listaPath: any) => ({
-    params: { pathCategory: listaPath.categoria },
-  }));
+    params: {
+      pathCategory: listaPath.categoria
+    }
+  })
+  );
+
   // { fallback: false } means other routes should 404.
-  return { paths, fallback: true };
+  return {
+    paths,
+    fallback: false,
+  };
 };
 
 
