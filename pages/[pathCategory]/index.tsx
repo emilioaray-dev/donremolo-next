@@ -9,9 +9,9 @@ import { useRouter } from 'next/router'
 
 function CardRender({ lista }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter()
-  const { listProduct } = router.query
+  const { pathCategory } = router.query
 
-  const listaFiltrada = lista.filter((p : any) => p.categoria === listProduct)
+  const listaFiltrada = lista.filter((p : any) => p.categoria === pathCategory)
   
   return (
     <>
@@ -59,7 +59,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await res.json();
 
   const paths = posts.map((listaPath: any) => ({
-    params: { listProduct: listaPath.categoria },
+    params: { pathCategory: listaPath.categoria },
   }));
   // { fallback: false } means other routes should 404.
   return { paths, fallback: true };
@@ -69,7 +69,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const res = await fetch("http://127.0.0.1:3000/api/dataAll");
   const lista = await res.json();
-  console.log(lista);
+//  console.log(lista);
 
   return {
     props: {
