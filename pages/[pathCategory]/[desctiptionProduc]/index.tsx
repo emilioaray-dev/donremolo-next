@@ -52,7 +52,7 @@ const url = process.env.NEXT_PUBLIC_VERCEL_URL;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   // (`http://${url}/api/dataCategorias`);
-  const res = await fetch(`http://localhost:3000/api/dataCategorias`
+  const res = await fetch(`https://api-donremolo.vercel.app/api/dataCategorias`
   );
   const posts = await res.json();
 
@@ -67,7 +67,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   //(`http://${url}/api/dataPizza`);
-  const res = await fetch(`http://localhost:3000/api/dataPizza`);
+  const res = await fetch(`https://api-donremolo.vercel.app/api/dataPizza`);
   const lista = await res.json();
   console.log(lista);
 

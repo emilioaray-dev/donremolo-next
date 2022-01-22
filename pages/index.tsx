@@ -23,12 +23,12 @@ export const getStaticProps: GetStaticProps = async (context) => {
   };
 
   // Res Lista Categoria (`http://${url}/api/dataCategorias`);
-  const resCategorias = await fetch(`http://localhost:3000/api/dataCategorias`
+  const resCategorias = await fetch(`https://api-donremolo.vercel.app/api/dataCategorias`
   );
   // Lista Categoria to Json
   const ListCategory = await resCategorias.json();
   // Lista All Product to Json
-  const res = await fetch(`http://localhost:3000/api/dataAll`);
+  const res = await fetch(`https://api-donremolo.vercel.app/api/dataAll`);
   const lista = await res.json();
   /*
   // Map Lista Categoria to Minuscula

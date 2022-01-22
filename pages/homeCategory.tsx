@@ -4,7 +4,7 @@ import CardHome from "../components/cards/CardHome";
 
 export const getStaticProps: GetStaticProps = async (context) => {
   // Res Lista Categoria (`http://${url}/api/dataCategorias`);
-  const resCategories = await fetch(`http://localhost:3000/api/dataCategorias`
+  const resCategories = await fetch(`https://api-donremolo.vercel.app/api/dataCategorias`
   );
   // Lista Categoria to Json
   const listCategories = await resCategories.json();

@@ -65,7 +65,7 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
 const url = process.env.NEXT_PUBLIC_VERCEL_URL;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch(`http://localhost:3000/api/dataCategorias`
+  const res = await fetch(`https://api-donremolo.vercel.app/api/dataCategorias`
   );
   const posts = await res.json();
 
@@ -79,7 +79,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   // (`http://${url}/api/dataAll`);
-  const res = await fetch(`http://localhost:3000/api/dataAll`);
+  const res = await fetch(`https://api-donremolo.vercel.app/api/dataAll`);
   const Lista = await res.json();
 //  console.log(Lista);
 
