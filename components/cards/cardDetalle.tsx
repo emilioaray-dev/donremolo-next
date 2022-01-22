@@ -1,10 +1,16 @@
 import { FC } from "react";
 import Image from "next/image";
 
-
-const CardDescription: FC<Props> = ({
-const CardDescription = () => {
-  return (
+interface Props {
+  titulo: string;
+  imagen: string;
+  altImagen: string;
+  descripcion: string;
+  porciones: number;
+  precio: number;
+  cantidad: string;
+}
+const CardDescription: FC<Props> = ({ titulo, imagen, altImagen, descripcion, porciones, precio, cantidad }) => (
     <>
       <div className="container">
         <article className="cardMaster">
@@ -31,7 +37,7 @@ const CardDescription = () => {
             <div className="price marginTop">$1134</div>
           </div>
           <div className="cuentaGrid">
-            <div style={{ fontSize: "14px" }}>Cantida</div>
+            <div style={{ fontSize: "14px" }}>Cantidad</div>
             <form>
               <input
                 id="cantidad"
@@ -180,11 +186,8 @@ const CardDescription = () => {
         button:hover {
           opacity: 0.8;
         }
-      
-      }
       `}</style>
     </>
   );
-};
 
 export default CardDescription;

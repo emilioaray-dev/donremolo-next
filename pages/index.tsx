@@ -1,20 +1,38 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import Header from '../components/header'
-import Slogan from '../components/slogan'
-import Link from 'next/link'
+import Head from 'next/head';
+import styles from '../styles/Home.module.css';
+import Header from '../components/header';
+import Slogan from '../components/slogan';
+import Link from 'next/link';
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { GetStaticProps } from "next";
+import { InferGetStaticPropsType } from "next";
+import { Key, ReactChild, ReactFragment, ReactPortal } from 'react';
 
 
-export async function getStaticProps() {
-  // Res Lista Categoria
-  const resCategorias = await fetch("http://127.0.0.1:3000/api/dataCategorias");
+const url = process.env.NEXT_PUBLIC_VERCEL_URL;
+
+
+
+export const getStaticProps: GetStaticProps = async (context) => {
+
+  type ListCategory = {
+    id: number;
+    categoria: string;
+    urlImagen: string;
+  };
+
+  // Res Lista Categoria (`http://${url}/api/dataCategorias`);
+  const resCategorias = await fetch(`http://localhost:3000/api/dataCategorias`
+  );
   // Lista Categoria to Json
-  const listCategory = await resCategorias.json();
+  const ListCategory = await resCategorias.json();
+  // Lista All Product to Json
+  const res = await fetch(`http://localhost:3000/api/dataAll`);
+  const lista = await res.json();
   /*
   // Map Lista Categoria to Minuscula
-  listCategory.map((pathCategory) => {
+  ListCategory.map((pathCategory) => {
     const pathLower = pathCategory.categoria.toLowerCase();
     console.log(pathLower);
   });
@@ -22,12 +40,12 @@ export async function getStaticProps() {
 
   return {
     props: {
-      listCategory,
+      ListCategory,
     },
     revalidate: 10, // In 10 seconds
   };
-}
-function Home({ listCategory }) {
+};
+function Home({ ListCategory }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter();
   return (
     <div className={styles.backgroundHome}>
@@ -42,7 +60,7 @@ function Home({ listCategory }) {
       <main>
         <section className="container">
           <div className="containerCardCategories">
-            {listCategory.map((listC) => {
+            {ListCategory.map((listC: { id: Key | null | undefined; categoria: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined; urlImagen: any; }) => {
               return (
                 <div key={listC.id}>
                   <Link href={`/${listC.categoria}`}>
@@ -130,4 +148,4 @@ function Home({ listCategory }) {
 }
 
 
-export default Home
+export default Home;

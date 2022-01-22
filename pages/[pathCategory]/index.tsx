@@ -7,11 +7,20 @@ import { useRouter } from 'next/router'
 
 
 
-function CardRender({ lista }: InferGetStaticPropsType<typeof getStaticProps>) {
+function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
+  type Lista = {
+    id: number;
+    categoria: string;
+    nombre: string;
+    descripcion: string;
+    precio: string;
+    urlImagen: string;
+  };
+
   const router = useRouter()
   const { pathCategory } = router.query
 
-  const listaFiltrada = lista.filter((p : any) => p.categoria === pathCategory)
+  const listaFiltrada = Lista.filter((p : any) => p.categoria === pathCategory)
   
   return (
     <>
@@ -53,9 +62,11 @@ function CardRender({ lista }: InferGetStaticPropsType<typeof getStaticProps>) {
     </>
   );
 }
+const url = process.env.NEXT_PUBLIC_VERCEL_URL;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch("http://127.0.0.1:3000/api/dataCategorias");
+  const res = await fetch(`http://localhost:3000/api/dataCategorias`
+  );
   const posts = await res.json();
 
   const paths = posts.map((listaPath: any) => ({
@@ -67,13 +78,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const res = await fetch("http://127.0.0.1:3000/api/dataAll");
-  const lista = await res.json();
-//  console.log(lista);
+  // (`http://${url}/api/dataAll`);
+  const res = await fetch(`http://localhost:3000/api/dataAll`);
+  const Lista = await res.json();
+//  console.log(Lista);
 
   return {
     props: {
-      lista,
+      Lista,
     },
     revalidate: 10, // In seconds
   };

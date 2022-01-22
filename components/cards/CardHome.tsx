@@ -2,6 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 
+interface Props {
+  id: string;
+  href: string;
+  imagen: string;
+  altImagen: string;
+  titulo: string;
+}
+
 const CardHome: FC<Props> = ({
   id,
   href,

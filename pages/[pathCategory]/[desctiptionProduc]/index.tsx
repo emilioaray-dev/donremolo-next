@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Head from "next/head";
-import Header from "../../components/header";
-import CardList from "../../components/cards/CardList";
+import Header from "../../../components/header";
+import CardList from "../../../components/cards/CardList";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 
 function Description({
@@ -48,8 +48,12 @@ function Description({
   );
 }
 
+const url = process.env.NEXT_PUBLIC_VERCEL_URL;
+
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch("http://127.0.0.1:3000/api/dataCategorias");
+  // (`http://${url}/api/dataCategorias`);
+  const res = await fetch(`http://localhost:3000/api/dataCategorias`
+  );
   const posts = await res.json();
 
   const paths = posts.map((listaPath: any) => ({
@@ -59,8 +63,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: true };
 };
 
+
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const res = await fetch("http://127.0.0.1:3000/api/dataPizza");
+
+  //(`http://${url}/api/dataPizza`);
+  const res = await fetch(`http://localhost:3000/api/dataPizza`);
   const lista = await res.json();
   console.log(lista);
 

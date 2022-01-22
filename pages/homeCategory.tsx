@@ -3,8 +3,9 @@ import { Key } from "react";
 import CardHome from "../components/cards/CardHome";
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  // Res Lista Categoria
-  const resCategories = await fetch("http://127.0.0.1:3000/api/dataCategorias");
+  // Res Lista Categoria (`http://${url}/api/dataCategorias`);
+  const resCategories = await fetch(`http://localhost:3000/api/dataCategorias`
+  );
   // Lista Categoria to Json
   const listCategories = await resCategories.json();
 
@@ -23,7 +24,7 @@ function HomeCategory({ listCategories, }: InferGetStaticPropsType<typeof getSta
         return (
           <div key={category.id}>
             <CardHome
-              key=""
+              id=""
               href={`/${category.categoria}`}
               imagen={`${category.urlImagen}`}
               altImagen={`Imagen de ${category.categoria}`}

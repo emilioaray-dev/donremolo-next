@@ -37,13 +37,14 @@ function CardDescription2() {
   return (
     <div>
       {/*   {data.categorias.map(c => DibujarCategoria(c))} */}
-      {DibujarPlato(data.categorias[0].platos[0])}
+      {/* {DibujarPlato(data.categoria[0].platos[0])} */}
     </div>
   );
 }
 
 
-
+{
+  /* 
 function DibujarPlato(p) {
   return (
     <>
@@ -89,9 +90,9 @@ function DibujarPlato(p) {
           margin-bottom: 6px;
         }
         .description {
-          display: -webkit-box; /* Caja Limitada */
-          -webkit-line-clamp: 3; /* Maximo 3 lineas */
-          -webkit-box-orient: vertical; /* Caja Vertical */
+          display: -webkit-box; 
+          -webkit-line-clamp: 3; 
+          -webkit-box-orient: vertical; 
           overflow: hidden;
           font-size: 12px;
           font-weight: 300;
@@ -224,3 +225,5 @@ function DibujarPlato(p) {
 }
 
 export default CardDescription2;
+*/
+}
