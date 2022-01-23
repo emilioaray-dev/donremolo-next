@@ -79,7 +79,7 @@
     "urlImagen": "/assets/img/pizzas/fugazza.png"
   },
   {
-    "id": "15",
+    "id": "11",
     "categoria": "Bebidas",
     "nombre": "Coca Cola",
     "descripcion": "Común | Zero",
@@ -87,7 +87,7 @@
     "urlImagen": "/assets/img/bebidas/bebidasCocaCola.png"
   },
   {
-    "id": "16",
+    "id": "12",
     "categoria": "Bebidas",
     "nombre": "Agua Saborizada",
     "descripcion": "Manzana | Naranja | Citrus",
@@ -95,7 +95,7 @@
     "urlImagen": "/assets/img/bebidas/bebidasAguaSaborizada.png"
   },
   {
-    "id": "17",
+    "id": "13",
     "categoria": "Bebidas",
     "nombre": "Agua",
     "descripcion": "",
@@ -103,7 +103,23 @@
     "urlImagen": "/assets/img/bebidas/bebidasAguaMineral.png"
   },
   {
-    "id": "18",
+    "id": "14",
+    "categoria": "Bebidas",
+    "nombre": "Cerveza",
+    "descripcion": "",
+    "precio": "85",
+    "urlImagen": "/assets/img/bebidas/bebidasCerveza.png"
+  },
+  {
+    "id": "15",
+    "categoria": "Bebidas",
+    "nombre": "Agua con Gas",
+    "descripcion": "",
+    "precio": "85",
+    "urlImagen": "/assets/img/bebidas/bebidasAguaGas.png"
+  },
+  {
+    "id": "16",
     "categoria": "Postres",
     "nombre": "Helado",
     "descripcion": "Frutilla|Vainilla|Chocolate",
@@ -111,7 +127,7 @@
     "urlImagen": "/assets/img/postres/helado.png"
   },
   {
-    "id": "19",
+    "id": "17",
     "categoria": "Postres",
     "nombre": "Lemon Pie",
     "descripcion": "Limón|Merengue|Masa de manteca",
@@ -119,7 +135,7 @@
     "urlImagen": "/assets/img/postres/lemon.png"
   },
   {
-    "id": "20",
+    "id": "18",
     "categoria": "Postres",
     "nombre": "Budín de pan",
     "descripcion": "Pan|Leche|Caramelo",
@@ -127,7 +143,7 @@
     "urlImagen": "/assets/img/postres/pudinPan.png"
   },
   {
-    "id": "21",
+    "id": "19",
     "categoria": "Postres",
     "nombre": "Ensalada de Frutas",
     "descripcion": "Frutas de estación|Jugo de Naranja Azúcar",
@@ -135,7 +151,7 @@
     "urlImagen": "/assets/img/postres/emsaladaFrutas.png"
   },
   {
-    "id": "22",
+    "id": "20",
     "categoria": "Postres",
     "nombre": "Flan",
     "descripcion": "Huevos| Leche |Azúcar |Crema |Dulce de Leche",
