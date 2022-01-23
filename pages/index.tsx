@@ -57,7 +57,7 @@ function Home({ ListCategory }: InferGetStaticPropsType<typeof getStaticProps>) 
         hideBackbuttom={"hide"} //'hide' Oculta el bottom de back
         hideTitle={""} // 'hide' Oculta el titulo o --title--
         title={"Nuestro Menú"} // Texto a mostrar
-        hideIconNav={"hide"} //'hide' Oculta Los Botonos del Nav
+        hideIconNav={"none"} //'none' Oculta Los Botonos del Nav
       />
 
       <main>

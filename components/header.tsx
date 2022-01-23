@@ -60,9 +60,8 @@ const Header: FC<{
         </div>
         <div className="container">
           <div className="cardNav">
+            <h1 className={`titleNav ${hideTitle}`}>{title}</h1>
             <div className="gridNav">
-              <h1 className={`titleNav ${hideTitle}`}>{title}</h1>
-
               <Link href="/Pizzas">
                 <a className="linkIcon">
                   <div className={`iconNav ${hideIconNav}`}>
@@ -119,6 +118,9 @@ const Header: FC<{
     <style jsx>{`
       .hide {
         visibility: hidden;
+      }
+      .none {
+        display: none !important;
       }
 
       header {
@@ -191,10 +193,11 @@ const Header: FC<{
       }
 
       .titleNav {
-        position: absolute;
-        margin: 0 auto;
-        text-align: center;
-        width: 100%;
+        display: grid;
+        grid-template-columns: auto;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
       }
 
       h1 {

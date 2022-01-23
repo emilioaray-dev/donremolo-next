@@ -47,6 +47,12 @@ const CardList: FC<Props> = ({
     </Link>
 
     <style jsx>{`
+
+      @media only screen and (min-width: 768px) {
+        .card {
+          width: 380px !important;
+        }
+      }
         .container {
           padding: var(--margen-horizontal);
           max-width: var(--maxWidth-container);
@@ -61,6 +67,7 @@ const CardList: FC<Props> = ({
           min-height: 112px;
           padding: 12px;
           margin: 0 0 1.2rem 0rem;
+          min-width: 320px;
         }
         .cardGrid {
           display: grid;

@@ -32,8 +32,8 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
       </Head>
 
       <Header
-        hideBackbuttom={""} //'hide' Oculta el bottom de back
-        hideTitle={"hide"} // 'hide' Oculta el titulo o --title--
+        hideBackbuttom={""} //'none' Oculta el bottom de back
+        hideTitle={"none"} // 'none' Oculta el titulo o --title--
         title={"Nuestro Menú"} // Texto a mostrar
         hideIconNav={""} //'hide' Oculta Los Botonos del Nav
       />
