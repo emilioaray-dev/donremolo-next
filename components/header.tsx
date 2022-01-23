@@ -98,7 +98,7 @@ const Header: FC<{
                 </a>
               </Link>
 
-              <Link href="/Helados">
+              <Link href="/Postres">
                 <a className="linkIcon ">
                   <div className={`iconNav pRight ${hideIconNav}`}>
                     <IconHelado
