@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
 import Header from '../components/header';
 import Slogan from '../components/slogan';
 import Link from 'next/link';
@@ -8,10 +7,6 @@ import { useRouter } from "next/router";
 import { GetStaticProps } from "next";
 import { InferGetStaticPropsType } from "next";
 import { Key, ReactChild, ReactFragment, ReactPortal } from 'react';
-
-
-const url = process.env.NEXT_PUBLIC_VERCEL_URL;
-
 
 
 export const getStaticProps: GetStaticProps = async (context) => {
@@ -23,20 +18,14 @@ export const getStaticProps: GetStaticProps = async (context) => {
   };
 
   // Res Lista Categoria (`http://${url}/api/dataCategorias`);
-  const resCategorias = await fetch(`https://api-donremolo.vercel.app/api/dataCategorias`
+  const resCategorias = await fetch(`https://donremolo-next.vercel.app/api/dataCategorias`
   );
   // Lista Categoria to Json
   const ListCategory = await resCategorias.json();
   // Lista All Product to Json
-  const res = await fetch(`https://api-donremolo.vercel.app/api/dataAll`);
+  const res = await fetch(`https://donremolo-next.vercel.app/api/dataAll`);
   const lista = await res.json();
-  /*
-  // Map Lista Categoria to Minuscula
-  ListCategory.map((pathCategory) => {
-    const pathLower = pathCategory.categoria.toLowerCase();
-    console.log(pathLower);
-  });
-*/
+
 
   return {
     props: {
@@ -48,45 +37,73 @@ export const getStaticProps: GetStaticProps = async (context) => {
 function Home({ ListCategory }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter();
   return (
-    <div className={styles.backgroundHome}>
+    <>
       <Head>
         <title>Don Rémolo</title>
         <meta name="description" content="Generado por el Equipo 87 de IDeas" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0"
+        ></meta>
+        <link
+          rel="preload"
+          as="font"
+          href="/assets/fonts/OpenSans-VariableFont_wdth,wght.ttf"
+        ></link>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
+      <Header
+        hideBackbuttom={"hide"} //'hide' Oculta el bottom de back
+        hideTitle={""} // 'hide' Oculta el titulo o --title--
+        title={"Nuestro Menú"} // Texto a mostrar
+        hideIconNav={"hide"} //'hide' Oculta Los Botonos del Nav
+      />
 
       <main>
         <section className="container">
           <div className="containerCardCategories">
-            {ListCategory.map((listC: { id: Key | null | undefined; categoria: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined; urlImagen: any; }) => {
-              return (
-                <div key={listC.id}>
-                  <Link href={`/${listC.categoria}`}>
-                    <a>
-                      <div className="cardCategories">
-                        <div className="effectTranslateY">
-                          <div className="imgGrid">
-                            <picture className="imgCategories">
-                              <Image
-                                src={`${listC.urlImagen}`}
-                                alt="Imagen de Empanadas"
-                                width={512}
-                                height={384}
-                                layout="responsive"
-                                priority
-                              />
-                            </picture>
+            {ListCategory.map(
+              (listC: {
+                id: Key | null | undefined;
+                categoria:
+                  | boolean
+                  | ReactChild
+                  | ReactFragment
+                  | ReactPortal
+                  | null
+                  | undefined;
+                urlImagen: any;
+              }) => {
+                return (
+                  <div key={listC.id}>
+                    <Link href={`/${listC.categoria}`}>
+                      <a>
+                        <div className="cardCategories">
+                          <div className="effectTranslateY">
+                            <div className="imgGrid">
+                              <picture className="imgCategories">
+                                <Image
+                                  src={`${listC.urlImagen}`}
+                                  alt="Imagen de Empanadas"
+                                  width={512}
+                                  height={384}
+                                  layout="responsive"
+                                  priority
+                                />
+                              </picture>
+                            </div>
+                            <h2 className="titleCategories">
+                              {listC.categoria}
+                            </h2>
                           </div>
-                          <h2 className="titleCategories">{listC.categoria}</h2>
                         </div>
-                      </div>
-                    </a>
-                  </Link>
-                </div>
-              );
-            })}
+                      </a>
+                    </Link>
+                  </div>
+                );
+              }
+            )}
           </div>
         </section>
       </main>
@@ -102,11 +119,16 @@ function Home({ ListCategory }: InferGetStaticPropsType<typeof getStaticProps>) 
             grid-template-columns: auto auto auto auto !important;
           }
         }
+        @media (max-width: 768px) and (orientation: landscape) {
+          .containerCardCategories {
+            grid-template-columns: auto auto auto auto !important;
+          }
+        }
         .container {
           position: absolute;
           width: 100vw;
           top: 50%;
-          transform: translateY(-48%);
+          transform: translateY(-38%);
         }
 
         .containerCardCategories {
@@ -122,7 +144,7 @@ function Home({ ListCategory }: InferGetStaticPropsType<typeof getStaticProps>) 
           border-radius: 0.625rem;
           margin: 2rem 1rem 1rem 1rem;
           background-color: var(--Cards-Colors);
-          height: fit-content;
+          height: 7.2rem;
         }
 
         .effectTranslateY {
@@ -143,7 +165,7 @@ function Home({ ListCategory }: InferGetStaticPropsType<typeof getStaticProps>) 
           font-size: 0.875rem;
         }
       `}</style>
-    </div>
+    </>
   );
 }
 

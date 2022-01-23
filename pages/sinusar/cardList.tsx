@@ -36,7 +36,7 @@ const CardList = () => {
           overflow-wrap: break-word;
         }
         h2 {
-          font-size: 16px;
+          font-size: 2rem;
           font-weight: 600;
           color: var(--color-Negro);
           margin-bottom: 6px;

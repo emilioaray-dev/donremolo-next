@@ -23,23 +23,25 @@ const CardList: FC<Props> = ({
     <Link href={href}>
       <a>
         <div className="container">
-          <article className="containerGrid card">
-            <picture>
-              <Image
-                src={imagen}
-                alt={altImagen}
-                width={100}
-                height={100}
-                layout="responsive"
-                priority
-              />
-            </picture>
-            <div className="rowGrid">
-              <h2>{titulo}</h2>
-              <div className="description">{descripcion}</div>
-              <footer>${precio}</footer>
-            </div>
-          </article>
+          <div className="card">
+            <article className=" cardGrid">
+              <picture>
+                <Image
+                  src={imagen}
+                  alt={altImagen}
+                  width={100}
+                  height={100}
+                  layout="responsive"
+                  priority
+                />
+              </picture>
+              <div className="rowGrid">
+                <h2>{titulo}</h2>
+                <div className="description">{descripcion}</div>
+                <footer>${precio}</footer>
+              </div>
+            </article>
+          </div>
         </div>
       </a>
     </Link>
@@ -47,7 +49,6 @@ const CardList: FC<Props> = ({
     <style jsx>{`
         .container {
           padding: var(--margen-horizontal);
-          width: max-content;
           max-width: var(--maxWidth-container);
           margin: 0 auto;
         }
@@ -55,13 +56,13 @@ const CardList: FC<Props> = ({
           box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
           border-radius: 0.625rem;
           background-color: var(--Cards-Colors);
-          min-width: 27rem;
+          max-width: 27rem;
           height: fit-content;
           min-height: 112px;
           padding: 12px;
-          margin-bottom: 1.2rem;
+          margin: 0 0 1.2rem 0rem;
         }
-        .containerGrid {
+        .cardGrid {
           display: grid;
           grid-template-columns: max-content auto;
         }
@@ -77,10 +78,12 @@ const CardList: FC<Props> = ({
           overflow-wrap: break-word;
         }
         h2 {
-          font-size: 16px;
+          font-size: 1.3rem;
           font-weight: 600;
           color: var(--color-Negro);
           margin-bottom: 6px;
+          margin-block-start: 0em;
+          margin-block-end: 0.1em;
         }
         .description {
           display: -webkit-box; /* Caja Limitada */
@@ -88,7 +91,7 @@ const CardList: FC<Props> = ({
           -webkit-box-orient: vertical; /* Caja Vertical */
           overflow: hidden;
           height: 3.5rem;
-          font-size: 12px;
+          font-size: 1rem;
           font-weight: 300;
           color: var(--color-Negro);
           opacity: 0.8;
@@ -102,6 +105,7 @@ const CardList: FC<Props> = ({
           color: var(--color-Rojo);
           font-weight: 600;
           opacity: 0.8;
+          font-size: 1.2rem;
         }
         .espacioFinal {
           height: 3rem;

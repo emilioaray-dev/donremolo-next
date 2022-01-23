@@ -20,7 +20,7 @@ const CardHome: FC<Props> = ({
   <>
     <section className="container">
       <div className="containerCardCategories">
-        <div key={id}>
+        <div key={id} className="containerCardCategories">
           <Link href={href}>
             <a>
               <div className="cardCategories">
@@ -56,7 +56,7 @@ const CardHome: FC<Props> = ({
         position: absolute;
         width: 100vw;
         top: 50%;
-        transform: translateY(-48%);
+        transform: translateY(-40%);
       }
 
       .containerCardCategories {
@@ -72,7 +72,7 @@ const CardHome: FC<Props> = ({
         border-radius: 0.625rem;
         margin: 2rem 1rem 1rem 1rem;
         background-color: var(--Cards-Colors);
-        height: fit-content;
+        height: 7.2rem;
       }
 
       .effectTranslateY {
@@ -89,7 +89,7 @@ const CardHome: FC<Props> = ({
       }
 
       .titleCategories {
-        font-family: var(--Home-Card-fontFamily);
+        font-family: OpenSans;
         font-size: 0.875rem;
       }
     `}</style>

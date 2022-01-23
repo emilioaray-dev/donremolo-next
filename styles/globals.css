@@ -23,8 +23,9 @@ body {
 
 html,
 body {
-  height: 100%;
   color: var(--color-Negro);
+  width: 100%;
+  overflow-x: hidden;
 }
 
 
@@ -33,7 +34,7 @@ body {
 
 body {
   -webkit-font-smoothing: antialiased;
-  font-family: OpenSans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: OpenSans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
 }
 
 
@@ -70,23 +71,6 @@ a:-webkit-any-link {
 }
 
 
-/*8.Agregar cuadrado después del header hecho por Emilio */
-
-.cuadrado {
-  margin-top: 30px ! important;
-  padding: 20px;
-  margin: 10px;
-  background-color: #d4c6c6ef;
-  border: solid 1px #d4c6c6ef(255, 247, 247);
-  color: black;
-}
-
-.cuadradoMitad {
-  width: 40%;
-  border: solid 1px #d4c6c6ef(255, 247, 247);
-}
-
-
 /*
   End - Reset CSS
 */
@@ -97,6 +81,10 @@ a:-webkit-any-link {
 @font-face {
   font-family: OpenSans;
   src: url(../public/assets/fonts/OpenSans-VariableFont_wdth,wght.ttf);
+}
+
+[data-v-32478853] {
+  font-family: OpenSans;
 }
 
 
@@ -112,7 +100,7 @@ body {
   background-size: contain;
   background-position: center;
   background-attachment: fixed;
-  min-height: 100vh;
+  height: 100%;
 }
 
 

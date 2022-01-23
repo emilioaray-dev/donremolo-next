@@ -1,35 +1,31 @@
 /*******************************************
 **********   Start Theme var   *************
 ********************************************/
+
+
 /* El Objeto es fijar en Variables Globales todo lo concerniente a theme.*/
 
 :root {
   /* Variable de altura del Header*/
   --header-Nav-height: 60px;
-
   /* Variable de Color de fondo Navbar */
   --background--Nav: rgba(255, 255, 255, 0.5);
-
   /* Variable size with logo */
   --size-With-Logo: 6.438rem;
-
   /* Margen horizontal de componentes */
   --margen-horizontal: 0rem 1rem;
-
   /* Variable de Fuentes en Home Cards  */
   --Home-Card-fontFamily: OpenSans;
-
   /* variable para fondo en listas de precios*/
   --background-list-price: #ec3205;
-
   /* Variable Color de Cartas */
   --Cards-Colors: #fff;
-
   --color-Negro: #313638;
   --color-Rojo: #EC3205;
-
+  --color-Amarillo: #FFF485;
   --maxWidth-container: 1128px;
 }
+
 
 /*******************************************
 ************   End Theme var   *************

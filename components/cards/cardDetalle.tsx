@@ -94,7 +94,7 @@ const CardDescription: FC<Props> = ({ titulo, imagen, altImagen, descripcion, po
           color: var(--color-Negro);
         }
         h2 {
-          font-size: 16px;
+          font-size: 2rem;
           font-weight: 600;
           color: var(--color-Negro);
           margin-bottom: 6px;
