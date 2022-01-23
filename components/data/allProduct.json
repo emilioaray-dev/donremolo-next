@@ -104,10 +104,42 @@
   },
   {
     "id": "18",
-    "categoria": "Bebidas",
-    "nombre": "Agua con Gas",
-    "descripcion": "",
-    "precio": "85",
-    "urlImagen": "/assets/img/bebidas/bebidasAguaGas.png"
+    "categoria": "Postres",
+    "nombre": "Helado",
+    "descripcion": "Frutilla|Vainilla|Chocolate",
+    "precio": "65",
+    "urlImagen": "/assets/img/postres/helado.png"
+  },
+  {
+    "id": "19",
+    "categoria": "Postres",
+    "nombre": "Lemon Pie",
+    "descripcion": "Limón|Merengue|Masa de manteca",
+    "precio": "66",
+    "urlImagen": "/assets/img/postres/lemon.png"
+  },
+  {
+    "id": "20",
+    "categoria": "Postres",
+    "nombre": "Budín de pan",
+    "descripcion": "Pan|Leche|Caramelo",
+    "precio": "67",
+    "urlImagen": "/assets/img/postres/pudinPan.png"
+  },
+  {
+    "id": "21",
+    "categoria": "Postres",
+    "nombre": "Ensalada de Frutas",
+    "descripcion": "Frutas de estación|Jugo de Naranja Azúcar",
+    "precio": "70",
+    "urlImagen": "/assets/img/postres/emsaladaFrutas.png"
+  },
+  {
+    "id": "22",
+    "categoria": "Postres",
+    "nombre": "Flan",
+    "descripcion": "Huevos| Leche |Azúcar |Crema |Dulce de Leche",
+    "precio": "65",
+    "urlImagen": "/assets/img/postres/flan.png"
   }
 ]
