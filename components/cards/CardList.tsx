@@ -24,7 +24,7 @@ const CardList: FC<Props> = ({
       <a>
         <div className="container">
           <div className="card">
-            <article className=" cardGrid">
+            <article className="cardGrid">
               <picture>
                 <Image
                   src={imagen}
@@ -77,6 +77,8 @@ const CardList: FC<Props> = ({
           display: grid;
           width:  7rem;
           height: 7rem;
+          border-radius: 50%;
+          overflow: hidden;
         }
         .rowGrid {
           display: grid;
