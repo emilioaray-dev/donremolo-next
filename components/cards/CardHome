@@ -10,17 +10,11 @@ interface Props {
   titulo: string;
 }
 
-const CardHome: FC<Props> = ({
-  id,
-  href,
-  imagen,
-  altImagen,
-  titulo,
-}) => (
+const CardHome: FC<Props> = ({ id, href, imagen, altImagen, titulo }) => (
   <>
     <section className="container">
       <div className="containerCardCategories">
-        <div key={id} className="containerCardCategories">
+        <div key={id}>
           <Link href={href}>
             <a>
               <div className="cardCategories">
@@ -29,7 +23,7 @@ const CardHome: FC<Props> = ({
                     <picture className="imgCategories">
                       <Image
                         src={imagen}
-                        alt={altImagen}
+                        alt={`Imagen de ${altImagen}`}
                         width={512}
                         height={384}
                         layout="responsive"
@@ -43,6 +37,7 @@ const CardHome: FC<Props> = ({
             </a>
           </Link>
         </div>
+        );
       </div>
     </section>
     {/* Style of Component-----------------------------------*/}
@@ -52,11 +47,16 @@ const CardHome: FC<Props> = ({
           grid-template-columns: auto auto auto auto !important;
         }
       }
+      @media (max-width: 768px) and (orientation: landscape) {
+        .containerCardCategories {
+          grid-template-columns: auto auto auto auto !important;
+        }
+      }
       .container {
         position: absolute;
         width: 100vw;
         top: 50%;
-        transform: translateY(-40%);
+        transform: translateY(-38%);
       }
 
       .containerCardCategories {
@@ -89,11 +89,10 @@ const CardHome: FC<Props> = ({
       }
 
       .titleCategories {
-        font-family: OpenSans;
+        font-family: var(--Home-Card-fontFamily);
         font-size: 0.875rem;
       }
     `}</style>
   </>
 );
-
 export default CardHome;

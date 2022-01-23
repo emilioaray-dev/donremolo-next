@@ -45,7 +45,7 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
               <div key={producto.id}>
                 <CardList
                   key=""
-                  href="#"
+                  href={`/${producto.categoria}/${producto.nombre}`}
                   imagen={`${producto.urlImagen}`}
                   altImagen={` ${producto.categoria} ${producto.nombre}`}
                   titulo={producto.nombre}

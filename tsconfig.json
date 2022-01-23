@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/producto/descripcion.js", "pages/sinusar/cardDescription2", "pages/sinusar/index"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/producto/descripcion.js", "pages/sinusar/cardDescription2", "pages/sinusar/index", "pages/index2", "pages/homeCategory", "components/cards/CardHome", "pages/index"],
   "exclude": ["node_modules"]
 }
