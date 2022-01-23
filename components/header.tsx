@@ -172,7 +172,7 @@ const Header: FC<{
         grid-template-columns: auto;
         justify-content: center;
         align-items: center;
-        padding-right: 2rem;
+        padding-right: 3.5rem;
       }
 
       .cardNav {
