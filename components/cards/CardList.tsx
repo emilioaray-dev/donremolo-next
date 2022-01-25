@@ -22,10 +22,10 @@ const CardList: FC<Props> = ({
   <>
     <Link href={href}>
       <a>
-        <div className="container">
-          <div className="card">
-            <article className="cardGrid">
-              <picture>
+        <div className="containerCardList">
+          <div className="cardList">
+            <article className="cardList__grid">
+              <picture className="cardList__imgGrid">
                 <Image
                   src={imagen}
                   alt={altImagen}
@@ -35,10 +35,10 @@ const CardList: FC<Props> = ({
                   priority
                 />
               </picture>
-              <div className="rowGrid">
-                <h2>{titulo}</h2>
-                <div className="description">{descripcion}</div>
-                <footer>${precio}</footer>
+              <div className="cardList__rowGrid">
+                <h2 className="cardList__title">{titulo}</h2>
+                <div className="cardList__description">{descripcion}</div>
+                <footer className="cardList__price">${precio}</footer>
               </div>
             </article>
           </div>
@@ -49,16 +49,16 @@ const CardList: FC<Props> = ({
     <style jsx>{`
 
       @media only screen and (min-width: 768px) {
-        .card {
+        .cardList {
           width: 380px !important;
         }
       }
-        .container {
+        .containerCardList {
           padding: var(--margen-horizontal);
           max-width: var(--maxWidth-container);
           margin: 0 auto;
         }
-        .card{
+        .cardList{
           box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
           border-radius: 0.625rem;
           background-color: var(--Cards-Colors);
@@ -69,24 +69,24 @@ const CardList: FC<Props> = ({
           margin: 0 0 1.2rem 0rem;
           min-width: 320px;
         }
-        .cardGrid {
+        .cardList__grid {
           display: grid;
           grid-template-columns: max-content auto;
         }
-        picture {
+        .cardList__imgGrid {
           display: grid;
           width:  7rem;
           height: 7rem;
           border-radius: 50%;
           overflow: hidden;
         }
-        .rowGrid {
+        .cardList__rowGrid {
           display: grid;
           grid-template-rows: min-content min-content auto;
           margin-left: 1rem;
           overflow-wrap: break-word;
         }
-        h2 {
+        .cardList__title {
           font-size: 1.3rem;
           font-weight: 600;
           color: var(--color-Negro);
@@ -94,7 +94,7 @@ const CardList: FC<Props> = ({
           margin-block-start: 0em;
           margin-block-end: 0.1em;
         }
-        .description {
+        .cardList__description {
           display: -webkit-box; /* Caja Limitada */
           -webkit-line-clamp: 3; /* Maximo 3 lineas */
           -webkit-box-orient: vertical; /* Caja Vertical */
@@ -105,7 +105,7 @@ const CardList: FC<Props> = ({
           color: var(--color-Negro);
           opacity: 0.8;
         }
-        footer {
+        .cardList__price {
           display: grid;
           display: grid;
           align-items: end;
