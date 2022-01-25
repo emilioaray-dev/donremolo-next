@@ -61,8 +61,8 @@ function Home({ ListCategory }: InferGetStaticPropsType<typeof getStaticProps>) 
       />
 
       <main>
-        <section className="container">
-          <div className="containerCardCategories">
+        <section className="containerCardCategories">
+          <div className="cardCategories__grid">
             {ListCategory.map(
               (listC: {
                 id: Key | null | undefined;
@@ -80,19 +80,17 @@ function Home({ ListCategory }: InferGetStaticPropsType<typeof getStaticProps>) 
                     <Link href={`/${listC.categoria}`}>
                       <a>
                         <div className="cardCategories">
-                          <div className="effectTranslateY">
-                            <div className="imgGrid">
-                              <picture className="imgCategories">
+                          <div className="cardCategories--effectTranslateY">
+                              <picture className="cardCategories__imgGrid">
                                 <Image
                                   src={`${listC.urlImagen}`}
-                                  alt="Imagen de Empanadas"
+                                  alt={`Imagen de ${listC.categoria}`}
                                   width={512}
                                   height={384}
                                   layout="responsive"
                                   priority
                                 />
                               </picture>
-                            </div>
                             <h2 className="titleCategories">
                               {listC.categoria}
                             </h2>
@@ -115,26 +113,25 @@ function Home({ ListCategory }: InferGetStaticPropsType<typeof getStaticProps>) 
       {/* Style of Component-----------------------------------*/}
       <style jsx>{`
         @media only screen and (min-width: 768px) {
-          .containerCardCategories {
+          .cardCategories__grid {
             grid-template-columns: auto auto auto auto !important;
           }
         }
         @media (max-width: 768px) and (orientation: landscape) {
-          .containerCardCategories {
+          .cardCategories__grid {
             grid-template-columns: auto auto auto auto !important;
           }
         }
-        .container {
+        .cardCategories__grid {
+          display: grid;
+          grid-template-columns: auto auto;
+          justify-content: center;
+        }
+        .containerCardCategories {
           position: absolute;
           width: 100vw;
           top: 50%;
           transform: translateY(-38%);
-        }
-
-        .containerCardCategories {
-          display: grid;
-          grid-template-columns: auto auto;
-          justify-content: center;
         }
 
         .cardCategories {
@@ -147,13 +144,13 @@ function Home({ ListCategory }: InferGetStaticPropsType<typeof getStaticProps>) 
           height: 7.2rem;
         }
 
-        .effectTranslateY {
+        .cardCategories--effectTranslateY {
           display: grid;
           transform: translateY(-30%);
           justify-items: center;
         }
 
-        .imgGrid {
+        .cardCategories__imgGrid {
           display: grid;
           min-height: 6rem;
           padding: 0rem 0.5rem;
