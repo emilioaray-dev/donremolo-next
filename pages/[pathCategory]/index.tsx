@@ -17,15 +17,22 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
 
   const router = useRouter();
   const { pathCategory } = router.query;
-  // const Upertitle = pathCategory.toUpperCase();
+
   const listaFiltrada = Lista.filter(
     (p: any) => slugify(p.categoria, { lower: true }) === pathCategory
   );
+  //  console.log({pathCategory})
 
+  // titleDescriptionAll Regresa un map de todas las .categorías de la lista
+  const titleDescriptionAll = listaFiltrada.map((td: any) => td.categoria);
+
+  // titleDescription elige el nombre de la posición 0 del listado de Categoria
+  const titleDescription = [titleDescriptionAll[0]];
+  // console.log(titleDescription);
   return (
     <>
       <Head>
-        <title>{`Don Rémolo | ${pathCategory}`} </title>
+        <title>{`Don Rémolo | ${titleDescription}`} </title>
         <meta name="description" content="Generado por el Equipo 87 de IDeas" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -82,7 +89,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     "https://donremolo-next.vercel.app/api/dataCategorias"
   );
   const posts = await res.json();
-
+  const titleDescription = posts.map((td: any) => (td.categoria));
   const paths = posts.map((listaPath: any) => ({
     params: {
       pathCategory: slugify(listaPath.categoria, { lower: true }),
@@ -97,10 +104,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  // (`http://${url}/api/dataAll`);
+  // 
   const res = await fetch(`https://donremolo-next.vercel.app/api/dataAll`);
   const Lista = await res.json();
-  //  console.log(Lista);
+
+  const listCategory = Lista.map((lc: any) => (lc.categoria));
+  const filterListCategory = listCategory.filter((flc: any) => flc === flc);
+  // console.log(filterListCategory);
 
   return {
     props: {

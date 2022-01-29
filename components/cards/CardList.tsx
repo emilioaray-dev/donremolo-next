@@ -59,7 +59,7 @@ const CardList: FC<Props> = ({
           margin: 0 auto;
         }
         .cardList{
-          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
           border-radius: 0.625rem;
           background-color: var(--Cards-Colors);
           max-width: 27rem;

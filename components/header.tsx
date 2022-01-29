@@ -178,7 +178,7 @@ const Header: FC<{
       }
 
       .cardNav {
-        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 20%);
+        box-shadow: 0 2px 4px 0 rgb(0 0 0 / 55%);
         backdrop-filter: blur(2px);
         background: var(--background--Nav);
         border-radius: 1rem;
@@ -219,6 +219,15 @@ const Header: FC<{
       svg {
         stroke: #000;
         fill: #000;
+      }
+
+      .iconNav:hover,
+      svg {
+        background-color: var(--color-Rojo);
+        border-radius: 10px;
+        fill: #fff ;
+        stroke: #fff;
+        transition: background-color 0.5s;
       }
 
       .linkIcon:hover,

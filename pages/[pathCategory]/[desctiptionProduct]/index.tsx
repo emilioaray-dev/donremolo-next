@@ -5,9 +5,21 @@ import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { useRouter } from "next/router";
 import slugify from "slugify";
 
-function Detalle ({  }: InferGetStaticPropsType<typeof getStaticProps>) {
- 
 
+
+function Detalle({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
+  type Lista = {
+    id: number;
+    categoria: string;
+    nombre: string;
+    descripcion: string;
+    precio: string;
+    urlImagen: string;
+  };
+
+  const router = useRouter();
+  const { desctiptionProduct } = router.query;
+  console.log({ desctiptionProduct });
   return (
     <>
       <Head>
@@ -25,11 +37,60 @@ function Detalle ({  }: InferGetStaticPropsType<typeof getStaticProps>) {
       />
 
       <main>
-       foot
+        foot
+        <CardDetalle
+          titulo={""}
+          imagen={""}
+          altImagen={""}
+          descripcion={""}
+          porciones={0}
+          precio={0}
+          cantidad={""}
+        />
       </main>
     </>
   );
 }
+
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const res = await fetch("https://donremolo-next.vercel.app/api/dataAll");
+  const posts = await res.json();
+
+  const paths = posts.map((listaPath: any) => ({
+    params: [
+      {
+        pathCategory: slugify(listaPath.categoria, { lower: true }),
+        desctiptionProduct: slugify(listaPath.nombre, { lower: true }),
+        
+      },
+      {
+        
+      },
+    ],
+  }));
+
+  // { fallback: false } means other routes should 404.
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  // (`http://${url}/api/dataAll`);
+  const res = await fetch(`https://donremolo-next.vercel.app/api/dataAll`);
+  const Lista = await res.json();
+  //  console.log(Lista);
+
+  return {
+    props: {
+      Lista,
+    },
+    revalidate: 10, // In seconds
+  };
+};
 
 
 
