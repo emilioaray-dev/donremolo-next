@@ -17,7 +17,7 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
 
   const router = useRouter();
   const { pathCategory } = router.query;
-
+  // const Upertitle = pathCategory.toUpperCase();
   const listaFiltrada = Lista.filter(
     (p: any) => slugify(p.categoria, { lower: true }) === pathCategory
   );
@@ -25,7 +25,7 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <Head>
-        <title>Don Rémolo | </title>
+        <title>{`Don Rémolo | ${pathCategory}`} </title>
         <meta name="description" content="Generado por el Equipo 87 de IDeas" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -45,10 +45,9 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
               <div key={producto.id}>
                 <CardList
                   key=""
-                  href={`/${slugify(producto.categoria, { lower:true })}/${slugify(
-                    producto.nombre,
-                    { lower: true }
-                  )}`}
+                  href={`/${slugify(producto.categoria, {
+                    lower: true,
+                  })}/${slugify(producto.nombre, { lower: true })}`}
                   imagen={`${producto.urlImagen}`}
                   altImagen={` ${producto.categoria} ${producto.nombre}`}
                   titulo={producto.nombre}
