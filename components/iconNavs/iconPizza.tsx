@@ -1,10 +1,11 @@
 import { FC } from "react";
 
-const IconPizza: FC<{ fill: string; width: number; height: number }> = ({
-  fill,
-  width,
-  height,
-}) => {
+const IconPizza: FC<{
+  fill: string;
+  width: number;
+  height: number;
+  stroke: any;
+}> = ({ fill, width, height, stroke }) => {
   return (
     <>
       <svg
@@ -12,6 +13,7 @@ const IconPizza: FC<{ fill: string; width: number; height: number }> = ({
         height={height}
         viewBox="0 0 25 29"
         fill="none"
+        stroke=""
         xmlns="http://www.w3.org/2000/svg"
       >
         <path

@@ -147,7 +147,7 @@ const Header: FC<{
         backdrop-filter: blur(2px);
         background: var(--color-Amarillo);
         border-radius: 17px;
-        height: 3rem;
+        height: 2.375rem;
       }
 
       .buttonGrid {
@@ -213,13 +213,23 @@ const Header: FC<{
         height: 60px;
       }
 
-      .linkIcon:hover {
+      .linkIcon,
+      svg {
+        stroke: #000;
+        fill: #000;
+      }
+
+      .linkIcon:hover,
+      svg {
         background-color: var(--color-Rojo);
         border-radius: 10px;
+        fill: #fff;
+        stroke: #fff;
+        transition: background-color 0.5s;
       }
 
       .pRight {
-          padding-right: 3px;
+        padding-right: 3px;
       }
 
       .marginTopNav {
@@ -228,8 +238,7 @@ const Header: FC<{
       @media (max-width: 768px) and (orientation: landscape) {
         .cardNav {
           display: none !important;
-        }import IconEmpanada from './iconNavs/iconEmpanada';
-
+        }
       }
     `}</style>
   </>
