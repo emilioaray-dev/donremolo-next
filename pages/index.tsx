@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { GetStaticProps } from "next";
 import { InferGetStaticPropsType } from "next";
 import { Key, ReactChild, ReactFragment, ReactPortal } from 'react';
+import slugify from "slugify";
 
 
 export const getStaticProps: GetStaticProps = async (context) => {
@@ -18,7 +19,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
   };
 
   // Res Lista Categoria (`http://${url}/api/dataCategorias`);
-  const resCategorias = await fetch(`https://donremolo-next.vercel.app/api/dataCategorias`
+  const resCategorias = await fetch(
+    `https://donremolo-next.vercel.app/api/dataCategorias`
   );
   // Lista Categoria to Json
   const ListCategory = await resCategorias.json();
@@ -26,6 +28,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const res = await fetch(`https://donremolo-next.vercel.app/api/dataAll`);
   const lista = await res.json();
 
+  const ok = ListCategory.map((l: any) => slugify(l.categoria, {lower: true}));
+// console.log (ok)
 
   return {
     props: {
@@ -64,33 +68,25 @@ function Home({ ListCategory }: InferGetStaticPropsType<typeof getStaticProps>) 
         <section className="containerCardCategories">
           <div className="cardCategories__grid">
             {ListCategory.map(
-              (listC: {
-                id: Key | null | undefined;
-                categoria:
-                  | boolean
-                  | ReactChild
-                  | ReactFragment
-                  | ReactPortal
-                  | null
-                  | undefined;
-                urlImagen: any;
-              }) => {
+              (listC: { id: string; categoria: string; urlImagen: string }) => {
                 return (
                   <div key={listC.id}>
-                    <Link href={`/${listC.categoria}`}>
+                    <Link
+                      href={`/${slugify(listC.categoria, { lower: true })}`}
+                    >
                       <a>
                         <div className="cardCategories">
                           <div className="cardCategories--effectTranslateY">
-                              <picture className="cardCategories__imgGrid">
-                                <Image
-                                  src={`${listC.urlImagen}`}
-                                  alt={`Imagen de ${listC.categoria}`}
-                                  width={512}
-                                  height={384}
-                                  layout="responsive"
-                                  priority
-                                />
-                              </picture>
+                            <picture className="cardCategories__imgGrid">
+                              <Image
+                                src={`${listC.urlImagen}`}
+                                alt={`Imagen de ${listC.categoria}`}
+                                width={512}
+                                height={384}
+                                layout="responsive"
+                                priority
+                              />
+                            </picture>
                             <h2 className="titleCategories">
                               {listC.categoria}
                             </h2>

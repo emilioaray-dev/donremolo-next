@@ -100,7 +100,7 @@ const CardList: FC<Props> = ({
           -webkit-box-orient: vertical; /* Caja Vertical */
           overflow: hidden;
           height: 3.5rem;
-          font-size: 1rem;
+          font-size: 0.9rem;
           font-weight: 300;
           color: var(--color-Negro);
           opacity: 0.8;

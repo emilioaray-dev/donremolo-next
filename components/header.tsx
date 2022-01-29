@@ -8,8 +8,6 @@ import IconEmpanada from "./iconNavs/iconEmpanada";
 import IconBebida from "./iconNavs/iconBebida";
 import IconHelado from "./iconNavs/iconHelado";
 
-
-
 const fillColorActive = "#fff";
 const fillColorInactive = "#000";
 
@@ -62,49 +60,53 @@ const Header: FC<{
           <div className="cardNav">
             <h1 className={`titleNav ${hideTitle}`}>{title}</h1>
             <div className="gridNav">
-              <Link href="/Pizzas">
+              <Link href="/pizzas">
                 <a className="linkIcon">
                   <div className={`iconNav ${hideIconNav}`}>
                     <IconPizza
                       fill={fillColorInactive}
                       width={38}
                       height={38}
+                      stroke=""
                     />
                   </div>
                 </a>
               </Link>
 
-              <Link href="/Empanadas">
+              <Link href="/empanadas">
                 <a className="linkIcon ">
                   <div className={`iconNav pRight ${hideIconNav}`}>
                     <IconEmpanada
                       fill={fillColorInactive}
                       width={38}
                       height={38}
+                      stroke=""
                     />
                   </div>
                 </a>
               </Link>
 
-              <Link href="/Bebidas">
+              <Link href="/bebidas">
                 <a className="linkIcon ">
                   <div className={`iconNav pRight ${hideIconNav}`}>
                     <IconBebida
                       fill={fillColorInactive}
                       width={38}
                       height={38}
+                      stroke=""
                     />
                   </div>
                 </a>
               </Link>
 
-              <Link href="/Postres">
+              <Link href="/postres">
                 <a className="linkIcon ">
                   <div className={`iconNav pRight ${hideIconNav}`}>
                     <IconHelado
                       fill={fillColorInactive}
                       width={38}
                       height={38}
+                      stroke=""
                     />
                   </div>
                 </a>

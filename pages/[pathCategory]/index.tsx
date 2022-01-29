@@ -1,11 +1,9 @@
-
 import Head from "next/head";
 import Header from "../../components/header";
 import CardList from "../../components/cards/CardList";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
-import { useRouter } from 'next/router';
-
-
+import { useRouter } from "next/router";
+import slugify from "slugify";
 
 function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
   type Lista = {
@@ -20,7 +18,9 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter();
   const { pathCategory } = router.query;
 
-  const listaFiltrada = Lista.filter((p: any) => p.categoria === pathCategory);
+  const listaFiltrada = Lista.filter(
+    (p: any) => slugify(p.categoria, { lower: true }) === pathCategory
+  );
 
   return (
     <>
@@ -45,7 +45,10 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
               <div key={producto.id}>
                 <CardList
                   key=""
-                  href={`/${producto.categoria}/${producto.nombre}`}
+                  href={`/${slugify(producto.categoria, { lower:true })}/${slugify(
+                    producto.nombre,
+                    { lower: true }
+                  )}`}
                   imagen={`${producto.urlImagen}`}
                   altImagen={` ${producto.categoria} ${producto.nombre}`}
                   titulo={producto.nombre}
@@ -76,15 +79,16 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
 const url = process.env.NEXT_PUBLIC_VERCEL_URL;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch("https://donremolo-next.vercel.app/api/dataCategorias");
+  const res = await fetch(
+    "https://donremolo-next.vercel.app/api/dataCategorias"
+  );
   const posts = await res.json();
 
   const paths = posts.map((listaPath: any) => ({
     params: {
-      pathCategory: listaPath.categoria
-    }
-  })
-  );
+      pathCategory: slugify(listaPath.categoria, { lower: true }),
+    },
+  }));
 
   // { fallback: false } means other routes should 404.
   return {
@@ -92,7 +96,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
     fallback: false,
   };
 };
-
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   // (`http://${url}/api/dataAll`);
