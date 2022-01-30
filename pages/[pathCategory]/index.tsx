@@ -108,9 +108,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const res = await fetch(`https://donremolo-next.vercel.app/api/dataAll`);
   const Lista = await res.json();
 
-  const listCategory = Lista.map((lc: any) => (lc.categoria));
-  const filterListCategory = listCategory.filter((flc: any) => flc === flc);
+  let listCategory = Lista.map((lc: any) => (lc.categoria));
+
+  let filterListCategory = [...new Set(listCategory)];
   // console.log(filterListCategory);
+
 
   return {
     props: {

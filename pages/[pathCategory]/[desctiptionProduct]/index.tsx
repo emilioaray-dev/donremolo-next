@@ -19,7 +19,12 @@ function Detalle({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
 
   const router = useRouter();
   const { desctiptionProduct } = router.query;
-  console.log({ desctiptionProduct });
+
+  const listaFiltrada = Lista.filter(
+    (p: any) => slugify(p.nombre, { lower: true }) === desctiptionProduct
+  );
+
+  // console.log(listaFiltrada);
   return (
     <>
       <Head>
@@ -37,37 +42,41 @@ function Detalle({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
       />
 
       <main>
-        foot
-        <CardDetalle
-          titulo={""}
-          imagen={""}
-          altImagen={""}
-          descripcion={""}
-          porciones={0}
-          precio={0}
-          cantidad={""}
-        />
+        {listaFiltrada.map((producto: any) => {
+          return (
+            <div key={producto.id}>
+              <CardDetalle
+                titulo={producto.nombre}
+                imagen={producto.urlImagen}
+                altImagen={`${producto.categoria} ${producto.nombre}`}
+                descripcion={producto.descripcion}
+                porciones={0}
+                precio={producto.precio}
+                cantidad={""}
+              />
+              ;
+            </div>
+          );
+        })}
       </main>
     </>
   );
 }
 
+{
+  /*  */
+}
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const res = await fetch("https://donremolo-next.vercel.app/api/dataAll");
   const posts = await res.json();
 
   const paths = posts.map((listaPath: any) => ({
-    params: [
-      {
+    params: {
         pathCategory: slugify(listaPath.categoria, { lower: true }),
         desctiptionProduct: slugify(listaPath.nombre, { lower: true }),
-        
-      },
-      {
-        
-      },
-    ],
+    },
+  
   }));
 
   // { fallback: false } means other routes should 404.
@@ -91,6 +100,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     revalidate: 10, // In seconds
   };
 };
+
 
 
 

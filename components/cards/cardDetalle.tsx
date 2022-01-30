@@ -1,5 +1,6 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import Image from "next/image";
+
 
 interface Props {
   titulo: string;
@@ -28,8 +29,8 @@ const CardDescription: FC<Props> = ({
         <div className="containerGrid">
           <picture>
             <Image
-              src="/assets/img/pizzas/mozzarella.png"
-              alt="Pizza Mozzarella"
+              src={`${imagen}`}
+              alt={`${altImagen}`}
               width={100}
               height={100}
               layout="responsive"
@@ -43,7 +44,7 @@ const CardDescription: FC<Props> = ({
           <div className="price marginTop">$ {precio}</div>
         </div>
         <div className="cuentaGrid">
-          <div style={{ fontSize: "14px" }}>Cantidad</div>
+          <div style={{ fontSize: "16px" }}>Cantidad</div>
           <form>
             <input
               id="cantidad"
@@ -54,7 +55,7 @@ const CardDescription: FC<Props> = ({
             ></input>
           </form>
           <span style={{ textAlign: "right", marginRight: "0.5rem" }}>$</span>
-          <span className="total">1234</span>
+          <span className="total">{precio}</span>
         </div>
         <div style={{ padding: "0px 1.93rem" }}>
           <button>Agregar al Pedido</button>
@@ -110,7 +111,7 @@ const CardDescription: FC<Props> = ({
         -webkit-line-clamp: 3; /* Maximo 3 lineas */
         -webkit-box-orient: vertical; /* Caja Vertical */
         overflow: hidden;
-        font-size: 12px;
+        font-size: 14px;
         font-weight: 300;
         color: var(--color-Negro);
         opacity: 0.8;
@@ -141,7 +142,7 @@ const CardDescription: FC<Props> = ({
       }
       .porciones {
         text-align: center;
-        font-size: 12px;
+        font-size: 14px;
         font-weight: 300;
         color: var(--color-Negro);
       }
