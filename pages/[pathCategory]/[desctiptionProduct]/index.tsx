@@ -20,17 +20,38 @@ function Detalle({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
   };
 
   const router = useRouter();
+  const { pathCategory } = router.query;
   const { desctiptionProduct } = router.query;
 
-  const listaFiltrada = Lista.filter(
+  const listaCategoriaFiltrada = Lista.filter(
+    (p: any) => slugify(p.categoria, { lower: true }) === pathCategory
+  );
+  //  console.log({pathCategory})
+
+  const listaProductoFiltrada = Lista.filter(
     (p: any) => slugify(p.nombre, { lower: true }) === desctiptionProduct
   );
 
-//  console.log(listaFiltrada);
+  // titleDescriptionAll Regresa un map de todas las .categorías de la lista
+  const titleDescriptionAll = listaCategoriaFiltrada.map(
+    (td: any) => td.categoria
+  );
+
+  const titleDescriptionProduct = listaProductoFiltrada.map(
+    (td: any) => td.nombre
+  );
+
+  // titleDescription elige el nombre de la posición 0 del listado de Categoria
+  const titleDescription = [titleDescriptionAll[0]];
+  const titleDetalleDescription = [titleDescriptionProduct[0]];
+
+  //  console.log(listaProductoFiltrada);
   return (
     <>
       <Head>
-        <title>Don Rémolo | </title>
+        <title>
+          {`Don Rémolo | ${titleDescription} | ${titleDetalleDescription}`}{" "}
+        </title>
         <meta name="description" content="Generado por el Equipo 87 de IDeas" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,8 +65,7 @@ function Detalle({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
       />
 
       <main>
-        {listaFiltrada.map((producto: any) => {
-          
+        {listaProductoFiltrada.map((producto: any) => {
           return (
             <div key={producto.id}>
               <CardDetalle
@@ -58,7 +78,6 @@ function Detalle({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
                 cantidad={""}
                 total={""}
               />
-              
             </div>
           );
         })}
