@@ -13,8 +13,10 @@ function Detalle({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
     categoria: string;
     nombre: string;
     descripcion: string;
-    precio: string;
+    precio: number;
     urlImagen: string;
+    value: string;
+    total: string;
   };
 
   const router = useRouter();
@@ -24,7 +26,7 @@ function Detalle({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
     (p: any) => slugify(p.nombre, { lower: true }) === desctiptionProduct
   );
 
-  // console.log(listaFiltrada);
+//  console.log(listaFiltrada);
   return (
     <>
       <Head>
@@ -43,6 +45,7 @@ function Detalle({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
 
       <main>
         {listaFiltrada.map((producto: any) => {
+          
           return (
             <div key={producto.id}>
               <CardDetalle
@@ -53,8 +56,9 @@ function Detalle({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
                 porciones={0}
                 precio={producto.precio}
                 cantidad={""}
+                total={""}
               />
-              ;
+              
             </div>
           );
         })}
