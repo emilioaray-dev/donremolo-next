@@ -2,11 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { FC } from "react";
 
-
 import IconPizza from "./iconNavs/iconPizza";
 import IconEmpanada from "./iconNavs/iconEmpanada";
 import IconBebida from "./iconNavs/iconBebida";
 import IconHelado from "./iconNavs/iconHelado";
+import Router from "next/router";
+import { useRouter } from "next/router";
 
 const fillColorActive = "#fff";
 const fillColorInactive = "#000";
@@ -16,108 +17,130 @@ const Header: FC<{
   hideTitle: string;
   title: string;
   hideIconNav: string;
-}> = ({ hideBackbuttom, hideTitle, title, hideIconNav }) => (
-  <>
-    <header>
-      <nav>
-        <div className="container">
-          <div className="headerNav">
-            <div className={`buttonGrid ${hideBackbuttom}`}>
-              <Link href="/">
-                <a className="button">
-                  <Image
-                    src="/assets/img/iconNav/returnAarrow.svg"
-                    alt="Buttom Back"
-                    width="40px"
-                    height="40px"
-                  />
-                </a>
-              </Link>
-            </div>
+  active: string;
+  aid: string;
+}> = ({ hideBackbuttom, hideTitle, title, hideIconNav, active, aid }) => {
+  const router = useRouter();
+  const { pathCategory } = router.query;
 
-            <div className="gridLogo">
-              <Link href="/">
-                <a>
-                  <Image
-                    src="/assets/img/iconNav/letterLogo.svg"
-                    alt="Buttom Back"
-                    width="103.25px"
-                    height="22.38px"
-                  />
+  const lin = pathCategory === aid;
 
-                  <Image
-                    src="/assets/img/iconNav/moustacheLogo.svg"
-                    alt="Buttom Back"
-                    width="60.03px"
-                    height="18.74px"
-                  />
-                </a>
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="container">
-          <div className="cardNav">
-            <h1 className={`titleNav ${hideTitle}`}>{title}</h1>
-            <div className="gridNav">
-              <Link href="/pizzas">
-                <a className="linkIcon">
-                  <div className={`iconNav ${hideIconNav}`}>
-                    <IconPizza
-                      fill={fillColorInactive}
-                      width={38}
-                      height={38}
-                      stroke=""
+  console.log(pathCategory);
+  return (
+    <>
+      <header>
+        <nav>
+          <div className="container">
+            <div className="headerNav">
+              <div className={`buttonGrid ${hideBackbuttom}`}>
+
+                  <a onClick={() => Router.back()} className="button">
+                    <Image
+                      src="/assets/img/iconNav/returnAarrow.svg"
+                      alt="Buttom Back"
+                      width="40px"
+                      height="40px"
                     />
-                  </div>
-                </a>
-              </Link>
+                  </a>
 
-              <Link href="/empanadas">
-                <a className="linkIcon ">
-                  <div className={`iconNav pRight ${hideIconNav}`}>
-                    <IconEmpanada
-                      fill={fillColorInactive}
-                      width={38}
-                      height={38}
-                      stroke=""
-                    />
-                  </div>
-                </a>
-              </Link>
+              </div>
 
-              <Link href="/bebidas">
-                <a className="linkIcon ">
-                  <div className={`iconNav pRight ${hideIconNav}`}>
-                    <IconBebida
-                      fill={fillColorInactive}
-                      width={38}
-                      height={38}
-                      stroke=""
+              <div className="gridLogo">
+                <Link href="/">
+                  <a>
+                    <Image
+                      src="/assets/img/iconNav/letterLogo.svg"
+                      alt="Buttom Back"
+                      width="103.25px"
+                      height="22.38px"
                     />
-                  </div>
-                </a>
-              </Link>
 
-              <Link href="/postres">
-                <a className="linkIcon ">
-                  <div className={`iconNav pRight ${hideIconNav}`}>
-                    <IconHelado
-                      fill={fillColorInactive}
-                      width={38}
-                      height={38}
-                      stroke=""
+                    <Image
+                      src="/assets/img/iconNav/moustacheLogo.svg"
+                      alt="Buttom Back"
+                      width="60.03px"
+                      height="18.74px"
                     />
-                  </div>
-                </a>
-              </Link>
+                  </a>
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-      </nav>
-    </header>
-    <div className="marginTopNav" />
-    <style jsx>{`
+          <div className="container">
+            <div className="cardNav">
+              <h1 className={`titleNav ${hideTitle}`}>{title}</h1>
+
+              <div className="gridNav">
+                <Link href="/pizzas">
+                  <a className="linkIcon">
+                    <div
+                      id="pizzas"
+                      className={`iconNav ${active}  ${hideIconNav}`}
+                    >
+                      <IconPizza
+                        fill={fillColorInactive}
+                        width={38}
+                        height={38}
+                        stroke=""
+                      />
+                    </div>
+                  </a>
+                </Link>
+
+                <Link href="/empanadas">
+                  <a className="linkIcon ">
+                    <div
+                      id="empanadas"
+                      className={`iconNav pRight  ${active} ${hideIconNav}`}
+                    >
+                      <IconEmpanada
+                        fill={fillColorInactive}
+                        width={38}
+                        height={38}
+                        stroke=""
+                      />
+                    </div>
+                  </a>
+                </Link>
+
+                <Link href="/bebidas">
+                  <a className="linkIcon ">
+                    <div
+                      id="bebidas"
+                      className={`iconNav pRight ${active} ${hideIconNav}`}
+                    >
+                      <IconBebida
+                        fill={fillColorInactive}
+                        width={38}
+                        height={38}
+                        stroke=""
+                      />
+                    </div>
+                  </a>
+                </Link>
+
+                <Link href="/postres">
+                  <a className="linkIcon ">
+                    <div
+                      id="postres"
+                      className={`iconNav pRight ${active} ${hideIconNav}`}
+                    >
+                      <IconHelado
+                        fill={fillColorInactive}
+                        width={38}
+                        height={38}
+                        stroke=""
+                      />
+                    </div>
+                  </a>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <div className="marginTopNav" />
+      <style jsx>{`
       .hide {
         visibility: hidden;
       }
@@ -215,6 +238,14 @@ const Header: FC<{
         height: 60px;
       }
 
+       .active {
+        background-color: var(--color-Rojo);
+        border-radius: 10px;
+        fill: #fff;
+        stroke: #fff;
+        transition: background-color 0.5s;
+      }
+
       .linkIcon,
       svg {
         stroke: #000;
@@ -225,7 +256,7 @@ const Header: FC<{
       svg {
         background-color: var(--color-Rojo);
         border-radius: 10px;
-        fill: #fff ;
+        fill: #fff;
         stroke: #fff;
         transition: background-color 0.5s;
       }
@@ -249,9 +280,11 @@ const Header: FC<{
       @media (max-width: 768px) and (orientation: landscape) {
         .cardNav {
           display: none !important;
-        }
+        }import CardRender from '../pages/[pathCategory]/index';
+
       }
     `}</style>
-  </>
-);
+    </>
+  );
+};
 export default Header;
