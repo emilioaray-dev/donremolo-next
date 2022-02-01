@@ -153,6 +153,7 @@ const Header: FC<{
         height: var(--header-Nav-height);
         /* box-shadow: 0 2px 12px 0 rgb(0 0 0 / 20%); */
         backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
         background: var(--color-Amarillo);
         border-radius: 17px;
         height: 2.375rem;
@@ -186,6 +187,7 @@ const Header: FC<{
       .cardNav {
         box-shadow: 0 2px 4px 0 rgb(0 0 0 / 55%);
         backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
         background: var(--background--Nav);
         border-radius: 1rem;
         height: 67px;
