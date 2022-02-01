@@ -27,7 +27,21 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
   const titleDescriptionAll = listaFiltrada.map((td: any) => td.categoria);
 
   // titleDescription elige el nombre de la posición 0 del listado de Categoria
-  const titleDescription = [titleDescriptionAll[0]];
+  const titleDescription = titleDescriptionAll[0];
+
+  let activarNav = "";
+  if (titleDescription == "Pizzas") {
+    activarNav = "activePizza";
+  }
+  if (titleDescription == "Bebidas") {
+    activarNav = "activeBebidas";
+  }
+  if (titleDescription == "Empanadas") {
+    activarNav = "activeEmpanadas";
+  }
+  if (titleDescription == "Postres") {
+    activarNav = "activePostres";
+  }
   // console.log(titleDescription);
   return (
     <>
@@ -43,6 +57,7 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
         hideTitle={"none"} // 'none' Oculta el titulo o --title--
         title={"Nuestro Menú"} // Texto a mostrar
         hideIconNav={""} //'hide' Oculta Los Botonos del Nav
+        color={activarNav}
       />
 
       <main>

@@ -17,15 +17,12 @@ const Header: FC<{
   hideTitle: string;
   title: string;
   hideIconNav: string;
-  active: string;
-  aid: string;
-}> = ({ hideBackbuttom, hideTitle, title, hideIconNav, active, aid }) => {
+  color: string;
+}> = ({ hideBackbuttom, hideTitle, title, hideIconNav, color }) => {
   const router = useRouter();
   const { pathCategory } = router.query;
 
-  const lin = pathCategory === aid;
-
-  console.log(pathCategory);
+ // console.log(Lista);
   return (
     <>
       <header>
@@ -33,16 +30,14 @@ const Header: FC<{
           <div className="container">
             <div className="headerNav">
               <div className={`buttonGrid ${hideBackbuttom}`}>
-
-                  <a onClick={() => Router.back()} className="button">
-                    <Image
-                      src="/assets/img/iconNav/returnAarrow.svg"
-                      alt="Buttom Back"
-                      width="40px"
-                      height="40px"
-                    />
-                  </a>
-
+                <a className="button" onClick={() => Router.back()}>
+                  <Image
+                    src="/assets/img/iconNav/returnAarrow.svg"
+                    alt="Buttom Back"
+                    width="40px"
+                    height="40px"
+                  />
+                </a>
               </div>
 
               <div className="gridLogo">
@@ -72,11 +67,8 @@ const Header: FC<{
 
               <div className="gridNav">
                 <Link href="/pizzas">
-                  <a className="linkIcon">
-                    <div
-                      id="pizzas"
-                      className={`iconNav ${active}  ${hideIconNav}`}
-                    >
+                  <a id="pizzas" className={`linkIcon ${hideIconNav}`}>
+                    <div className={`iconNav ${color}`}>
                       <IconPizza
                         fill={fillColorInactive}
                         width={38}
@@ -88,11 +80,8 @@ const Header: FC<{
                 </Link>
 
                 <Link href="/empanadas">
-                  <a className="linkIcon ">
-                    <div
-                      id="empanadas"
-                      className={`iconNav pRight  ${active} ${hideIconNav}`}
-                    >
+                  <a id="empanadas" className={`linkIcon ${hideIconNav}`}>
+                    <div className={`${color} iconNav  pRight `}>
                       <IconEmpanada
                         fill={fillColorInactive}
                         width={38}
@@ -104,11 +93,8 @@ const Header: FC<{
                 </Link>
 
                 <Link href="/bebidas">
-                  <a className="linkIcon ">
-                    <div
-                      id="bebidas"
-                      className={`iconNav pRight ${active} ${hideIconNav}`}
-                    >
+                  <a id="bebidas" className={`linkIcon ${hideIconNav}`}>
+                    <div className={`${color} iconNav pRight `}>
                       <IconBebida
                         fill={fillColorInactive}
                         width={38}
@@ -120,11 +106,8 @@ const Header: FC<{
                 </Link>
 
                 <Link href="/postres">
-                  <a className="linkIcon ">
-                    <div
-                      id="postres"
-                      className={`iconNav pRight ${active} ${hideIconNav}`}
-                    >
+                  <a id="postres" className={`linkIcon ${hideIconNav}`}>
+                    <div className={`iconNav pRight ${color}`}>
                       <IconHelado
                         fill={fillColorInactive}
                         width={38}
@@ -238,7 +221,31 @@ const Header: FC<{
         height: 60px;
       }
 
-       .active {
+       #pizzas > .activePizza {
+        background-color: var(--color-Rojo);
+        border-radius: 10px;
+        fill: #fff;
+        stroke: #fff;
+        transition: background-color 0.5s;
+      }
+
+      #empanadas > .activeEmpanadas {
+        background-color: var(--color-Rojo);
+        border-radius: 10px;
+        fill: #fff;
+        stroke: #fff;
+        transition: background-color 0.5s;
+      }
+
+      #bebidas > .activeBebidas {
+        background-color: var(--color-Rojo);
+        border-radius: 10px;
+        fill: #fff;
+        stroke: #fff;
+        transition: background-color 0.5s;
+      }
+
+      #postres > .activePostres {
         background-color: var(--color-Rojo);
         border-radius: 10px;
         fill: #fff;

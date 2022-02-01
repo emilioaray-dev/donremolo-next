@@ -69,7 +69,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   //(`http://${url}/api/dataPizza`);
   const res = await fetch(`https://donremolo-next.vercel.app/api/dataPizza`);
   const Description = await res.json();
-  console.log(Description);
+ // console.log(Description);
 
   return {
     props: {
