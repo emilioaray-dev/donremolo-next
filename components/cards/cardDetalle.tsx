@@ -33,7 +33,7 @@ const CardDescription: FC<Props> = ({
             <h1>{titulo}</h1>
           </div>
           <div className="containerGrid">
-            <picture>
+            <picture className="roundPicture">
               <Image
                 src={`${imagen}`}
                 alt={`${altImagen}`}
@@ -96,10 +96,12 @@ const CardDescription: FC<Props> = ({
           align-items: center;
           padding: 0px 1.93rem;
         }
-        picture {
+        .roundPicture {
           display: grid;
           width: 7rem;
           height: 7rem;
+          border-radius: 50%;
+          overflow: hidden;
         }
         .rowGrid {
           display: grid;
