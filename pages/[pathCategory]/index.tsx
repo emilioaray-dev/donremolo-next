@@ -4,6 +4,7 @@ import CardList from "../../components/cards/CardList";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { useRouter } from "next/router";
 import slugify from "slugify";
+import ShoppingCart from "../../components/cards/shoppingCart";
 
 function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
   type Lista = {
@@ -79,7 +80,7 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
               </div>
             );
           })}
-          <div style={{ height: "3rem" }}></div>
+          <div style={{ height: "4rem" }}></div>
           <style jsx>{`
             @media only screen and (min-width: 768px) {
               .containerFather {
@@ -94,6 +95,7 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
           `}</style>
         </div>
       </main>
+      <ShoppingCart number={1} />
     </>
   );
 }

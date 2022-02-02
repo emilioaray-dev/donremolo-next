@@ -84,7 +84,7 @@ const CardDescription: FC<Props> = ({
         .cardMaster {
           box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
           border-radius: 0.625rem;
-          background-color: var(--Cards-Colors);
+          background-color: var(--brandColorWhite);
           height: fit-content;
           min-height: 112px;
           padding: 12px;
@@ -134,7 +134,7 @@ const CardDescription: FC<Props> = ({
           align-items: end;
           justify-items: end;
           margin-right: 1rem;
-          color: var(--color-Rojo);
+          color: var(--brandColorRed);
           font-weight: 600;
           opacity: 0.8;
         }
@@ -146,7 +146,7 @@ const CardDescription: FC<Props> = ({
           align-content: center;
           box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
           border-radius: 0.625rem;
-          background-color: var(--Cards-Colors);
+          background-color: var(--brandColorWhite);
           height: fit-content;
           text-align: center;
           height: 3.88rem;
@@ -173,7 +173,7 @@ const CardDescription: FC<Props> = ({
           text-align: center;
           padding: 0.5rem;
           margin: 0;
-          background-color: var(--color-Rojo);
+          background-color: var(--brandColorRed);
           color: #fff;
           border: none;
           border-radius: 5px;
@@ -184,7 +184,7 @@ const CardDescription: FC<Props> = ({
           width: 4rem;
           text-align: right;
           padding: 0.5rem;
-          background-color: var(--color-Rojo);
+          background-color: var(--brandColorRed);
           color: #fff;
           border: none;
           border-radius: 5px;
@@ -196,7 +196,7 @@ const CardDescription: FC<Props> = ({
           margin: 2.5rem 0 1rem;
           align-items: center;
           padding: 10px;
-          background: var(--color-Rojo);
+          background: var(--brandColorRed);
           color: #fff;
           font-family: OpenSans;
           border-radius: 10px;

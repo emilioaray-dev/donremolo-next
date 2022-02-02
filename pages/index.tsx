@@ -28,8 +28,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const res = await fetch(`https://donremolo-next.vercel.app/api/dataAll`);
   const lista = await res.json();
 
-  const ok = ListCategory.map((l: any) => slugify(l.categoria, {lower: true}));
-// console.log (ok)
+  const ok = ListCategory.map((l: any) => slugify(l.categoria, { lower: true }));
+  // console.log (ok)
 
   return {
     props: {
@@ -68,7 +68,7 @@ function Home({ ListCategory }: InferGetStaticPropsType<typeof getStaticProps>) 
         <section className="containerCardCategories">
           <div className="cardCategories__grid">
             {ListCategory.map(
-              (listC: { id: string; categoria: string; urlImagen: string }) => {
+              (listC: { id: string; categoria: string; urlImagen: string; }) => {
                 return (
                   <div key={listC.id}>
                     <Link
@@ -136,7 +136,7 @@ function Home({ ListCategory }: InferGetStaticPropsType<typeof getStaticProps>) 
           box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
           border-radius: 0.625rem;
           margin: 2rem 1rem 1rem 1rem;
-          background-color: var(--Cards-Colors);
+          background-color: var(--brandColorWhite);
           height: 7.2rem;
         }
 

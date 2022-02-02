@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from 'next/image';
+import Link from 'next/link';
 
 const CardHome = () => {
   return (
@@ -23,7 +23,7 @@ const CardHome = () => {
         box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
         border-radius: 0.625rem;
         margin: 2rem 1rem 1rem 1rem;
-        background-color: var(--Cards-Colors);
+        background-color: var(--brandColorWhite);
         height: fit-content;
       }
 
@@ -116,5 +116,5 @@ const CardHome = () => {
     </>
 
   );
-}
+};
 export default CardHome;

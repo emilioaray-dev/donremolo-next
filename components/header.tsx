@@ -22,7 +22,7 @@ const Header: FC<{
   const router = useRouter();
   const { pathCategory } = router.query;
 
- // console.log(Lista);
+  // console.log(Lista);
   return (
     <>
       <header>
@@ -154,7 +154,7 @@ const Header: FC<{
         /* box-shadow: 0 2px 12px 0 rgb(0 0 0 / 20%); */
         backdrop-filter: blur(2px);
         -webkit-backdrop-filter: blur(2px);
-        background: var(--color-Amarillo);
+        background: var(--brandColorYellow);
         border-radius: 17px;
         height: 2.375rem;
       }
@@ -224,7 +224,7 @@ const Header: FC<{
       }
 
        #pizzas > .activePizza {
-        background-color: var(--color-Rojo);
+        background-color: var(--brandColorRed);
         border-radius: 10px;
         fill: #fff;
         stroke: #fff;
@@ -232,7 +232,7 @@ const Header: FC<{
       }
 
       #empanadas > .activeEmpanadas {
-        background-color: var(--color-Rojo);
+        background-color: var(--brandColorRed);
         border-radius: 10px;
         fill: #fff;
         stroke: #fff;
@@ -240,7 +240,7 @@ const Header: FC<{
       }
 
       #bebidas > .activeBebidas {
-        background-color: var(--color-Rojo);
+        background-color: var(--brandColorRed);
         border-radius: 10px;
         fill: #fff;
         stroke: #fff;
@@ -248,7 +248,7 @@ const Header: FC<{
       }
 
       #postres > .activePostres {
-        background-color: var(--color-Rojo);
+        background-color: var(--brandColorRed);
         border-radius: 10px;
         fill: #fff;
         stroke: #fff;
@@ -263,7 +263,7 @@ const Header: FC<{
 
       .iconNav:hover,
       svg {
-        background-color: var(--color-Rojo);
+        background-color: var(--brandColorRed);
         border-radius: 10px;
         fill: #fff;
         stroke: #fff;
@@ -272,7 +272,7 @@ const Header: FC<{
 
       .linkIcon:hover,
       svg {
-        background-color: var(--color-Rojo);
+        background-color: var(--brandColorRed);
         border-radius: 10px;
         fill: #fff;
         stroke: #fff;

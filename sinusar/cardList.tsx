@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from 'next/image';
+import Link from 'next/link';
 
 
 const CardList = () => {
@@ -14,7 +14,7 @@ const CardList = () => {
         .card{
           box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
           border-radius: 0.625rem;
-          background-color: var(--Cards-Colors);
+          background-color: var(--brandColorWhite);
           height: fit-content;
           min-height: 112px;
           padding: 12px;
@@ -58,7 +58,7 @@ const CardList = () => {
           align-items: end;
           justify-items: end;
           margin-right: 1rem;
-          color: var(--color-Rojo);
+          color: var(--brandColorRed);
           font-weight: 600;
           opacity: 0.8;
         }
@@ -331,6 +331,6 @@ const CardList = () => {
       <div className="espacioFinal"></div>
     </>
   );
-}
+};
 
-export default CardList
+export default CardList;

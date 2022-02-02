@@ -2,7 +2,6 @@
 **********   Start Theme var   *************
 ********************************************/
 
-
 /* El Objeto es fijar en Variables Globales todo lo concerniente a theme.*/
 
 :root {
@@ -19,13 +18,15 @@
   /* variable para fondo en listas de precios*/
   --background-list-price: #ec3205;
   /* Variable Color de Cartas */
-  --Cards-Colors: #fff;
-  --color-Negro: #313638;
-  --color-Rojo: #EC3205;
-  --color-Amarillo: #FFF485;
-  --maxWidth-container: 1128px;
-}
 
+  --maxWidth-container: 1128px;
+  --brandColorWhite: #fff;
+  --brandColorBlack: #313638;
+  --brandColorRed: #ec3205;
+  --brandColorYellow: #fff485;
+  --brandColorGrey1: #bdbdbd;
+  --brandColorGrey2: #c4c4c4;
+}
 
 /*******************************************
 ************   End Theme var   *************

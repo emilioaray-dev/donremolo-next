@@ -61,7 +61,7 @@ const CardList: FC<Props> = ({
         .cardList{
           box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
           border-radius: 0.625rem;
-          background-color: var(--Cards-Colors);
+          background-color: var(--brandColorWhite);
           max-width: 27rem;
           height: fit-content;
           min-height: 112px;
@@ -111,7 +111,7 @@ const CardList: FC<Props> = ({
           align-items: end;
           justify-items: end;
           margin-right: 1rem;
-          color: var(--color-Rojo);
+          color: var(--brandColorRed);
           font-weight: 600;
           opacity: 0.8;
           font-size: 1.2rem;
