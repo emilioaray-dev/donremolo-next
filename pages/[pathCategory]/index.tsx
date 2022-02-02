@@ -80,7 +80,7 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
               </div>
             );
           })}
-          <div style={{ height: "4rem" }}></div>
+          <div style={{ height: "5rem" }}></div>
           <style jsx>{`
             @media only screen and (min-width: 768px) {
               .containerFather {

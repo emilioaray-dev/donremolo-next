@@ -87,10 +87,14 @@ const ShoppingCart: FC<{ number: number; }> = ({ number }) => {
           border-radius: 100%;
           height: 1.5rem;
           width: 1.5rem;
+          user-select: none;
+          text-align: center;
         }
         button.reset {
           border-radius: 5px;
           width: auto;
+          user-select: none;
+          text-align: center;
         }
 
         .shopImgCart__picture {
