@@ -53,7 +53,7 @@ const ShoppingCart: FC<{ number: number; }> = ({ number }) => {
               +
             </button>
           </div>
-          <button onClick={() => setCount(initialCount)}>Reset</button>
+          <button className="reset" onClick={() => setCount(initialCount)}>Reset</button>
         </div>
       </footer>
       <style jsx>{`
@@ -82,6 +82,17 @@ const ShoppingCart: FC<{ number: number; }> = ({ number }) => {
         .ma {
           margin: 0px 1rem;
         }
+
+        button:nth-child(-n+3) {
+          border-radius: 100%;
+          height: 1.5rem;
+          width: 1.5rem;
+        }
+        button.reset {
+          border-radius: 5px;
+          width: auto;
+        }
+
         .shopImgCart__picture {
           background: var(--brandColorGrey1);
           padding: 10px 11px 6px 10px;
