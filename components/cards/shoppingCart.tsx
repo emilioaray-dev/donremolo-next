@@ -8,7 +8,7 @@ export default function ShoppingCart() {
   let initialCount = 0;
   const [count, setCount] = useState(initialCount);
 
-  // Funcion de no restar si llega a 0
+  // Funcion de restar y si llega a 0 no resta
   function bajarCuenta() {
     if (count >= 0) {
       setCount(count - 1);
@@ -17,6 +17,9 @@ export default function ShoppingCart() {
       setCount(count);
     }
   }
+  // Funcion de restar y si llega a 0 no resta
+  const subirCuenta = () => setCount(count + 1);
+
 
   // Si es = 0 Apagar el Carro CSS
   let ocultar = "0";
@@ -61,7 +64,7 @@ export default function ShoppingCart() {
               </Link>
             </div>
 
-            <button onClick={() => setCount((prevCount) => prevCount + 1)}>
+            <button onClick={() => subirCuenta()}>
               +
             </button>
           </div>
@@ -70,6 +73,7 @@ export default function ShoppingCart() {
           </button>
         </div>
       </footer>
+
       <style jsx>{`
         .hide {
           display: none !important;
