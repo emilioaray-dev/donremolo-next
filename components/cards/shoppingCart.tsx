@@ -1,15 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
-import { listenerCount } from "events";
+import { useEffect, useRef, useState } from "react";
+import CardDescription from "./cardDetalle";
 
-export default function ShoppingCart(prop: { count: number; }) {
+export default function ShoppingCart() {
+
   let initialCount = 0;
-
   const [count, setCount] = useState(initialCount);
 
-
-
+  // Funcion de no restar si llega a 0
   function bajarCuenta() {
     if (count >= 0) {
       setCount(count - 1);
@@ -19,17 +18,18 @@ export default function ShoppingCart(prop: { count: number; }) {
     }
   }
 
-
-
+  // Si es = 0 Apagar el Carro CSS
   let ocultar = "0";
   if (count <= 0) {
     ocultar = "hide";
   }
-
+  // Si es >= 1 Activar el Carro CSS
   let activar = "no";
   if (count >= 1) {
     activar = "activo";
   }
+
+
 
   // console.log(activar);
   return (

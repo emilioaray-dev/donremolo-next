@@ -70,7 +70,7 @@ export default function CardDescription(props: {
       </div>
 
       <div className="espacioFinal"></div>
-      <ShoppingCart count={props.count} />
+      <ShoppingCart />
 
       <style jsx>{`
         .container {

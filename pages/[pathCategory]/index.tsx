@@ -80,7 +80,6 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
               </div>
             );
           })}
-          <div style={{ height: "5rem" }}></div>
           <style jsx>{`
             @media only screen and (min-width: 768px) {
               .containerFather {
@@ -94,8 +93,9 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
             }
           `}</style>
         </div>
+        <div style={{ height: "5rem" }}></div>
       </main>
-      <ShoppingCart count={0} />
+      <ShoppingCart />
     </>
   );
 }
