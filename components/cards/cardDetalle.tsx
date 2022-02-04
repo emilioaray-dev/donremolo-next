@@ -5,7 +5,7 @@ import ShoppingCart from "./shoppingCart";
 
 
 export default function CardDescription(props: {
-  count: number;
+  contador: any;
   titulo: string,
   imagen: string,
   altImagen: string,
@@ -70,8 +70,6 @@ export default function CardDescription(props: {
       </div>
 
       <div className="espacioFinal"></div>
-      <ShoppingCart />
-
       <style jsx>{`
         .container {
           padding: var(--margen-horizontal);

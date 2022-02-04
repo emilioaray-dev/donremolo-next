@@ -97,7 +97,7 @@ function Detalle({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
             </div>
           );
         })}
-
+        <div style={{ height: "5rem" }}></div>
       </main>
     </>
   );
