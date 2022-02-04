@@ -1,27 +1,23 @@
 import { FC, useState } from "react";
 import Image from "next/image";
+import ShoppingCart from "./shoppingCart";
 
-interface Props {
-  titulo: string;
-  imagen: string;
-  altImagen: string;
-  descripcion: string;
-  porciones: number;
-  precio: number;
-  cantidad: string;
-  value: string;
-}
 
-const CardDescription: FC<Props> = ({
-  titulo,
-  imagen,
-  altImagen,
-  descripcion,
-  porciones,
-  precio,
-  cantidad,
-  value,
-}) => {
+
+export default function CardDescription(props: {
+  count: number;
+  titulo: string,
+  imagen: string,
+  altImagen: string,
+  descripcion: string,
+  porciones: string,
+  precio: number,
+  cantidad: number,
+  value: number,
+
+}) {
+
+
 
   const [input, setInput] = useState("1");
 
@@ -30,13 +26,13 @@ const CardDescription: FC<Props> = ({
       <div className="container">
         <article className="cardMaster">
           <div className="cardTitle">
-            <h1>{titulo}</h1>
+            <h1>{props.titulo}</h1>
           </div>
           <div className="containerGrid">
             <picture className="roundPicture">
               <Image
-                src={`${imagen}`}
-                alt={`${altImagen}`}
+                src={`${props.imagen}`}
+                alt={`${props.altImagen}`}
                 width={100}
                 height={100}
                 layout="responsive"
@@ -44,10 +40,10 @@ const CardDescription: FC<Props> = ({
               />
             </picture>
             <div className="rowGrid">
-              <div className="description">{descripcion}</div>
+              <div className="description">{props.descripcion}</div>
             </div>
             <div className="porciones marginTop">8 Porciones</div>
-            <div className="price marginTop">$ {precio}</div>
+            <div className="price marginTop">$ {props.precio}</div>
           </div>
 
           <div className="cuentaGrid">
@@ -64,16 +60,17 @@ const CardDescription: FC<Props> = ({
               ></input>
             </form>
             <span style={{ textAlign: "right", marginRight: "0.5rem" }}>$</span>
-            <span className="total">{input * precio}</span>
+            <span className="total">{input * props.precio}</span>
           </div>
 
           <div style={{ padding: "0px 1.93rem" }}>
-            <button>Agregar al Pedido</button>
+            <button onClick={() => bajarCuenta()} >Agregar al Pedido</button>
           </div>
         </article>
       </div>
 
       <div className="espacioFinal"></div>
+      <ShoppingCart count={props.count} />
 
       <style jsx>{`
         .container {
@@ -211,5 +208,3 @@ const CardDescription: FC<Props> = ({
   );
 };
 
-
-export default CardDescription;

@@ -8,6 +8,7 @@ import { GetStaticProps } from "next";
 import { InferGetStaticPropsType } from "next";
 import { Key, ReactChild, ReactFragment, ReactPortal } from 'react';
 import slugify from "slugify";
+import ShoppingCart from '../components/cards/shoppingCart';
 
 
 export const getStaticProps: GetStaticProps = async (context) => {
@@ -62,7 +63,7 @@ function Home({ ListCategory }: InferGetStaticPropsType<typeof getStaticProps>) 
         hideTitle={""} // 'hide' Oculta el titulo o --title--
         title={"Nuestro Menú"} // Texto a mostrar
         hideIconNav={"none"} //'none' Oculta Los Botonos del Nav
-      />
+        color={''} />
 
       <main>
         <section className="containerCardCategories">
@@ -104,6 +105,7 @@ function Home({ ListCategory }: InferGetStaticPropsType<typeof getStaticProps>) 
 
       <footer>
         <Slogan />
+
       </footer>
 
       {/* Style of Component-----------------------------------*/}

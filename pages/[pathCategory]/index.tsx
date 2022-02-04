@@ -95,7 +95,7 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
           `}</style>
         </div>
       </main>
-      <ShoppingCart number={1} />
+      <ShoppingCart count={0} />
     </>
   );
 }

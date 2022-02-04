@@ -1,13 +1,25 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FC, useState } from "react";
+import { useState } from "react";
+import { listenerCount } from "events";
 
-import { useRouter } from "next/router";
-
-const ShoppingCart: FC<{ number: number; }> = ({ number }) => {
+export default function ShoppingCart(prop: { count: number; }) {
   let initialCount = 0;
 
   const [count, setCount] = useState(initialCount);
+
+
+
+  function bajarCuenta() {
+    if (count >= 0) {
+      setCount(count - 1);
+    }
+    if (count <= 0) {
+      setCount(count);
+    }
+  }
+
+
 
   let ocultar = "0";
   if (count <= 0) {
@@ -19,13 +31,13 @@ const ShoppingCart: FC<{ number: number; }> = ({ number }) => {
     activar = "activo";
   }
 
-  console.log(activar);
+  // console.log(activar);
   return (
     <>
       <footer>
         <div className="shopImgCart">
           <div className="shopImgCart__grid">
-            <button onClick={() => setCount((prevCount) => prevCount - 1)}>
+            <button onClick={() => bajarCuenta()}>
               -
             </button>
             <div className="ma">
@@ -53,7 +65,9 @@ const ShoppingCart: FC<{ number: number; }> = ({ number }) => {
               +
             </button>
           </div>
-          <button className="reset" onClick={() => setCount(initialCount)}>Reset</button>
+          <button className="reset" onClick={() => setCount(initialCount)}>
+            Reset
+          </button>
         </div>
       </footer>
       <style jsx>{`
@@ -83,24 +97,27 @@ const ShoppingCart: FC<{ number: number; }> = ({ number }) => {
           margin: 0px 1rem;
         }
 
-        button:nth-child(-n+3) {
+        button:nth-child(-n + 3) {
           border-radius: 100%;
           height: 1.5rem;
           width: 1.5rem;
           user-select: none;
           text-align: center;
+          vertical-align: middle;
         }
         button.reset {
           border-radius: 5px;
           width: auto;
           user-select: none;
           text-align: center;
+          vertical-align: middle;
         }
 
         .shopImgCart__picture {
           background: var(--brandColorGrey1);
           padding: 10px 11px 6px 10px;
           border-radius: 50%;
+          user-select: none;
         }
 
         .shopImgCart__picture.activo {
@@ -130,9 +147,9 @@ const ShoppingCart: FC<{ number: number; }> = ({ number }) => {
           justify-content: center;
           width: 1rem;
           font-weight: 600;
+          user-select: none;
         }
       `}</style>
     </>
   );
-};
-export default ShoppingCart;
+}

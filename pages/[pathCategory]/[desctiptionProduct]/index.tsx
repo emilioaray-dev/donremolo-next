@@ -4,6 +4,7 @@ import CardDetalle from "../../../components/cards/cardDetalle";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { useRouter } from "next/router";
 import slugify from "slugify";
+import ShoppingCart from "../../../components/cards/shoppingCart";
 
 
 
@@ -88,14 +89,15 @@ function Detalle({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
                 imagen={producto.urlImagen}
                 altImagen={`${producto.categoria} ${producto.nombre}`}
                 descripcion={producto.descripcion}
-                porciones={0}
+                porciones={"0"}
                 precio={producto.precio}
-                cantidad={""}
+                cantidad={0}
                 total={""}
               />
             </div>
           );
         })}
+
       </main>
     </>
   );
@@ -111,10 +113,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const paths = posts.map((listaPath: any) => ({
     params: {
-        pathCategory: slugify(listaPath.categoria, { lower: true }),
-        desctiptionProduct: slugify(listaPath.nombre, { lower: true }),
+      pathCategory: slugify(listaPath.categoria, { lower: true }),
+      desctiptionProduct: slugify(listaPath.nombre, { lower: true }),
     },
-  
+
   }));
 
   // { fallback: false } means other routes should 404.
