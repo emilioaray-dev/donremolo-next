@@ -150,11 +150,11 @@ export function CartProvider() {
           display: flex;
           justify-content: center;
           border-radius: 50%;
-          transform: translate(38px, -7px);
+          transform: translate(33px, -7px);
           color: var(--brandColorRed);
-          font-size: small;
-          padding: 0.2rem;
-          border: 1px solid gray;
+          font-size: x-small;
+          padding: 0.02rem;
+          /* border: 1px solid gray; */
         }
 
         .shopImgCart__badgeGrid--number {

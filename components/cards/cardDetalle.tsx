@@ -2,23 +2,17 @@ import { FC, useState } from "react";
 import Image from "next/image";
 import ShoppingCart from "./shoppingCart";
 
-
-
 export default function CardDescription(props: {
   contador: any;
-  titulo: string,
-  imagen: string,
-  altImagen: string,
-  descripcion: string,
-  porciones: string,
-  precio: number,
-  cantidad: number,
-  value: number,
-
+  titulo: string;
+  imagen: string;
+  altImagen: string;
+  descripcion: string;
+  porciones: string;
+  precio: number;
+  cantidad: number;
+  value: number;
 }) {
-
-
-
   const [input, setInput] = useState("1");
 
   return (
@@ -56,7 +50,10 @@ export default function CardDescription(props: {
                 type="number"
                 name="cantidad"
                 min="1"
-                max="10"
+                step="1"
+                max="20"
+                pattern="[0-9]*"
+                inputMode="numeric"
               ></input>
             </form>
             <span style={{ textAlign: "right", marginRight: "0.5rem" }}>$</span>
@@ -64,7 +61,7 @@ export default function CardDescription(props: {
           </div>
 
           <div style={{ padding: "0px 1.93rem" }}>
-            <button onClick={() => bajarCuenta()} >Agregar al Pedido</button>
+            <button onClick={() => bajarCuenta()}>Agregar al Pedido</button>
           </div>
         </article>
       </div>
@@ -204,5 +201,4 @@ export default function CardDescription(props: {
       `}</style>
     </>
   );
-};
-
+}
