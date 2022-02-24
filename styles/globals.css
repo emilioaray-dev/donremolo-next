@@ -6,7 +6,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 
@@ -14,8 +14,8 @@
 
 html,
 body {
-  margin: 0px;
-  padding: 0px;
+    margin: 0px;
+    padding: 0px;
 }
 
 
@@ -23,9 +23,9 @@ body {
 
 html,
 body {
-  color: var(--color-Negro);
-  width: 100%;
-  overflow-x: hidden;
+    color: var(--color-Negro);
+    width: 100%;
+    overflow-x: hidden;
 }
 
 
@@ -33,8 +33,8 @@ body {
 4.1 Definiendo OpenSans como fuente predeterminada*/
 
 body {
-  -webkit-font-smoothing: antialiased;
-  font-family: OpenSans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    font-family: OpenSans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
 }
 
 
@@ -45,8 +45,8 @@ picture,
 video,
 canvas,
 svg {
-  display: block;
-  max-width: 100%;
+    display: block;
+    max-width: 100%;
 }
 
 
@@ -59,15 +59,15 @@ h3,
 h4,
 h5,
 h6 {
-  overflow-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 
 /*7. Quitando Estilos de los textos de links  */
 
 a:-webkit-any-link {
-  color: unset;
-  text-decoration: none;
+    color: unset;
+    text-decoration: none;
 }
 
 
@@ -79,12 +79,12 @@ a:-webkit-any-link {
 /* fonts */
 
 @font-face {
-  font-family: OpenSans;
-  src: url(../public/assets/fonts/OpenSans-VariableFont_wdth,wght.ttf);
+    font-family: OpenSans;
+    src: url(../public/assets/fonts/OpenSans-VariableFont.ttf);
 }
 
 [data-v-32478853] {
-  font-family: OpenSans;
+    font-family: OpenSans;
 }
 
 
@@ -96,20 +96,20 @@ a:-webkit-any-link {
 /* BackGround for Tablet and Pc */
 
 body {
-  background-image: url("/assets/img/Background_mobile_PNG.png");
-  background-size: contain;
-  background-position: center;
-  background-attachment: fixed;
-  height: 100%;
+    background-image: url("/assets/img/Background_mobile_PNG.png");
+    background-size: contain;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
 }
 
 
 /* BackGround for Mobile */
 
-@media only screen and (min-width:768px) {
-  body {
-    background-image: url("/assets/img/Background_Desktop_PNG.png");
-  }
+@media only screen and (min-width: 768px) {
+    body {
+        background-image: url("/assets/img/Background_Desktop_PNG.png");
+    }
 }
 
 

@@ -1,12 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { createContext, useContext } from "react";
+import { useContext } from "react";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
-// Creando el Context
-const Que = createContext({ contador: 0 });
-
-export function CartProvider(props: any) {
+export function CartProvider() {
   // Set Hook de Cuenta de Artículos
   let initialCount = 0;
   const [count, setCount] = useState(initialCount);
@@ -26,7 +24,7 @@ export function CartProvider(props: any) {
   // Si es = 0 Apagar el Carro CSS
   let ocultar = "0";
   if (count <= 0) {
-    ocultar = "hide";
+    ocultar = "hide"; // Set Style hide Display None
   }
   // Si es >= 1 Activar el Carro CSS
   let activar = "no";
@@ -34,10 +32,19 @@ export function CartProvider(props: any) {
     activar = "activo";
   }
 
-  // console.log(activar);
+  // Router
+  let ocultarIsHome = ""; // Set OcultarIsHome Empty Styled
+  const router = useRouter();
+  const patch = router.pathname;
+
+  if (patch == "/") {
+    ocultarIsHome = "hide";
+  }
+
+  console.log(patch);
   return (
-    <Que.Provider value={count}>
-      <div className="shopImgCart ">
+    <>
+      <div className={`shopImgCart ${ocultarIsHome}  `}>
         <div className="shopImgCart__grid">
           <button className="button" onClick={() => bajarCuenta()}>
             -
@@ -160,6 +167,6 @@ export function CartProvider(props: any) {
           user-select: none;
         }
       `}</style>
-    </Que.Provider>
+    </>
   );
 }

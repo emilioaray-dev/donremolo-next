@@ -52,11 +52,7 @@ function Home({
           name="viewport"
           content="width=device-width, initial-scale=1.0"
         ></meta>
-        <link
-          rel="preload"
-          as="font"
-          href="/assets/fonts/OpenSans-VariableFont_wdth,wght.ttf"
-        ></link>
+
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

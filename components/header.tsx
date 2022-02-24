@@ -32,7 +32,7 @@ const Header: FC<{
               <div className={`buttonGrid ${hideBackbuttom}`}>
                 <a className="button" onClick={() => Router.back()}>
                   <Image
-                    src="/assets/img/iconNav/returnAarrow.svg"
+                    src="/assets/img/iconNav/returnArrow.svg"
                     alt="Buttom Back"
                     width="40px"
                     height="40px"

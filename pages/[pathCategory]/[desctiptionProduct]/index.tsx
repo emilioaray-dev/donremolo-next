@@ -4,8 +4,6 @@ import CardDetalle from "../../../components/cards/cardDetalle";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { useRouter } from "next/router";
 import slugify from "slugify";
-import ShoppingCart from "../../../components/cards/shoppingCart";
-import { CartProvider } from "../../../components/context/shoppingCartContext";
 
 function Detalle({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
   type Lista = {
@@ -90,14 +88,14 @@ function Detalle({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
                 descripcion={producto.descripcion}
                 porciones={"0"}
                 precio={producto.precio}
+                contador={undefined}
                 cantidad={0}
-                total={""}
+                value={0}
               />
             </div>
           );
         })}
         <div style={{ height: "5rem" }}></div>
-        <CartProvider />
       </main>
     </>
   );

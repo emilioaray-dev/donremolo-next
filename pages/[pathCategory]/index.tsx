@@ -66,9 +66,8 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
         <div className="containerFather">
           {listaFiltrada.map((producto: any) => {
             return (
-              <>
+              <div key={producto.id}>
                 <CardList
-                  key={producto.id}
                   href={`/${slugify(producto.categoria, {
                     lower: true,
                   })}/${slugify(producto.nombre, { lower: true })}`}
@@ -78,7 +77,7 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
                   descripcion={producto.descripcion}
                   precio={`${producto.precio}`}
                 />
-              </>
+              </div>
             );
           })}
           <style jsx>{`
@@ -101,7 +100,6 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
           `}</style>
         </div>
         <div style={{ height: "5rem" }}></div>
-        <CartProvider />
       </main>
     </>
   );
