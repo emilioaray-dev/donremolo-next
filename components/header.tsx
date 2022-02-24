@@ -181,7 +181,7 @@ const Header: FC<{
         grid-template-columns: auto;
         justify-content: center;
         align-items: center;
-        padding-right: 3.5rem;
+        padding-right: 2.38rem;
       }
 
       .cardNav {
@@ -189,7 +189,7 @@ const Header: FC<{
         backdrop-filter: blur(2px);
         -webkit-backdrop-filter: blur(2px);
         background: var(--background--Nav);
-        border-radius: 1rem;
+        border-radius: 0.5rem;
         height: 67px;
       }
 

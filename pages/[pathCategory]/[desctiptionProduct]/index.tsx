@@ -5,8 +5,7 @@ import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { useRouter } from "next/router";
 import slugify from "slugify";
 import ShoppingCart from "../../../components/cards/shoppingCart";
-
-
+import { CartProvider } from "../../../components/context/shoppingCartContext";
 
 function Detalle({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
   type Lista = {
@@ -98,6 +97,7 @@ function Detalle({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
           );
         })}
         <div style={{ height: "5rem" }}></div>
+        <CartProvider />
       </main>
     </>
   );
@@ -116,7 +116,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
       pathCategory: slugify(listaPath.categoria, { lower: true }),
       desctiptionProduct: slugify(listaPath.nombre, { lower: true }),
     },
-
   }));
 
   // { fallback: false } means other routes should 404.
@@ -125,7 +124,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
     fallback: false,
   };
 };
-
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   // (`http://${url}/api/dataAll`);
@@ -140,8 +138,5 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     revalidate: 10, // In seconds
   };
 };
-
-
-
 
 export default Detalle;

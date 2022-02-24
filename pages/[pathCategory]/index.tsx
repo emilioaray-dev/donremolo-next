@@ -5,6 +5,7 @@ import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { useRouter } from "next/router";
 import slugify from "slugify";
 import ShoppingCart from "../../components/cards/shoppingCart";
+import { CartProvider } from "../../components/context/shoppingCartContext";
 
 function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
   type Lista = {
@@ -65,9 +66,9 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
         <div className="containerFather">
           {listaFiltrada.map((producto: any) => {
             return (
-              <div key={producto.id}>
+              <>
                 <CardList
-                  key=""
+                  key={producto.id}
                   href={`/${slugify(producto.categoria, {
                     lower: true,
                   })}/${slugify(producto.nombre, { lower: true })}`}
@@ -77,7 +78,7 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
                   descripcion={producto.descripcion}
                   precio={`${producto.precio}`}
                 />
-              </div>
+              </>
             );
           })}
           <style jsx>{`
@@ -86,16 +87,22 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
                 display: grid;
                 grid-template-columns: auto auto;
                 justify-content: center;
+                grid-gap: 0rem 1rem;
               }
             }
             .containerFather {
               display: grid;
+              justify-items: center;
+              padding: var(--margen-horizontal);
+              max-width: var(--maxWidth-container);
+              margin: 0 auto;
+              width: 100vw;
             }
           `}</style>
         </div>
         <div style={{ height: "5rem" }}></div>
+        <CartProvider />
       </main>
-      <ShoppingCart />
     </>
   );
 }
@@ -106,7 +113,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     "https://donremolo-next.vercel.app/api/dataCategorias"
   );
   const posts = await res.json();
-  const titleDescription = posts.map((td: any) => (td.categoria));
+  const titleDescription = posts.map((td: any) => td.categoria);
   const paths = posts.map((listaPath: any) => ({
     params: {
       pathCategory: slugify(listaPath.categoria, { lower: true }),
@@ -121,15 +128,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  // 
+  //
   const res = await fetch(`https://donremolo-next.vercel.app/api/dataAll`);
   const Lista = await res.json();
 
-  let listCategory = Lista.map((lc: any) => (lc.categoria));
+  let listCategory = Lista.map((lc: any) => lc.categoria);
 
   let filterListCategory = [...new Set(listCategory)];
   // console.log(filterListCategory);
-
 
   return {
     props: {

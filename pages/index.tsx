@@ -1,18 +1,16 @@
-import Head from 'next/head';
-import Header from '../components/header';
-import Slogan from '../components/slogan';
-import Link from 'next/link';
+import Head from "next/head";
+import Header from "../components/header";
+import Slogan from "../components/slogan";
+import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { GetStaticProps } from "next";
 import { InferGetStaticPropsType } from "next";
-import { Key, ReactChild, ReactFragment, ReactPortal } from 'react';
+import { Key, ReactChild, ReactFragment, ReactPortal } from "react";
 import slugify from "slugify";
-import ShoppingCart from '../components/cards/shoppingCart';
-
+import ShoppingCart from "../components/cards/shoppingCart";
 
 export const getStaticProps: GetStaticProps = async (context) => {
-
   type ListCategory = {
     id: number;
     categoria: string;
@@ -29,7 +27,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const res = await fetch(`https://donremolo-next.vercel.app/api/dataAll`);
   const lista = await res.json();
 
-  const ok = ListCategory.map((l: any) => slugify(l.categoria, { lower: true }));
+  const ok = ListCategory.map((l: any) =>
+    slugify(l.categoria, { lower: true })
+  );
   // console.log (ok)
 
   return {
@@ -39,7 +39,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
     revalidate: 10, // In 10 seconds
   };
 };
-function Home({ ListCategory }: InferGetStaticPropsType<typeof getStaticProps>) {
+function Home({
+  ListCategory,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter();
   return (
     <>
@@ -63,13 +65,14 @@ function Home({ ListCategory }: InferGetStaticPropsType<typeof getStaticProps>) 
         hideTitle={""} // 'hide' Oculta el titulo o --title--
         title={"Nuestro Menú"} // Texto a mostrar
         hideIconNav={"none"} //'none' Oculta Los Botonos del Nav
-        color={''} />
+        color={""}
+      />
 
       <main>
         <section className="containerCardCategories">
           <div className="cardCategories__grid">
             {ListCategory.map(
-              (listC: { id: string; categoria: string; urlImagen: string; }) => {
+              (listC: { id: string; categoria: string; urlImagen: string }) => {
                 return (
                   <div key={listC.id}>
                     <Link
@@ -105,7 +108,6 @@ function Home({ ListCategory }: InferGetStaticPropsType<typeof getStaticProps>) 
 
       <footer>
         <Slogan />
-
       </footer>
 
       {/* Style of Component-----------------------------------*/}
@@ -163,6 +165,5 @@ function Home({ ListCategory }: InferGetStaticPropsType<typeof getStaticProps>) 
     </>
   );
 }
-
 
 export default Home;

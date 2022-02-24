@@ -1,8 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { createContext, useContext } from "react";
+import { useState } from "react";
 
-export default function ShoppingCart() {
+// Creando el Context
+const Que = createContext({ contador: 0 });
+
+export function CartProvider(props: any) {
   // Set Hook de Cuenta de Artículos
   let initialCount = 0;
   const [count, setCount] = useState(initialCount);
@@ -16,7 +20,7 @@ export default function ShoppingCart() {
       setCount(count);
     }
   }
-  // Funcion de restar y si llega a 0 no resta
+  // Funcion de sumar
   const subirCuenta = () => setCount(count + 1);
 
   // Si es = 0 Apagar el Carro CSS
@@ -32,42 +36,40 @@ export default function ShoppingCart() {
 
   // console.log(activar);
   return (
-    <>
-      <div>
-        <div className="shopImgCart">
-          <div className="shopImgCart__grid">
-            <button className="button" onClick={() => bajarCuenta()}>
-              -
-            </button>
-            <div className="margin">
-              <Link href="">
-                <a href="">
-                  <picture className={`shopImgCart__picture ${activar}`}>
-                    <Image
-                      className="shopImgCart__img"
-                      src="/assets/img/icons/shoppingCart.svg"
-                      alt=""
-                      width={30}
-                      height={28}
-                    />
-                  </picture>
-                  <div className={`shoppingImgCart__badgeGrid ${ocultar}`}>
-                    <span className="shopImgCart__badgeGrid--number">
-                      {count}
-                    </span>
-                  </div>
-                </a>
-              </Link>
-            </div>
-
-            <button className="button" onClick={() => subirCuenta()}>
-              +
-            </button>
+    <Que.Provider value={count}>
+      <div className="shopImgCart ">
+        <div className="shopImgCart__grid">
+          <button className="button" onClick={() => bajarCuenta()}>
+            -
+          </button>
+          <div className="margin">
+            <Link href="">
+              <a href="">
+                <picture className={`shopImgCart__picture ${activar}`}>
+                  <Image
+                    className="shopImgCart__img"
+                    src="/assets/img/icons/shoppingCart.svg"
+                    alt=""
+                    width={30}
+                    height={28}
+                  />
+                </picture>
+                <div className={`shoppingImgCart__badgeGrid ${ocultar}`}>
+                  <span className="shopImgCart__badgeGrid--number">
+                    {count}
+                  </span>
+                </div>
+              </a>
+            </Link>
           </div>
-          <button className="reset" onClick={() => setCount(initialCount)}>
-            Reset
+
+          <button className="button" onClick={() => subirCuenta()}>
+            +
           </button>
         </div>
+        <button className="reset" onClick={() => setCount(initialCount)}>
+          Reset
+        </button>
       </div>
 
       <style jsx>{`
@@ -141,20 +143,23 @@ export default function ShoppingCart() {
           display: flex;
           justify-content: center;
           border-radius: 50%;
-          transform: translate(39px, -2px);
+          transform: translate(38px, -7px);
           color: var(--brandColorRed);
           font-size: small;
-          padding: 2px;
+          padding: 0.2rem;
+          border: 1px solid gray;
         }
 
         .shopImgCart__badgeGrid--number {
           display: flex;
+          align-items: center;
           justify-content: center;
-          width: 1rem;
+          width: 1.3rem;
+          height: 1.3rem;
           font-weight: 600;
           user-select: none;
         }
       `}</style>
-    </>
+    </Que.Provider>
   );
 }
