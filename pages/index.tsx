@@ -23,9 +23,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
   );
   // Lista Categoria to Json
   const ListCategory = await resCategorias.json();
-  // Lista All Product to Json
-  const res = await fetch(`https://donremolo-next.vercel.app/api/dataAll`);
-  const lista = await res.json();
 
   const ok = ListCategory.map((l: any) =>
     slugify(l.categoria, { lower: true })

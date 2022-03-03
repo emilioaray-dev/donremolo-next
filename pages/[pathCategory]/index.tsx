@@ -4,8 +4,8 @@ import CardList from "../../components/cards/CardList";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { useRouter } from "next/router";
 import slugify from "slugify";
-import ShoppingCart from "../../components/cards/shoppingCart";
-import { CartProvider } from "../../components/context/shoppingCartContext";
+import useRequest from "../../lib/useRequest";
+import useSWR from "swr";
 
 function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
   type Lista = {
@@ -20,9 +20,11 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter();
   const { pathCategory } = router.query;
 
+  // Devuelve un Json Filtrado por categoria que haga match con el router pathCategory
   const listaFiltrada = Lista.filter(
     (p: any) => slugify(p.categoria, { lower: true }) === pathCategory
   );
+  // console.log({ listaFiltrada });
   //  console.log({pathCategory})
 
   // titleDescriptionAll Regresa un map de todas las .categorías de la lista
@@ -44,7 +46,11 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
   if (titleDescription == "Postres") {
     activarNav = "activePostres";
   }
-  // console.log(titleDescription);
+
+  const { data } = useRequest({
+    url: "/api/data",
+  });
+  console.log(data);
   return (
     <>
       <Head>
@@ -110,6 +116,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const res = await fetch(
     "https://donremolo-next.vercel.app/api/dataCategorias"
   );
+
   const posts = await res.json();
   const titleDescription = posts.map((td: any) => td.categoria);
   const paths = posts.map((listaPath: any) => ({

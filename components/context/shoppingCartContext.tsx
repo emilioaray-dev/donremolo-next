@@ -37,11 +37,16 @@ export function CartProvider() {
   const router = useRouter();
   const patch = router.pathname;
 
+  // Ocultar Carro en Home
   if (patch == "/") {
     ocultarIsHome = "hide";
   }
+  // Ocultar Carro en Pedido
+  if (patch == "/pedido") {
+    ocultarIsHome = "hide";
+  }
 
-  console.log(patch);
+  //console.log(patch);
   return (
     <>
       <div className={`shopImgCart ${ocultarIsHome}  `}>
@@ -50,7 +55,7 @@ export function CartProvider() {
             -
           </button>
           <div className="margin">
-            <Link href="">
+            <Link href="/pedido">
               <a href="">
                 <picture className={`shopImgCart__picture ${activar}`}>
                   <Image
