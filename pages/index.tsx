@@ -6,9 +6,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { GetStaticProps } from "next";
 import { InferGetStaticPropsType } from "next";
-import { Key, ReactChild, ReactFragment, ReactPortal } from "react";
 import slugify from "slugify";
-import ShoppingCart from "../components/cards/shoppingCart";
 
 export const getStaticProps: GetStaticProps = async (context) => {
   type ListCategory = {

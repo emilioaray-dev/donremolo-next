@@ -16,6 +16,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/producto/descripcion.js", "pages/sinusar/cardDescription2", "pages/sinusar/index", "pages/index2", "pages/homeCategory", "components/cards/CardHome", "pages/index", "pages/api/data.js", "lib/useRequest.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/producto/descripcion.js", "pages/sinusar/cardDescription2", "pages/sinusar/index", "pages/index2", "pages/homeCategory", "components/cards/CardHome", "pages/index", "pages/api/data.js", "lib/useRequest.js", "components/cards/CartItemPedido"],
   "exclude": ["node_modules"]
 }

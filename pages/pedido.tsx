@@ -16,7 +16,7 @@ export default function Pedido() {
         <link
           rel="preload"
           as="font"
-          href="/assets/fonts/OpenSans-VariableFont_wdth,wght.ttf"
+          href="/assets/fonts/OpenSans-VariableFont.ttf"
         ></link>
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -25,9 +25,10 @@ export default function Pedido() {
         hideTitle={""} // 'hide' Oculta el titulo o --title--
         title={"Tu Pedido"} // Texto a mostrar
         hideIconNav={"none"} //'none' Oculta Los Botonos del Nav
+        color=""
       />
       <main>
-        <CartPedido />
+        <CartPedido units={1} product={""} price={" "} />
       </main>
       <CartPedidoFooter />
     </>
