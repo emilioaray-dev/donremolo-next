@@ -5,6 +5,6 @@ import { useState } from "react";
 
 // Creando el Context
 const HolaContext = createContext(null);
-console.log(HolaContext);
+// console.log(HolaContext);
 
 export default HolaContext;

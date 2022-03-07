@@ -41,7 +41,7 @@ export function CartProvider() {
     ocultarIsHome = "hide";
   }
 
-  console.log(patch);
+  // console.log(patch);
   return (
     <>
       <div className={`shopImgCart ${ocultarIsHome}  `}>
