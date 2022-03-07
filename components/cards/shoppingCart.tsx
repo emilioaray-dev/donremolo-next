@@ -40,7 +40,7 @@ export default function ShoppingCart() {
               -
             </button>
             <div className="margin">
-              <Link href="">
+              <Link href="/pedido">
                 <a href="">
                   <picture className={`shopImgCart__picture ${activar}`}>
                     <Image

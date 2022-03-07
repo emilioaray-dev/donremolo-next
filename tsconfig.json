@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "downlevelIteration": true,
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -16,6 +16,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/producto/descripcion.js", "pages/sinusar/cardDescription2", "pages/sinusar/index", "pages/index2", "pages/homeCategory", "components/cards/CardHome", "pages/index"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/producto/descripcion.js", "pages/sinusar/cardDescription2", "pages/sinusar/index", "pages/index2", "pages/homeCategory", "components/cards/CardHome", "pages/index", "pages/api/data.js", "lib/useRequest.js", "components/cards/CartItemPedido"],
   "exclude": ["node_modules"]
 }

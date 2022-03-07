@@ -1,17 +1,13 @@
 import Head from "next/head";
 import Header from "../components/header";
-import Slogan from "../components/slogan";
-import { useRouter } from "next/router";
-import { GetStaticProps } from "next";
-import { InferGetStaticPropsType } from "next";
-import Category from "./homeCategory";
+import CartPedido from "../components/cards/CartPedido";
+import CartPedidoFooter from "../components/cards/CartPedidoFooter";
 
-
-function Home() {
+export default function Pedido() {
   return (
     <>
       <Head>
-        <title>Don Rémolo</title>
+        <title>Don Rémolo | Pedido</title>
         <meta name="description" content="Generado por el Equipo 87 de IDeas" />
         <meta
           name="viewport"
@@ -20,31 +16,21 @@ function Home() {
         <link
           rel="preload"
           as="font"
-          href="/assets/fonts/OpenSans-VariableFont_wdth,wght.ttf"
+          href="/assets/fonts/OpenSans-VariableFont.ttf"
         ></link>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <Header
-        hideBackbuttom={"hide"} //'hide' Oculta el bottom de back
+        hideBackbuttom={""} //'hide' Oculta el bottom de back
         hideTitle={""} // 'hide' Oculta el titulo o --title--
-        title={"Nuestro Menú"} // Texto a mostrar
+        title={"Tu Pedido"} // Texto a mostrar
         hideIconNav={"none"} //'none' Oculta Los Botonos del Nav
+        color=""
       />
-
       <main>
-
-        <Category />
-
+        <CartPedido units={1} product={""} price={" "} />
       </main>
-
-      <footer>
-        <Slogan />
-      </footer>
-
-
+      <CartPedidoFooter />
     </>
   );
 }
-
-export default Home;
