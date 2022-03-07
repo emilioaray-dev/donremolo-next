@@ -49,8 +49,8 @@ pnpm-lock.yaml
 /.vscode
 
 # PWA
-public/sw.js
-public/sw.js.map
-public/workbox-d1b0e804.js
-public/workbox-d1b0e804.js.map
+# public/sw.js
+# public/sw.js.map
+# public/workbox-d1b0e804.js
+# public/workbox-d1b0e804.js.map
 
