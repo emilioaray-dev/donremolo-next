@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Header from "../components/header";
-import CartPedido from "../components/cards/CartPedido";
+import CartPedido2 from "../components/cards/CartPedido2";
 import CartPedidoFooter from "../components/cards/CartPedidoFooter";
 
 export default function Pedido() {
@@ -24,7 +24,7 @@ export default function Pedido() {
         color=""
       />
       <main>
-        <CartPedido units={1} product={""} price={" "} />
+        <CartPedido2 units={1} product={""} price={" "} />
       </main>
       <CartPedidoFooter />
     </>
