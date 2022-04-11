@@ -55,6 +55,4 @@ pnpm-lock.yaml
 # public/workbox-d1b0e804.js.map
 
 # PWA
-public/sw.js
-public/sw.js.map
-public/workbox*
+
