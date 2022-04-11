@@ -16,9 +16,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   };
 
   // Res Lista Categoria (`http://${url}/api/dataCategorias`);
-  const resCategorias = await fetch(
-    `https://donremolo-next.vercel.app/api/dataCategorias`
-  );
+  const resCategorias = await fetch(process.env.URL_fetchCategorias);
   // Lista Categoria to Json
   const ListCategory = await resCategorias.json();
 
@@ -63,7 +61,7 @@ function Home({
         <section className="containerCardCategories">
           <div className="cardCategories__grid">
             {ListCategory.map(
-              (listC: { id: string; categoria: string; urlImagen: string }) => {
+              (listC: { id: string; categoria: string; urlImagen: string; }) => {
                 return (
                   <div key={listC.id}>
                     <Link

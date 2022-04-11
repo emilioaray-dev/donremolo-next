@@ -106,7 +106,7 @@ function Detalle({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch("https://donremolo-next.vercel.app/api/dataAll");
+  const res = await fetch(process.env.URL_fetchDataAll);
   const posts = await res.json();
 
   const paths = posts.map((listaPath: any) => ({
@@ -125,7 +125,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   // (`http://${url}/api/dataAll`);
-  const res = await fetch(`https://donremolo-next.vercel.app/api/dataAll`);
+  const res = await fetch(process.env.URL_fetchDataAll);
   const Lista = await res.json();
   //  console.log(Lista);
 

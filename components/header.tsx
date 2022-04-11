@@ -132,8 +132,8 @@ const Header: FC<{
       }
 
       header {
-        position: fixed;
-        /* Necesario para que sea flotante la barra del Nav*/
+        position: fixed; /**
+        *! Necesario para que sea flotante la barra del Nav*/
         z-index: 1;
         width: 100%;
         padding: var(--margen-horizontal);

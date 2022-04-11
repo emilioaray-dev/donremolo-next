@@ -113,9 +113,7 @@ function CardRender({ Lista }: InferGetStaticPropsType<typeof getStaticProps>) {
 const url = process.env.NEXT_PUBLIC_VERCEL_URL;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch(
-    "https://donremolo-next.vercel.app/api/dataCategorias"
-  );
+  const res = await fetch(process.env.URL_fetchCategorias);
 
   const posts = await res.json();
   const titleDescription = posts.map((td: any) => td.categoria);
@@ -134,7 +132,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   //
-  const res = await fetch(`https://donremolo-next.vercel.app/api/dataAll`);
+  const res = await fetch(process.env.URL_fetchDataAll);
   const Lista = await res.json();
 
   let listCategory = Lista.map((lc: any) => lc.categoria);
